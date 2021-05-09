@@ -41,14 +41,14 @@ public class JsonUtil {
      * @param <T>       target class type.
      * @return converted target object.
      */
-    public static <T> T toObject(String json, Class<T> valueType) {
-        Objects.requireNonNull(json, "json is null.");
-        Objects.requireNonNull(valueType, "value type is null.");
+    public static <T> T toObject(String json,Class<T> valueType) {
+        Objects.requireNonNull(json,"json is null.");
+        Objects.requireNonNull(valueType,"value type is null.");
 
         try {
-            return mapper.readValue(json, valueType);
+            return mapper.readValue(json,valueType);
         } catch (IOException e) {
-            throw new IllegalStateException("fail to convert [" + json + "] to [" + valueType + "].", e);
+            throw new IllegalStateException("fail to convert [" + json + "] to [" + valueType + "].",e);
         }
     }
 

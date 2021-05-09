@@ -57,100 +57,100 @@ public class WxPayRefundRequest {
         return this.appid;
     }
 
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getOutRefundNo() {
-        return this.outRefundNo;
-    }
-
-    public Integer getTotalFee() {
-        return this.totalFee;
-    }
-
-    public Integer getRefundFee() {
-        return this.refundFee;
-    }
-
-    public String getRefundFeeType() {
-        return this.refundFeeType;
-    }
-
-    public String getRefundDesc() {
-        return this.refundDesc;
-    }
-
-    public String getRefundAccount() {
-        return this.refundAccount;
-    }
-
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {
         this.sign = sign;
     }
 
+    public String getSignType() {
+        return this.signType;
+    }
+
     public void setSignType(String signType) {
         this.signType = signType;
+    }
+
+    public String getTransactionId() {
+        return this.transactionId;
     }
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
     }
 
+    public String getOutTradeNo() {
+        return this.outTradeNo;
+    }
+
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
+    }
+
+    public String getOutRefundNo() {
+        return this.outRefundNo;
     }
 
     public void setOutRefundNo(String outRefundNo) {
         this.outRefundNo = outRefundNo;
     }
 
+    public Integer getTotalFee() {
+        return this.totalFee;
+    }
+
     public void setTotalFee(Integer totalFee) {
         this.totalFee = totalFee;
+    }
+
+    public Integer getRefundFee() {
+        return this.refundFee;
     }
 
     public void setRefundFee(Integer refundFee) {
         this.refundFee = refundFee;
     }
 
+    public String getRefundFeeType() {
+        return this.refundFeeType;
+    }
+
     public void setRefundFeeType(String refundFeeType) {
         this.refundFeeType = refundFeeType;
     }
 
+    public String getRefundDesc() {
+        return this.refundDesc;
+    }
+
     public void setRefundDesc(String refundDesc) {
         this.refundDesc = refundDesc;
+    }
+
+    public String getRefundAccount() {
+        return this.refundAccount;
     }
 
     public void setRefundAccount(String refundAccount) {

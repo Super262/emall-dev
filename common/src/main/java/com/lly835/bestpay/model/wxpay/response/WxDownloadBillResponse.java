@@ -27,20 +27,20 @@ public class WxDownloadBillResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getErrorCode() {
-        return this.errorCode;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
     }
 
+    public String getReturnMsg() {
+        return this.returnMsg;
+    }
+
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
+    }
+
+    public String getErrorCode() {
+        return this.errorCode;
     }
 
     public void setErrorCode(String errorCode) {

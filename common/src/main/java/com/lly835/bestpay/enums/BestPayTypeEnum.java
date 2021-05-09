@@ -11,23 +11,23 @@ import static com.lly835.bestpay.enums.BestPayPlatformEnum.WX;
  */
 public enum BestPayTypeEnum {
 
-    ALIPAY_APP("alipay_app", ALIPAY, "支付宝app"),
+    ALIPAY_APP("alipay_app",ALIPAY,"支付宝app"),
 
-    ALIPAY_PC("alipay_pc", ALIPAY, "支付宝pc"),
+    ALIPAY_PC("alipay_pc",ALIPAY,"支付宝pc"),
 
-    ALIPAY_WAP("alipay_wap", ALIPAY, "支付宝wap"),
+    ALIPAY_WAP("alipay_wap",ALIPAY,"支付宝wap"),
 
-    ALIPAY_H5("alipay_h5", ALIPAY, "支付宝统一下单(h5)"),
+    ALIPAY_H5("alipay_h5",ALIPAY,"支付宝统一下单(h5)"),
 
-    WXPAY_MP("JSAPI", WX,"微信公众账号支付"),
+    WXPAY_MP("JSAPI",WX,"微信公众账号支付"),
 
-    WXPAY_MWEB("MWEB", WX, "微信H5支付"),
+    WXPAY_MWEB("MWEB",WX,"微信H5支付"),
 
-    WXPAY_NATIVE("NATIVE", WX, "微信Native支付"),
+    WXPAY_NATIVE("NATIVE",WX,"微信Native支付"),
 
-    WXPAY_MINI("JSAPI", WX, "微信小程序支付"),
+    WXPAY_MINI("JSAPI",WX,"微信小程序支付"),
 
-    WXPAY_APP("APP", WX, "微信APP支付"),
+    WXPAY_APP("APP",WX,"微信APP支付"),
     ;
 
     private String code;
@@ -36,10 +36,19 @@ public enum BestPayTypeEnum {
 
     private String desc;
 
-    BestPayTypeEnum(String code, BestPayPlatformEnum platform, String desc) {
+    BestPayTypeEnum(String code,BestPayPlatformEnum platform,String desc) {
         this.code = code;
         this.platform = platform;
         this.desc = desc;
+    }
+
+    public static BestPayTypeEnum getByName(String code) {
+        for (BestPayTypeEnum bestPayTypeEnum : BestPayTypeEnum.values()) {
+            if (bestPayTypeEnum.name().equalsIgnoreCase(code)) {
+                return bestPayTypeEnum;
+            }
+        }
+        throw new BestPayException(BestPayResultEnum.PAY_TYPE_ERROR);
     }
 
     public String getCode() {
@@ -52,14 +61,5 @@ public enum BestPayTypeEnum {
 
     public String getDesc() {
         return desc;
-    }
-
-    public static BestPayTypeEnum getByName(String code) {
-        for (BestPayTypeEnum bestPayTypeEnum : BestPayTypeEnum.values()) {
-            if (bestPayTypeEnum.name().equalsIgnoreCase(code)) {
-                return bestPayTypeEnum;
-            }
-        }
-        throw new BestPayException(BestPayResultEnum.PAY_TYPE_ERROR);
     }
 }

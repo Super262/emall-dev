@@ -14,7 +14,7 @@ public class AliPayAsyncResponse implements Serializable {
     private String notifyTime;
 
     /**
-     * 	通知的类型
+     * 通知的类型
      */
     private String notifyType;
 
@@ -51,7 +51,7 @@ public class AliPayAsyncResponse implements Serializable {
     /**
      * 支付宝交易号
      */
-    private  String tradeNo;
+    private String tradeNo;
 
     /**
      * APP_ID
@@ -110,148 +110,148 @@ public class AliPayAsyncResponse implements Serializable {
         return this.notifyTime;
     }
 
-    public String getNotifyType() {
-        return this.notifyType;
-    }
-
-    public String getNotifyId() {
-        return this.notifyId;
-    }
-
-    public String getCharset() {
-        return this.charset;
-    }
-
-    public String getVersion() {
-        return this.version;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getAuthAppId() {
-        return this.authAppId;
-    }
-
-    public String getTradeNo() {
-        return this.tradeNo;
-    }
-
-    public String getAppId() {
-        return this.appId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getTradeStatus() {
-        return this.tradeStatus;
-    }
-
-    public String getTotalAmount() {
-        return this.totalAmount;
-    }
-
-    public String getReceiptAmount() {
-        return this.receiptAmount;
-    }
-
-    public String getBuyerPayAmount() {
-        return this.buyerPayAmount;
-    }
-
-    public String getSubject() {
-        return this.subject;
-    }
-
-    public String getBody() {
-        return this.body;
-    }
-
-    public String getGmtCreate() {
-        return this.gmtCreate;
-    }
-
-    public String getGmtClose() {
-        return this.gmtClose;
-    }
-
     public void setNotifyTime(String notifyTime) {
         this.notifyTime = notifyTime;
+    }
+
+    public String getNotifyType() {
+        return this.notifyType;
     }
 
     public void setNotifyType(String notifyType) {
         this.notifyType = notifyType;
     }
 
+    public String getNotifyId() {
+        return this.notifyId;
+    }
+
     public void setNotifyId(String notifyId) {
         this.notifyId = notifyId;
+    }
+
+    public String getCharset() {
+        return this.charset;
     }
 
     public void setCharset(String charset) {
         this.charset = charset;
     }
 
+    public String getVersion() {
+        return this.version;
+    }
+
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getSignType() {
+        return this.signType;
     }
 
     public void setSignType(String signType) {
         this.signType = signType;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getAuthAppId() {
+        return this.authAppId;
     }
 
     public void setAuthAppId(String authAppId) {
         this.authAppId = authAppId;
     }
 
+    public String getTradeNo() {
+        return this.tradeNo;
+    }
+
     public void setTradeNo(String tradeNo) {
         this.tradeNo = tradeNo;
+    }
+
+    public String getAppId() {
+        return this.appId;
     }
 
     public void setAppId(String appId) {
         this.appId = appId;
     }
 
+    public String getOutTradeNo() {
+        return this.outTradeNo;
+    }
+
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
+    }
+
+    public String getTradeStatus() {
+        return this.tradeStatus;
     }
 
     public void setTradeStatus(String tradeStatus) {
         this.tradeStatus = tradeStatus;
     }
 
+    public String getTotalAmount() {
+        return this.totalAmount;
+    }
+
     public void setTotalAmount(String totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public String getReceiptAmount() {
+        return this.receiptAmount;
     }
 
     public void setReceiptAmount(String receiptAmount) {
         this.receiptAmount = receiptAmount;
     }
 
+    public String getBuyerPayAmount() {
+        return this.buyerPayAmount;
+    }
+
     public void setBuyerPayAmount(String buyerPayAmount) {
         this.buyerPayAmount = buyerPayAmount;
+    }
+
+    public String getSubject() {
+        return this.subject;
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
+    public String getBody() {
+        return this.body;
+    }
+
     public void setBody(String body) {
         this.body = body;
     }
 
+    public String getGmtCreate() {
+        return this.gmtCreate;
+    }
+
     public void setGmtCreate(String gmtCreate) {
         this.gmtCreate = gmtCreate;
+    }
+
+    public String getGmtClose() {
+        return this.gmtClose;
     }
 
     public void setGmtClose(String gmtClose) {

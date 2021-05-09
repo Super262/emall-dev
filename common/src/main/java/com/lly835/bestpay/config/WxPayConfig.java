@@ -56,6 +56,7 @@ public class WxPayConfig extends PayConfig {
 
     /**
      * 初始化证书
+     *
      * @return
      */
     public SSLContext initSSLContext() {
@@ -63,17 +64,17 @@ public class WxPayConfig extends PayConfig {
         try {
             inputStream = new FileInputStream(new File(this.keyPath));
         } catch (IOException e) {
-            throw new RuntimeException("读取微信商户证书文件出错", e);
+            throw new RuntimeException("读取微信商户证书文件出错",e);
         }
 
         try {
             KeyStore keystore = KeyStore.getInstance("PKCS12");
             char[] partnerId2charArray = mchId.toCharArray();
-            keystore.load(inputStream, partnerId2charArray);
-            this.sslContext = SSLContexts.custom().loadKeyMaterial(keystore, partnerId2charArray).build();
+            keystore.load(inputStream,partnerId2charArray);
+            this.sslContext = SSLContexts.custom().loadKeyMaterial(keystore,partnerId2charArray).build();
             return this.sslContext;
         } catch (Exception e) {
-            throw new RuntimeException("证书文件有问题，请核实！", e);
+            throw new RuntimeException("证书文件有问题，请核实！",e);
         } finally {
             IOUtils.closeQuietly(inputStream);
         }
@@ -83,60 +84,60 @@ public class WxPayConfig extends PayConfig {
         return this.appId;
     }
 
-    public String getAppSecret() {
-        return this.appSecret;
-    }
-
-    public String getMiniAppId() {
-        return this.miniAppId;
-    }
-
-    public String getAppAppId() {
-        return this.appAppId;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getMchKey() {
-        return this.mchKey;
-    }
-
-    public String getKeyPath() {
-        return this.keyPath;
-    }
-
-    public SSLContext getSslContext() {
-        return this.sslContext;
-    }
-
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getAppSecret() {
+        return this.appSecret;
     }
 
     public void setAppSecret(String appSecret) {
         this.appSecret = appSecret;
     }
 
+    public String getMiniAppId() {
+        return this.miniAppId;
+    }
+
     public void setMiniAppId(String miniAppId) {
         this.miniAppId = miniAppId;
+    }
+
+    public String getAppAppId() {
+        return this.appAppId;
     }
 
     public void setAppAppId(String appAppId) {
         this.appAppId = appAppId;
     }
 
+    public String getMchId() {
+        return this.mchId;
+    }
+
     public void setMchId(String mchId) {
         this.mchId = mchId;
+    }
+
+    public String getMchKey() {
+        return this.mchKey;
     }
 
     public void setMchKey(String mchKey) {
         this.mchKey = mchKey;
     }
 
+    public String getKeyPath() {
+        return this.keyPath;
+    }
+
     public void setKeyPath(String keyPath) {
         this.keyPath = keyPath;
+    }
+
+    public SSLContext getSslContext() {
+        return this.sslContext;
     }
 
     public void setSslContext(SSLContext sslContext) {

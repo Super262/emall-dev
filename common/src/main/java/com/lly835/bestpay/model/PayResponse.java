@@ -14,7 +14,9 @@ public class PayResponse {
 
     private URI payUri;
 
-    /** 以下字段仅在微信h5支付返回. */
+    /**
+     * 以下字段仅在微信h5支付返回.
+     */
     private String appId;
 
     private String timeStamp;
@@ -71,88 +73,44 @@ public class PayResponse {
         return this.prePayParams;
     }
 
-    public URI getPayUri() {
-        return this.payUri;
-    }
-
-    public String getAppId() {
-        return this.appId;
-    }
-
-    public String getTimeStamp() {
-        return this.timeStamp;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getPackAge() {
-        return this.packAge;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
-    public String getPaySign() {
-        return this.paySign;
-    }
-
-    public Double getOrderAmount() {
-        return this.orderAmount;
-    }
-
-    public String getOrderId() {
-        return this.orderId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getMwebUrl() {
-        return this.mwebUrl;
-    }
-
-    public String getBody() {
-        return this.body;
-    }
-
-    public String getCodeUrl() {
-        return this.codeUrl;
-    }
-
-    public String getAttach() {
-        return this.attach;
-    }
-
-    public BestPayPlatformEnum getPayPlatformEnum() {
-        return this.payPlatformEnum;
-    }
-
-    public String getPrepayId() {
-        return this.prepayId;
-    }
-
     public void setPrePayParams(String prePayParams) {
         this.prePayParams = prePayParams;
+    }
+
+    public URI getPayUri() {
+        return this.payUri;
     }
 
     public void setPayUri(URI payUri) {
         this.payUri = payUri;
     }
 
+    public String getAppId() {
+        return this.appId;
+    }
+
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getTimeStamp() {
+        return this.timeStamp;
     }
 
     public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getPackAge() {
+        return this.packAge;
     }
 
     @JsonProperty("package")
@@ -160,44 +118,88 @@ public class PayResponse {
         this.packAge = packAge;
     }
 
+    public String getSignType() {
+        return this.signType;
+    }
+
     public void setSignType(String signType) {
         this.signType = signType;
+    }
+
+    public String getPaySign() {
+        return this.paySign;
     }
 
     public void setPaySign(String paySign) {
         this.paySign = paySign;
     }
 
+    public Double getOrderAmount() {
+        return this.orderAmount;
+    }
+
     public void setOrderAmount(Double orderAmount) {
         this.orderAmount = orderAmount;
+    }
+
+    public String getOrderId() {
+        return this.orderId;
     }
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
+    public String getOutTradeNo() {
+        return this.outTradeNo;
+    }
+
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
+    }
+
+    public String getMwebUrl() {
+        return this.mwebUrl;
     }
 
     public void setMwebUrl(String mwebUrl) {
         this.mwebUrl = mwebUrl;
     }
 
+    public String getBody() {
+        return this.body;
+    }
+
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getCodeUrl() {
+        return this.codeUrl;
     }
 
     public void setCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
     }
 
+    public String getAttach() {
+        return this.attach;
+    }
+
     public void setAttach(String attach) {
         this.attach = attach;
     }
 
+    public BestPayPlatformEnum getPayPlatformEnum() {
+        return this.payPlatformEnum;
+    }
+
     public void setPayPlatformEnum(BestPayPlatformEnum payPlatformEnum) {
         this.payPlatformEnum = payPlatformEnum;
+    }
+
+    public String getPrepayId() {
+        return this.prepayId;
     }
 
     public void setPrepayId(String prepayId) {

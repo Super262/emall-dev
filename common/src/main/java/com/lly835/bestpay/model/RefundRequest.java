@@ -29,20 +29,20 @@ public class RefundRequest {
         return this.payTypeEnum;
     }
 
-    public String getOrderId() {
-        return this.orderId;
-    }
-
-    public Double getOrderAmount() {
-        return this.orderAmount;
-    }
-
     public void setPayTypeEnum(BestPayTypeEnum payTypeEnum) {
         this.payTypeEnum = payTypeEnum;
     }
 
+    public String getOrderId() {
+        return this.orderId;
+    }
+
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public Double getOrderAmount() {
+        return this.orderAmount;
     }
 
     public void setOrderAmount(Double orderAmount) {

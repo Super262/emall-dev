@@ -41,44 +41,44 @@ public class WxDownloadBillRequest {
         return this.appid;
     }
 
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getBillDate() {
-        return this.billDate;
-    }
-
-    public String getBillType() {
-        return this.billType;
-    }
-
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {
         this.sign = sign;
     }
 
+    public String getBillDate() {
+        return this.billDate;
+    }
+
     public void setBillDate(String billDate) {
         this.billDate = billDate;
+    }
+
+    public String getBillType() {
+        return this.billType;
     }
 
     public void setBillType(String billType) {

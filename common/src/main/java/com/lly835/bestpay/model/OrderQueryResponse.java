@@ -15,7 +15,7 @@ public class OrderQueryResponse {
     private OrderStatusEnum orderStatusEnum;
 
     /**
-     *第三方支付的流水号
+     * 第三方支付的流水号
      */
     private String outTradeNo;
 
@@ -56,44 +56,44 @@ public class OrderQueryResponse {
         return this.orderStatusEnum;
     }
 
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getAttach() {
-        return this.attach;
-    }
-
-    public String getResultMsg() {
-        return this.resultMsg;
-    }
-
-    public String getOrderId() {
-        return this.orderId;
-    }
-
-    public String getFinishTime() {
-        return this.finishTime;
-    }
-
     public void setOrderStatusEnum(OrderStatusEnum orderStatusEnum) {
         this.orderStatusEnum = orderStatusEnum;
+    }
+
+    public String getOutTradeNo() {
+        return this.outTradeNo;
     }
 
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    public String getAttach() {
+        return this.attach;
+    }
+
     public void setAttach(String attach) {
         this.attach = attach;
+    }
+
+    public String getResultMsg() {
+        return this.resultMsg;
     }
 
     public void setResultMsg(String resultMsg) {
         this.resultMsg = resultMsg;
     }
 
+    public String getOrderId() {
+        return this.orderId;
+    }
+
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public String getFinishTime() {
+        return this.finishTime;
     }
 
     public void setFinishTime(String finishTime) {

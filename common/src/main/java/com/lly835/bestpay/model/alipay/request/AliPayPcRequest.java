@@ -2,6 +2,7 @@ package com.lly835.bestpay.model.alipay.request;
 
 /**
  * Created by this
+ *
  * @date 2019/9/8 15:19
  */
 public class AliPayPcRequest {
@@ -54,76 +55,76 @@ public class AliPayPcRequest {
         return this.appId;
     }
 
-    public String getMethod() {
-        return this.method;
-    }
-
-    public String getCharset() {
-        return this.charset;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getTimestamp() {
-        return this.timestamp;
-    }
-
-    public String getVersion() {
-        return this.version;
-    }
-
-    public String getNotifyUrl() {
-        return this.notifyUrl;
-    }
-
-    public String getBizContent() {
-        return this.bizContent;
-    }
-
-    public String getReturnUrl() {
-        return this.returnUrl;
-    }
-
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getMethod() {
+        return this.method;
     }
 
     public void setMethod(String method) {
         this.method = method;
     }
 
+    public String getCharset() {
+        return this.charset;
+    }
+
     public void setCharset(String charset) {
         this.charset = charset;
+    }
+
+    public String getSignType() {
+        return this.signType;
     }
 
     public void setSignType(String signType) {
         this.signType = signType;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getTimestamp() {
+        return this.timestamp;
     }
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
+    public String getVersion() {
+        return this.version;
+    }
+
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getNotifyUrl() {
+        return this.notifyUrl;
     }
 
     public void setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
     }
 
+    public String getBizContent() {
+        return this.bizContent;
+    }
+
     public void setBizContent(String bizContent) {
         this.bizContent = bizContent;
+    }
+
+    public String getReturnUrl() {
+        return this.returnUrl;
     }
 
     public void setReturnUrl(String returnUrl) {

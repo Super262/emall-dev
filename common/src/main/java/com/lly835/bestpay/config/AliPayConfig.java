@@ -27,9 +27,9 @@ public class AliPayConfig extends PayConfig {
     }
 
     public void check() {
-        Objects.requireNonNull(appId, "config param 'appId' is null.");
-        Objects.requireNonNull(privateKey, "config param 'privateKey' is null.");
-        Objects.requireNonNull(aliPayPublicKey, "config param 'aliPayPublicKey' is null.");
+        Objects.requireNonNull(appId,"config param 'appId' is null.");
+        Objects.requireNonNull(privateKey,"config param 'privateKey' is null.");
+        Objects.requireNonNull(aliPayPublicKey,"config param 'aliPayPublicKey' is null.");
 
         if (appId.length() > 32) {
             throw new IllegalArgumentException("config param 'appId' is incorrect: size exceeds 32.");
@@ -40,28 +40,28 @@ public class AliPayConfig extends PayConfig {
         return this.appId;
     }
 
-    public String getPrivateKey() {
-        return this.privateKey;
-    }
-
-    public String getAliPayPublicKey() {
-        return this.aliPayPublicKey;
-    }
-
-    public boolean isSandbox() {
-        return this.sandbox;
-    }
-
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getPrivateKey() {
+        return this.privateKey;
     }
 
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
 
+    public String getAliPayPublicKey() {
+        return this.aliPayPublicKey;
+    }
+
     public void setAliPayPublicKey(String aliPayPublicKey) {
         this.aliPayPublicKey = aliPayPublicKey;
+    }
+
+    public boolean isSandbox() {
+        return this.sandbox;
     }
 
     public void setSandbox(boolean sandbox) {

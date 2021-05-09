@@ -16,7 +16,9 @@ public class WxPaySyncResponse {
     @Element(name = "return_msg", required = false)
     private String returnMsg;
 
-    /** 以下字段在return_code为SUCCESS的时候有返回. */
+    /**
+     * 以下字段在return_code为SUCCESS的时候有返回.
+     */
     @Element(name = "appid", required = false)
     private String appid;
 
@@ -41,7 +43,9 @@ public class WxPaySyncResponse {
     @Element(name = "err_code_des", required = false)
     private String errCodeDes;
 
-    /** 以下字段在return_code 和result_code都为SUCCESS的时候有返回. */
+    /**
+     * 以下字段在return_code 和result_code都为SUCCESS的时候有返回.
+     */
     @Element(name = "trade_type", required = false)
     private String tradeType;
 
@@ -61,108 +65,108 @@ public class WxPaySyncResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getAppid() {
-        return this.appid;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getDeviceInfo() {
-        return this.deviceInfo;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getResultCode() {
-        return this.resultCode;
-    }
-
-    public String getErrCode() {
-        return this.errCode;
-    }
-
-    public String getErrCodeDes() {
-        return this.errCodeDes;
-    }
-
-    public String getTradeType() {
-        return this.tradeType;
-    }
-
-    public String getPrepayId() {
-        return this.prepayId;
-    }
-
-    public String getCodeUrl() {
-        return this.codeUrl;
-    }
-
-    public String getMwebUrl() {
-        return this.mwebUrl;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
+    }
+
+    public String getReturnMsg() {
+        return this.returnMsg;
     }
 
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
     }
 
+    public String getAppid() {
+        return this.appid;
+    }
+
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getDeviceInfo() {
+        return this.deviceInfo;
+    }
+
     public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
+    }
+
+    public String getNonceStr() {
+        return this.nonceStr;
     }
 
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getResultCode() {
+        return this.resultCode;
     }
 
     public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
     }
 
+    public String getErrCode() {
+        return this.errCode;
+    }
+
     public void setErrCode(String errCode) {
         this.errCode = errCode;
+    }
+
+    public String getErrCodeDes() {
+        return this.errCodeDes;
     }
 
     public void setErrCodeDes(String errCodeDes) {
         this.errCodeDes = errCodeDes;
     }
 
+    public String getTradeType() {
+        return this.tradeType;
+    }
+
     public void setTradeType(String tradeType) {
         this.tradeType = tradeType;
+    }
+
+    public String getPrepayId() {
+        return this.prepayId;
     }
 
     public void setPrepayId(String prepayId) {
         this.prepayId = prepayId;
     }
 
+    public String getCodeUrl() {
+        return this.codeUrl;
+    }
+
     public void setCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
+    }
+
+    public String getMwebUrl() {
+        return this.mwebUrl;
     }
 
     public void setMwebUrl(String mwebUrl) {

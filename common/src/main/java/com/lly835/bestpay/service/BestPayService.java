@@ -25,10 +25,11 @@ public interface BestPayService {
      * @param sign                 签名.
      * @return 验证结果.
      */
-    boolean verify(Map<String, String> toBeVerifiedParamMap, SignType signType, String sign);
+    boolean verify(Map<String, String> toBeVerifiedParamMap,SignType signType,String sign);
 
     /**
      * 同步回调
+     *
      * @param request
      * @return
      */
@@ -36,6 +37,7 @@ public interface BestPayService {
 
     /**
      * 异步回调
+     *
      * @param notifyData
      * @return
      */
@@ -43,6 +45,7 @@ public interface BestPayService {
 
     /**
      * 退款
+     *
      * @param request
      * @return
      */
@@ -50,6 +53,7 @@ public interface BestPayService {
 
     /**
      * 查询订单
+     *
      * @param request
      * @return
      */
@@ -58,6 +62,7 @@ public interface BestPayService {
 
     /**
      * 下载对账单
+     *
      * @param request
      * @return
      */
@@ -66,6 +71,7 @@ public interface BestPayService {
 
     /**
      * 根据规则生成二维码URL
+     *
      * @param productId 商品ID
      * @return 二维码中的内容为链接
      */

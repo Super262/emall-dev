@@ -35,8 +35,8 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
      * @return
      */
     @Override
-    public Object encrypt(String key, String data) {
-        return super.encrypt(key, data);
+    public Object encrypt(String key,String data) {
+        return super.encrypt(key,data);
     }
 
     /**
@@ -48,9 +48,9 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
      * @return
      */
     @Override
-    public Object decrypt(String key, String data) {
+    public Object decrypt(String key,String data) {
         Security.addProvider(new BouncyCastleProvider());
-        SecretKeySpec aesKey = new SecretKeySpec(DigestUtils.md5Hex(key).toLowerCase().getBytes(), ALGORITHM);
+        SecretKeySpec aesKey = new SecretKeySpec(DigestUtils.md5Hex(key).toLowerCase().getBytes(),ALGORITHM);
         Cipher cipher = null;
         try {
             cipher = Cipher.getInstance(ALGORITHM_MODE_PADDING);
@@ -60,7 +60,7 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
             e.printStackTrace();
         }
         try {
-            cipher.init(Cipher.DECRYPT_MODE, aesKey);
+            cipher.init(Cipher.DECRYPT_MODE,aesKey);
         } catch (InvalidKeyException e) {
             e.printStackTrace();
         }

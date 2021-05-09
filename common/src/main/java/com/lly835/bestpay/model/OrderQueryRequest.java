@@ -31,20 +31,20 @@ public class OrderQueryRequest {
         return this.platformEnum;
     }
 
-    public String getOrderId() {
-        return this.orderId;
-    }
-
-    public String getOutOrderId() {
-        return this.outOrderId;
-    }
-
     public void setPlatformEnum(BestPayPlatformEnum platformEnum) {
         this.platformEnum = platformEnum;
     }
 
+    public String getOrderId() {
+        return this.orderId;
+    }
+
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public String getOutOrderId() {
+        return this.outOrderId;
     }
 
     public void setOutOrderId(String outOrderId) {

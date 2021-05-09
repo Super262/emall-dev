@@ -121,6 +121,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setBrand(String brand) {
         this.brand = brand;
@@ -134,6 +135,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setSeries(String series) {
         this.series = series;
@@ -147,6 +149,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setModel(String model) {
         this.model = model;
@@ -160,6 +163,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setColor(String color) {
         this.color = color;
@@ -173,6 +177,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setCpuType(String cpuType) {
         this.cpuType = cpuType;
@@ -186,6 +191,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setCpuSpeed(Integer cpuSpeed) {
         this.cpuSpeed = cpuSpeed;
@@ -199,6 +205,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setTurboFrequency(Integer turboFrequency) {
         this.turboFrequency = turboFrequency;
@@ -212,6 +219,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setNumberOfCores(Integer numberOfCores) {
         this.numberOfCores = numberOfCores;
@@ -225,6 +233,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setScreenSize(Integer screenSize) {
         this.screenSize = screenSize;
@@ -238,6 +247,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setResolution(String resolution) {
         this.resolution = resolution;
@@ -251,6 +261,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
@@ -264,6 +275,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setVideoMemory(Integer videoMemory) {
         this.videoMemory = videoMemory;
@@ -277,6 +289,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setStorage(Integer storage) {
         this.storage = storage;
@@ -290,6 +303,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setMemoryCapacity(Integer memoryCapacity) {
         this.memoryCapacity = memoryCapacity;
@@ -303,6 +317,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setMemorySpeed(Integer memorySpeed) {
         this.memorySpeed = memorySpeed;
@@ -316,6 +331,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setBattery(Integer battery) {
         this.battery = battery;
@@ -329,6 +345,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setDimension(String dimension) {
         this.dimension = dimension;
@@ -342,6 +359,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setWeight(Integer weight) {
         this.weight = weight;
@@ -355,6 +373,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setMainImage(String mainImage) {
         this.mainImage = mainImage;
@@ -368,6 +387,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setPrice(Long price) {
         this.price = price;
@@ -381,6 +401,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setStock(Integer stock) {
         this.stock = stock;
@@ -412,6 +433,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setCreatedTime(Date createdTime) {
         this.createdTime = createdTime;
@@ -425,6 +447,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setUpdatedTime(Date updatedTime) {
         this.updatedTime = updatedTime;
@@ -438,6 +461,7 @@ public class ProductComputer {
     }
 
     /**
+     *
      */
     public void setSubImages(String subImages) {
         this.subImages = subImages;

@@ -69,76 +69,76 @@ public class PayRequest {
         return this.payTypeEnum;
     }
 
-    public String getOrderId() {
-        return this.orderId;
-    }
-
-    public Double getOrderAmount() {
-        return this.orderAmount;
-    }
-
-    public String getOrderName() {
-        return this.orderName;
-    }
-
-    public String getOpenid() {
-        return this.openid;
-    }
-
-    public String getSpbillCreateIp() {
-        return this.spbillCreateIp;
-    }
-
-    public String getAttach() {
-        return this.attach;
-    }
-
-    public String getReturnUrl() {
-        return this.returnUrl;
-    }
-
-    public String getBuyerLogonId() {
-        return this.buyerLogonId;
-    }
-
-    public String getBuyerId() {
-        return this.buyerId;
-    }
-
     public void setPayTypeEnum(BestPayTypeEnum payTypeEnum) {
         this.payTypeEnum = payTypeEnum;
+    }
+
+    public String getOrderId() {
+        return this.orderId;
     }
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 
+    public Double getOrderAmount() {
+        return this.orderAmount;
+    }
+
     public void setOrderAmount(Double orderAmount) {
         this.orderAmount = orderAmount;
+    }
+
+    public String getOrderName() {
+        return this.orderName;
     }
 
     public void setOrderName(String orderName) {
         this.orderName = orderName;
     }
 
+    public String getOpenid() {
+        return this.openid;
+    }
+
     public void setOpenid(String openid) {
         this.openid = openid;
+    }
+
+    public String getSpbillCreateIp() {
+        return this.spbillCreateIp;
     }
 
     public void setSpbillCreateIp(String spbillCreateIp) {
         this.spbillCreateIp = spbillCreateIp;
     }
 
+    public String getAttach() {
+        return this.attach;
+    }
+
     public void setAttach(String attach) {
         this.attach = attach;
+    }
+
+    public String getReturnUrl() {
+        return this.returnUrl;
     }
 
     public void setReturnUrl(String returnUrl) {
         this.returnUrl = returnUrl;
     }
 
+    public String getBuyerLogonId() {
+        return this.buyerLogonId;
+    }
+
     public void setBuyerLogonId(String buyerLogonId) {
         this.buyerLogonId = buyerLogonId;
+    }
+
+    public String getBuyerId() {
+        return this.buyerId;
     }
 
     public void setBuyerId(String buyerId) {

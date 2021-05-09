@@ -30,7 +30,7 @@ public class CamelCaseUtil {
     }
 
     /**
-     *  小驼峰
+     * 小驼峰
      */
     public static String toCamelCase(String s) {
         if (s == null) {
@@ -61,6 +61,6 @@ public class CamelCaseUtil {
             return null;
         }
         s = toCamelCase(s);
-        return s.substring(0, 1).toUpperCase() + s.substring(1);
+        return s.substring(0,1).toUpperCase() + s.substring(1);
     }
 }

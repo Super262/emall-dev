@@ -31,17 +31,17 @@ public class WebUtil {
         }
     }
 
-    private static String buildHiddenField(String key, String value) {
+    private static String buildHiddenField(String key,String value) {
         StringBuilder sb = new StringBuilder();
         sb.append("<input type=\"hidden\" name=\"");
         sb.append(key);
         sb.append("\" value=\"");
-        String a = value.replace("\"", "&quot;");
+        String a = value.replace("\"","&quot;");
         sb.append(a).append("\">\n");
         return sb.toString();
     }
 
-    public static String buildQuery(Map<String, String> params, String charset) throws IOException {
+    public static String buildQuery(Map<String, String> params,String charset) throws IOException {
         if (params != null && !params.isEmpty()) {
             StringBuilder query = new StringBuilder();
             Set<Map.Entry<String, String>> entries = params.entrySet();
@@ -65,17 +65,15 @@ public class WebUtil {
         }
     }
 
-    public static String getRequestUrl(Map<String,String> parameters,Boolean isSandbox)  {
+    public static String getRequestUrl(Map<String, String> parameters,Boolean isSandbox) {
         StringBuilder urlSb;
-        if(isSandbox)
-            urlSb = new StringBuilder(AliPayConstants.ALIPAY_GATEWAY_OPEN_DEV);
-        else
-            urlSb = new StringBuilder(AliPayConstants.ALIPAY_GATEWAY_OPEN);
+        if (isSandbox) urlSb = new StringBuilder(AliPayConstants.ALIPAY_GATEWAY_OPEN_DEV);
+        else urlSb = new StringBuilder(AliPayConstants.ALIPAY_GATEWAY_OPEN);
 
         urlSb.append("/gateway.do");
         try {
             String charset = null != parameters.get("charset") ? parameters.get("charset") : "utf-8";
-            String sysMustQuery = WebUtil.buildQuery(parameters, charset);
+            String sysMustQuery = WebUtil.buildQuery(parameters,charset);
             urlSb.append("?");
             urlSb.append(sysMustQuery);
         } catch (IOException e) {

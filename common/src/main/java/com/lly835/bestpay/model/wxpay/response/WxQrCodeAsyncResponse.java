@@ -40,52 +40,52 @@ public class WxQrCodeAsyncResponse {
         return this.appid;
     }
 
-    public String getOpenId() {
-        return this.openId;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getIsSubscribe() {
-        return this.isSubscribe;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getProductId() {
-        return this.productId;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getOpenId() {
+        return this.openId;
     }
 
     public void setOpenId(String openId) {
         this.openId = openId;
     }
 
+    public String getMchId() {
+        return this.mchId;
+    }
+
     public void setMchId(String mchId) {
         this.mchId = mchId;
+    }
+
+    public String getIsSubscribe() {
+        return this.isSubscribe;
     }
 
     public void setIsSubscribe(String isSubscribe) {
         this.isSubscribe = isSubscribe;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
     }
 
+    public String getProductId() {
+        return this.productId;
+    }
+
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {

@@ -34,7 +34,7 @@ public class WxPayUnifiedorderRequest {
     @Element(name = "notify_url")
     private String notifyUrl;
 
-    @Element(name = "openid", required=false)
+    @Element(name = "openid", required = false)
     private String openid;
 
     @Element(name = "out_trade_no")
@@ -56,100 +56,100 @@ public class WxPayUnifiedorderRequest {
         return this.appid;
     }
 
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getAttach() {
-        return this.attach;
-    }
-
-    public String getBody() {
-        return this.body;
-    }
-
-    public String getDetail() {
-        return this.detail;
-    }
-
-    public String getNotifyUrl() {
-        return this.notifyUrl;
-    }
-
-    public String getOpenid() {
-        return this.openid;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getSpbillCreateIp() {
-        return this.spbillCreateIp;
-    }
-
-    public Integer getTotalFee() {
-        return this.totalFee;
-    }
-
-    public String getTradeType() {
-        return this.tradeType;
-    }
-
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {
         this.sign = sign;
     }
 
+    public String getAttach() {
+        return this.attach;
+    }
+
     public void setAttach(String attach) {
         this.attach = attach;
+    }
+
+    public String getBody() {
+        return this.body;
     }
 
     public void setBody(String body) {
         this.body = body;
     }
 
+    public String getDetail() {
+        return this.detail;
+    }
+
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public String getNotifyUrl() {
+        return this.notifyUrl;
     }
 
     public void setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
     }
 
+    public String getOpenid() {
+        return this.openid;
+    }
+
     public void setOpenid(String openid) {
         this.openid = openid;
+    }
+
+    public String getOutTradeNo() {
+        return this.outTradeNo;
     }
 
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    public String getSpbillCreateIp() {
+        return this.spbillCreateIp;
+    }
+
     public void setSpbillCreateIp(String spbillCreateIp) {
         this.spbillCreateIp = spbillCreateIp;
     }
 
+    public Integer getTotalFee() {
+        return this.totalFee;
+    }
+
     public void setTotalFee(Integer totalFee) {
         this.totalFee = totalFee;
+    }
+
+    public String getTradeType() {
+        return this.tradeType;
     }
 
     public void setTradeType(String tradeType) {

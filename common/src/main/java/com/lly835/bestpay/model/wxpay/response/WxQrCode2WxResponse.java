@@ -46,68 +46,68 @@ public class WxQrCode2WxResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getAppid() {
-        return this.appid;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getPrepayId() {
-        return this.prepayId;
-    }
-
-    public String getResultCode() {
-        return this.resultCode;
-    }
-
-    public String getErrCodeDes() {
-        return this.errCodeDes;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
+    }
+
+    public String getReturnMsg() {
+        return this.returnMsg;
     }
 
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
     }
 
+    public String getAppid() {
+        return this.appid;
+    }
+
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getPrepayId() {
+        return this.prepayId;
     }
 
     public void setPrepayId(String prepayId) {
         this.prepayId = prepayId;
     }
 
+    public String getResultCode() {
+        return this.resultCode;
+    }
+
     public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
     }
 
+    public String getErrCodeDes() {
+        return this.errCodeDes;
+    }
+
     public void setErrCodeDes(String errCodeDes) {
         this.errCodeDes = errCodeDes;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {

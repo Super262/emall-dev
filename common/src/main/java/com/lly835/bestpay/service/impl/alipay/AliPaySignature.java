@@ -31,19 +31,18 @@ public class AliPaySignature {
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AliPaySignature.class);
 
     /**
-     *
-     * @param params   参数map
-     * @param privateKey        商户私钥
+     * @param params     参数map
+     * @param privateKey 商户私钥
      * @return
      */
-    public static String sign(Map<String, String> params, String privateKey) {
+    public static String sign(Map<String, String> params,String privateKey) {
         String signType = params.get("sign_type");
         String signContent = getSignContent(params);
         log.info("sign content: {}",signContent);
-        if(AliPayConstants.SIGN_TYPE_RSA.equals(signType)) {
+        if (AliPayConstants.SIGN_TYPE_RSA.equals(signType)) {
             return rsaSign(signContent,privateKey);
         } else if (AliPayConstants.SIGN_TYPE_RSA2.equals(signType)) {
-            return rsa256Sign(signContent, privateKey);
+            return rsa256Sign(signContent,privateKey);
         }
         throw new RuntimeException("支付宝签名方式有误");
     }
@@ -72,13 +71,11 @@ public class AliPaySignature {
      * @return
      * @throws RuntimeException
      */
-    public static String rsaSign(String content, String privateKey) {
+    public static String rsaSign(String content,String privateKey) {
         try {
-            PrivateKey priKey = getPrivateKeyFromPKCS8(AliPayConstants.SIGN_TYPE_RSA,
-                    new ByteArrayInputStream(privateKey.getBytes()));
+            PrivateKey priKey = getPrivateKeyFromPKCS8(AliPayConstants.SIGN_TYPE_RSA,new ByteArrayInputStream(privateKey.getBytes()));
 
-            Signature signature = Signature
-                    .getInstance(AliPayConstants.SIGN_ALGORITHMS);
+            Signature signature = Signature.getInstance(AliPayConstants.SIGN_ALGORITHMS);
 
             signature.initSign(priKey);
             signature.update(content.getBytes(AliPayConstants.CHARSET_UTF8));
@@ -86,9 +83,9 @@ public class AliPaySignature {
 
             return new String(Base64.encodeBase64(signed));
         } catch (InvalidKeySpecException ie) {
-            throw new RuntimeException("RSA私钥格式不正确，请检查是否正确配置了PKCS8格式的私钥", ie);
+            throw new RuntimeException("RSA私钥格式不正确，请检查是否正确配置了PKCS8格式的私钥",ie);
         } catch (Exception e) {
-            throw new RuntimeException("RSAcontent = " + content + "; charset = utf-8" , e);
+            throw new RuntimeException("RSAcontent = " + content + "; charset = utf-8",e);
         }
     }
 
@@ -100,14 +97,12 @@ public class AliPaySignature {
      * @return
      * @throws RuntimeException
      */
-    public static String rsa256Sign(String content, String privateKey)  {
+    public static String rsa256Sign(String content,String privateKey) {
 
         try {
-            PrivateKey priKey = getPrivateKeyFromPKCS8(AliPayConstants.SIGN_TYPE_RSA,
-                    new ByteArrayInputStream(privateKey.getBytes()));
+            PrivateKey priKey = getPrivateKeyFromPKCS8(AliPayConstants.SIGN_TYPE_RSA,new ByteArrayInputStream(privateKey.getBytes()));
 
-            Signature signature = Signature
-                    .getInstance(AliPayConstants.SIGN_SHA256RSA_ALGORITHMS);
+            Signature signature = Signature.getInstance(AliPayConstants.SIGN_SHA256RSA_ALGORITHMS);
 
             signature.initSign(priKey);
             signature.update(content.getBytes(AliPayConstants.CHARSET_UTF8));
@@ -115,12 +110,12 @@ public class AliPaySignature {
 
             return new String(Base64.encodeBase64(signed));
         } catch (Exception e) {
-            throw new RuntimeException("RSAcontent = " + content + "; charset = utf-8", e);
+            throw new RuntimeException("RSAcontent = " + content + "; charset = utf-8",e);
         }
 
     }
 
-    public static PrivateKey getPrivateKeyFromPKCS8(String algorithm, InputStream ins) throws Exception {
+    public static PrivateKey getPrivateKeyFromPKCS8(String algorithm,InputStream ins) throws Exception {
 
         if (ins == null || StringUtils.isEmpty(algorithm)) {
             return null;
@@ -134,11 +129,12 @@ public class AliPaySignature {
 
     /**
      * 校验签名
+     *
      * @param params
      * @param publicKey
      * @return
      */
-    public static Boolean verify(Map<String, String> params, String publicKey) {
+    public static Boolean verify(Map<String, String> params,String publicKey) {
         return rsaCheckV1(params,publicKey,"UTF-8",AliPayConstants.SIGN_TYPE_RSA2);
     }
 
@@ -163,12 +159,11 @@ public class AliPaySignature {
         return content.toString();
     }
 
-    public static PublicKey getPublicKeyFromX509(String algorithm,
-                                                 InputStream ins) throws Exception {
+    public static PublicKey getPublicKeyFromX509(String algorithm,InputStream ins) throws Exception {
         KeyFactory keyFactory = KeyFactory.getInstance(algorithm);
 
         StringWriter writer = new StringWriter();
-        StreamUtil.io(new InputStreamReader(ins), writer);
+        StreamUtil.io(new InputStreamReader(ins),writer);
 
         byte[] encodedKey = writer.toString().getBytes();
 
@@ -178,13 +173,11 @@ public class AliPaySignature {
     }
 
 
-    public static boolean rsaCheckContent(String content, String sign, String publicKey, String charset)  {
+    public static boolean rsaCheckContent(String content,String sign,String publicKey,String charset) {
         try {
-            PublicKey pubKey = getPublicKeyFromX509("RSA",
-                    new ByteArrayInputStream(publicKey.getBytes()));
+            PublicKey pubKey = getPublicKeyFromX509("RSA",new ByteArrayInputStream(publicKey.getBytes()));
 
-            Signature signature = Signature
-                    .getInstance(AliPayConstants.SIGN_ALGORITHMS);
+            Signature signature = Signature.getInstance(AliPayConstants.SIGN_ALGORITHMS);
             signature.initVerify(pubKey);
             if (StringUtils.isEmpty(charset)) {
                 signature.update(content.getBytes());
@@ -193,19 +186,16 @@ public class AliPaySignature {
             }
             return signature.verify(Base64.decodeBase64(sign.getBytes()));
         } catch (Exception e) {
-            log.trace("RSAcontent = {},sign = {},charset =  {},exception: {}" + charset, content,sign,charset,e);
+            log.trace("RSAcontent = {},sign = {},charset =  {},exception: {}" + charset,content,sign,charset,e);
             return false;
         }
     }
 
-    public static boolean rsa256CheckContent(String content, String sign, String publicKey,
-                                             String charset) {
+    public static boolean rsa256CheckContent(String content,String sign,String publicKey,String charset) {
         try {
-            PublicKey pubKey = getPublicKeyFromX509("RSA",
-                    new ByteArrayInputStream(publicKey.getBytes()));
+            PublicKey pubKey = getPublicKeyFromX509("RSA",new ByteArrayInputStream(publicKey.getBytes()));
 
-            Signature signature = Signature
-                    .getInstance(AliPayConstants.SIGN_SHA256RSA_ALGORITHMS);
+            Signature signature = Signature.getInstance(AliPayConstants.SIGN_SHA256RSA_ALGORITHMS);
 
             signature.initVerify(pubKey);
 
@@ -216,16 +206,16 @@ public class AliPaySignature {
             }
             return signature.verify(Base64.decodeBase64(sign.getBytes()));
         } catch (Exception e) {
-            log.trace("RSAcontent = {},sign = {},charset =  {},exception: {}" + charset, content,sign,charset,e);
+            log.trace("RSAcontent = {},sign = {},charset =  {},exception: {}" + charset,content,sign,charset,e);
             return false;
         }
     }
 
-    public static boolean rsaCheck(String content, String sign, String publicKey, String charset, String signType)  {
+    public static boolean rsaCheck(String content,String sign,String publicKey,String charset,String signType) {
         if (AliPayConstants.SIGN_TYPE_RSA.equals(signType)) {
-            return rsaCheckContent(content, sign, publicKey, charset);
+            return rsaCheckContent(content,sign,publicKey,charset);
         } else if (AliPayConstants.SIGN_TYPE_RSA2.equals(signType)) {
-            return rsa256CheckContent(content, sign, publicKey, charset);
+            return rsa256CheckContent(content,sign,publicKey,charset);
         } else {
             log.trace("Sign Type is Not Support : signType= {}",signType);
             return false;
@@ -233,16 +223,16 @@ public class AliPaySignature {
 
     }
 
-    public static boolean rsaCheckV1(Map<String, String> params, String publicKey, String charset) {
+    public static boolean rsaCheckV1(Map<String, String> params,String publicKey,String charset) {
         String sign = params.get("sign");
         String content = getSignCheckContentV1(params);
-        return rsaCheckContent(content, sign, publicKey, charset);
+        return rsaCheckContent(content,sign,publicKey,charset);
     }
 
-    public static boolean rsaCheckV1(Map<String, String> params, String publicKey, String charset,String signType)  {
+    public static boolean rsaCheckV1(Map<String, String> params,String publicKey,String charset,String signType) {
         String sign = params.get("sign");
         String content = getSignCheckContentV1(params);
-        return rsaCheck(content, sign, publicKey, charset,signType);
+        return rsaCheck(content,sign,publicKey,charset,signType);
     }
 
 

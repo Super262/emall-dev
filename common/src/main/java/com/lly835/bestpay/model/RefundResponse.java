@@ -40,36 +40,36 @@ public class RefundResponse {
         return this.orderId;
     }
 
-    public Double getOrderAmount() {
-        return this.orderAmount;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getRefundId() {
-        return this.refundId;
-    }
-
-    public String getOutRefundNo() {
-        return this.outRefundNo;
-    }
-
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public Double getOrderAmount() {
+        return this.orderAmount;
     }
 
     public void setOrderAmount(Double orderAmount) {
         this.orderAmount = orderAmount;
     }
 
+    public String getOutTradeNo() {
+        return this.outTradeNo;
+    }
+
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    public String getRefundId() {
+        return this.refundId;
+    }
+
     public void setRefundId(String refundId) {
         this.refundId = refundId;
+    }
+
+    public String getOutRefundNo() {
+        return this.outRefundNo;
     }
 
     public void setOutRefundNo(String outRefundNo) {

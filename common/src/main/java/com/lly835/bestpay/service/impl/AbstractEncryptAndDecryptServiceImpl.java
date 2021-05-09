@@ -16,7 +16,7 @@ abstract class AbstractEncryptAndDecryptServiceImpl implements EncryptAndDecrypt
      * @return
      */
     @Override
-    public Object encrypt(String key, String data) {
+    public Object encrypt(String key,String data) {
         return null;
     }
 
@@ -28,7 +28,7 @@ abstract class AbstractEncryptAndDecryptServiceImpl implements EncryptAndDecrypt
      * @return
      */
     @Override
-    public Object decrypt(String key, String data) {
+    public Object decrypt(String key,String data) {
         return null;
     }
 }

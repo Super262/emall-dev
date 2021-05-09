@@ -17,7 +17,9 @@ public class WxRefundResponse {
     @Element(name = "return_msg", required = false)
     private String returnMsg;
 
-    /** 以下字段在return_code为SUCCESS的时候有返回. */
+    /**
+     * 以下字段在return_code为SUCCESS的时候有返回.
+     */
     @Element(name = "result_code", required = false)
     private String resultCode;
 
@@ -88,180 +90,180 @@ public class WxRefundResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getResultCode() {
-        return this.resultCode;
-    }
-
-    public String getErrCode() {
-        return this.errCode;
-    }
-
-    public String getErrCodeDes() {
-        return this.errCodeDes;
-    }
-
-    public String getAppid() {
-        return this.appid;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getOutRefundNo() {
-        return this.outRefundNo;
-    }
-
-    public String getRefundId() {
-        return this.refundId;
-    }
-
-    public Integer getRefundFee() {
-        return this.refundFee;
-    }
-
-    public Integer getSettlementRefundFee() {
-        return this.settlementRefundFee;
-    }
-
-    public Integer getTotalFee() {
-        return this.totalFee;
-    }
-
-    public Integer getSettlementTotalFee() {
-        return this.settlementTotalFee;
-    }
-
-    public String getFeeType() {
-        return this.feeType;
-    }
-
-    public Integer getCashFee() {
-        return this.cashFee;
-    }
-
-    public String getCashFeeType() {
-        return this.cashFeeType;
-    }
-
-    public Integer getCashRefundFee() {
-        return this.cashRefundFee;
-    }
-
-    public Integer getCouponRefundFee() {
-        return this.couponRefundFee;
-    }
-
-    public Integer getCouponRefundCount() {
-        return this.couponRefundCount;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
+    }
+
+    public String getReturnMsg() {
+        return this.returnMsg;
     }
 
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
     }
 
+    public String getResultCode() {
+        return this.resultCode;
+    }
+
     public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
+    }
+
+    public String getErrCode() {
+        return this.errCode;
     }
 
     public void setErrCode(String errCode) {
         this.errCode = errCode;
     }
 
+    public String getErrCodeDes() {
+        return this.errCodeDes;
+    }
+
     public void setErrCodeDes(String errCodeDes) {
         this.errCodeDes = errCodeDes;
+    }
+
+    public String getAppid() {
+        return this.appid;
     }
 
     public void setAppid(String appid) {
         this.appid = appid;
     }
 
+    public String getMchId() {
+        return this.mchId;
+    }
+
     public void setMchId(String mchId) {
         this.mchId = mchId;
+    }
+
+    public String getNonceStr() {
+        return this.nonceStr;
     }
 
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getTransactionId() {
+        return this.transactionId;
     }
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
     }
 
+    public String getOutTradeNo() {
+        return this.outTradeNo;
+    }
+
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
+    }
+
+    public String getOutRefundNo() {
+        return this.outRefundNo;
     }
 
     public void setOutRefundNo(String outRefundNo) {
         this.outRefundNo = outRefundNo;
     }
 
+    public String getRefundId() {
+        return this.refundId;
+    }
+
     public void setRefundId(String refundId) {
         this.refundId = refundId;
+    }
+
+    public Integer getRefundFee() {
+        return this.refundFee;
     }
 
     public void setRefundFee(Integer refundFee) {
         this.refundFee = refundFee;
     }
 
+    public Integer getSettlementRefundFee() {
+        return this.settlementRefundFee;
+    }
+
     public void setSettlementRefundFee(Integer settlementRefundFee) {
         this.settlementRefundFee = settlementRefundFee;
+    }
+
+    public Integer getTotalFee() {
+        return this.totalFee;
     }
 
     public void setTotalFee(Integer totalFee) {
         this.totalFee = totalFee;
     }
 
+    public Integer getSettlementTotalFee() {
+        return this.settlementTotalFee;
+    }
+
     public void setSettlementTotalFee(Integer settlementTotalFee) {
         this.settlementTotalFee = settlementTotalFee;
+    }
+
+    public String getFeeType() {
+        return this.feeType;
     }
 
     public void setFeeType(String feeType) {
         this.feeType = feeType;
     }
 
+    public Integer getCashFee() {
+        return this.cashFee;
+    }
+
     public void setCashFee(Integer cashFee) {
         this.cashFee = cashFee;
+    }
+
+    public String getCashFeeType() {
+        return this.cashFeeType;
     }
 
     public void setCashFeeType(String cashFeeType) {
         this.cashFeeType = cashFeeType;
     }
 
+    public Integer getCashRefundFee() {
+        return this.cashRefundFee;
+    }
+
     public void setCashRefundFee(Integer cashRefundFee) {
         this.cashRefundFee = cashRefundFee;
     }
 
+    public Integer getCouponRefundFee() {
+        return this.couponRefundFee;
+    }
+
     public void setCouponRefundFee(Integer couponRefundFee) {
         this.couponRefundFee = couponRefundFee;
+    }
+
+    public Integer getCouponRefundCount() {
+        return this.couponRefundCount;
     }
 
     public void setCouponRefundCount(Integer couponRefundCount) {

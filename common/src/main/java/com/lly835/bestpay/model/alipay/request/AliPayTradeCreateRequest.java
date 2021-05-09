@@ -55,76 +55,76 @@ public class AliPayTradeCreateRequest {
         return this.appId;
     }
 
-    public String getMethod() {
-        return this.method;
-    }
-
-    public String getCharset() {
-        return this.charset;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getTimestamp() {
-        return this.timestamp;
-    }
-
-    public String getVersion() {
-        return this.version;
-    }
-
-    public String getNotifyUrl() {
-        return this.notifyUrl;
-    }
-
-    public String getAppAuthToken() {
-        return this.appAuthToken;
-    }
-
-    public String getBizContent() {
-        return this.bizContent;
-    }
-
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getMethod() {
+        return this.method;
     }
 
     public void setMethod(String method) {
         this.method = method;
     }
 
+    public String getCharset() {
+        return this.charset;
+    }
+
     public void setCharset(String charset) {
         this.charset = charset;
+    }
+
+    public String getSignType() {
+        return this.signType;
     }
 
     public void setSignType(String signType) {
         this.signType = signType;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getTimestamp() {
+        return this.timestamp;
     }
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
+    public String getVersion() {
+        return this.version;
+    }
+
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getNotifyUrl() {
+        return this.notifyUrl;
     }
 
     public void setNotifyUrl(String notifyUrl) {
         this.notifyUrl = notifyUrl;
     }
 
+    public String getAppAuthToken() {
+        return this.appAuthToken;
+    }
+
     public void setAppAuthToken(String appAuthToken) {
         this.appAuthToken = appAuthToken;
+    }
+
+    public String getBizContent() {
+        return this.bizContent;
     }
 
     public void setBizContent(String bizContent) {
@@ -225,7 +225,6 @@ public class AliPayTradeCreateRequest {
         /**
          * 买家支付宝账号(和buyer_id不能同时为空)
          * api文档上只剩buyer_id了，推荐使用buyer_id
-         *
          */
         private String buyerLogonId;
 
@@ -242,36 +241,36 @@ public class AliPayTradeCreateRequest {
             return this.outTradeNo;
         }
 
-        public Double getTotalAmount() {
-            return this.totalAmount;
-        }
-
-        public String getSubject() {
-            return this.subject;
-        }
-
-        public String getBuyerLogonId() {
-            return this.buyerLogonId;
-        }
-
-        public String getBuyerId() {
-            return this.buyerId;
-        }
-
         public void setOutTradeNo(String outTradeNo) {
             this.outTradeNo = outTradeNo;
+        }
+
+        public Double getTotalAmount() {
+            return this.totalAmount;
         }
 
         public void setTotalAmount(Double totalAmount) {
             this.totalAmount = totalAmount;
         }
 
+        public String getSubject() {
+            return this.subject;
+        }
+
         public void setSubject(String subject) {
             this.subject = subject;
         }
 
+        public String getBuyerLogonId() {
+            return this.buyerLogonId;
+        }
+
         public void setBuyerLogonId(String buyerLogonId) {
             this.buyerLogonId = buyerLogonId;
+        }
+
+        public String getBuyerId() {
+            return this.buyerId;
         }
 
         public void setBuyerId(String buyerId) {

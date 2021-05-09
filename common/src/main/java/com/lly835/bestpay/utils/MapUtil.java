@@ -16,9 +16,10 @@ import java.util.*;
 public class MapUtil {
 
     final static ObjectMapper objectMapper;
+
     static {
         objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
     }
 
     /**
@@ -40,35 +41,35 @@ public class MapUtil {
                 }
 
                 String value = field.get(obj) == null ? "" : String.valueOf(field.get(obj));
-                map.put(fieldName, value);
+                map.put(fieldName,value);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return map;
     }
-	
-	public static Map<String, String> getMap(String mapStr) {
-		if(StringUtils.isEmpty(mapStr)) {
-			return null;
-		}
-		Map<String, String> map = new HashMap<>();
-		String[] key2ValArr = mapStr.replace("{", "").replace("}", "").split(", ");
+
+    public static Map<String, String> getMap(String mapStr) {
+        if (StringUtils.isEmpty(mapStr)) {
+            return null;
+        }
+        Map<String, String> map = new HashMap<>();
+        String[] key2ValArr = mapStr.replace("{","").replace("}","").split(", ");
         for (String s : key2ValArr) {
             String[] keyAndVal = s.split("=");
             map.put(keyAndVal[0],keyAndVal[1]);
         }
-		return map;
-	}
-	
+        return map;
+    }
+
     /**
      * map转为url
      * 结果类似 token=abccdssx&sign=ccsacccss
      */
-    public static String toUrl(Map<String, String> map){
+    public static String toUrl(Map<String, String> map) {
 
         StringBuilder url = new StringBuilder();
-        for(Map.Entry<String, String> entry : map.entrySet()){
+        for (Map.Entry<String, String> entry : map.entrySet()) {
             url.append(entry.getKey()).append("=").append(entry.getValue()).append("&");
         }
 
@@ -81,7 +82,7 @@ public class MapUtil {
     /**
      * map转url 排序后转
      */
-    public static String toUrlWithSort(Map<String, String> map){
+    public static String toUrlWithSort(Map<String, String> map) {
         List<String> keys = new ArrayList<>(map.keySet());
         Collections.sort(keys);
 
@@ -103,7 +104,7 @@ public class MapUtil {
      * 去除不参与签名的参数
      * 支付宝中是去除sign和sign_type
      */
-    public static Map<String, String> removeParamsForAlipaySign(Map<String, String> map){
+    public static Map<String, String> removeParamsForAlipaySign(Map<String, String> map) {
         map.remove("sign");
         map.remove("sign_type");
 
@@ -116,7 +117,7 @@ public class MapUtil {
     public static Map<String, String> removeEmptyKeyAndValue(Map<String, String> map) {
 
         Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Map.Entry<String, String> entry = it.next();
             String key = entry.getKey();
             String value = entry.getValue();
@@ -148,7 +149,7 @@ public class MapUtil {
     /**
      * map转url 排序后转
      */
-    public static String toUrlWithSortAndEncode(Map<String, String> map){
+    public static String toUrlWithSortAndEncode(Map<String, String> map) {
         List<String> keys = new ArrayList<>(map.keySet());
         Collections.sort(keys);
 
@@ -171,16 +172,14 @@ public class MapUtil {
     /**
      * 表单字符串转化成 hashMap
      */
-    public static HashMap<String, String> form2Map( String orderinfo) {
+    public static HashMap<String, String> form2Map(String orderinfo) {
         String[] listinfo;
         HashMap<String, String> map = new HashMap<String, String>();
         listinfo = orderinfo.split("&");
-        for(String s : listinfo)
-        {
+        for (String s : listinfo) {
             String[] list = s.split("=");
-            if(list.length>1)
-            {
-                map.put(list[0], list[1]);
+            if (list.length > 1) {
+                map.put(list[0],list[1]);
             }
         }
         return map;
@@ -189,15 +188,13 @@ public class MapUtil {
     /**
      * 表单字符串转化成 hashMap，将具有下划线的key转换为小驼峰
      */
-    public static HashMap<String, String> form2MapWithCamelCase( String orderinfo) {
+    public static HashMap<String, String> form2MapWithCamelCase(String orderinfo) {
         String[] listinfo;
         HashMap<String, String> map = new HashMap<String, String>();
         listinfo = orderinfo.split("&");
-        for(String s : listinfo)
-        {
+        for (String s : listinfo) {
             String[] list = s.split("=");
-            if(list.length>1)
-            {
+            if (list.length > 1) {
                 map.put(CamelCaseUtil.toCamelCase(list[0]),list[1]);
             }
         }
@@ -216,7 +213,7 @@ public class MapUtil {
                 String fieldName = field.getName();
                 fieldName = CamelCaseUtil.toUnderlineName(fieldName);
                 String value = field.get(obj) == null ? "" : String.valueOf(field.get(obj));
-                map.put(fieldName, value);
+                map.put(fieldName,value);
             }
         } catch (Exception e) {
             e.printStackTrace();

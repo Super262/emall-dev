@@ -38,52 +38,52 @@ public class WxOrderQueryRequest {
         return this.appid;
     }
 
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getSignType() {
-        return this.signType;
-    }
-
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getTransactionId() {
+        return this.transactionId;
+    }
+
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public String getOutTradeNo() {
+        return this.outTradeNo;
     }
 
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
     }
 
+    public String getSign() {
+        return this.sign;
+    }
+
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    public String getSignType() {
+        return this.signType;
     }
 
     public void setSignType(String signType) {

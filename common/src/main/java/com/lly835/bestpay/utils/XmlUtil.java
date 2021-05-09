@@ -17,12 +17,12 @@ import java.util.Map;
 public class XmlUtil {
 
     /**
-     *  xml转对象
+     * xml转对象
      */
-    public static Object toObject(String xml, Class objClass) {
+    public static Object toObject(String xml,Class objClass) {
         Serializer serializer = new Persister();
         try {
-            return serializer.read(objClass, xml);
+            return serializer.read(objClass,xml);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class XmlUtil {
         Serializer serializer = new Persister();
         StringWriter output = new StringWriter();
         try {
-            serializer.write(obj, output);
+            serializer.write(obj,output);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class XmlUtil {
     }
 
     /**
-     *  xml 转 map
+     * xml 转 map
      *
      * @param strXML XML字符串
      * @return XML数据转换后的Map
@@ -63,7 +63,7 @@ public class XmlUtil {
                 Node node = nodeList.item(idx);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     org.w3c.dom.Element element = (org.w3c.dom.Element) node;
-                    data.put(element.getNodeName(), element.getTextContent());
+                    data.put(element.getNodeName(),element.getTextContent());
                 }
             }
             try {

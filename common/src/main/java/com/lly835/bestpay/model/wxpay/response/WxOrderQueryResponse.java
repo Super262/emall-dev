@@ -16,7 +16,9 @@ public class WxOrderQueryResponse {
     @Element(name = "return_msg", required = false)
     private String returnMsg;
 
-    /** 以下字段在return_code为SUCCESS的时候有返回. */
+    /**
+     * 以下字段在return_code为SUCCESS的时候有返回.
+     */
     @Element(name = "appid", required = false)
     private String appid;
 
@@ -99,212 +101,212 @@ public class WxOrderQueryResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getAppid() {
-        return this.appid;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getNonceStr() {
-        return this.nonceStr;
-    }
-
-    public String getSign() {
-        return this.sign;
-    }
-
-    public String getResultCode() {
-        return this.resultCode;
-    }
-
-    public String getErrCode() {
-        return this.errCode;
-    }
-
-    public String getErrCodeDes() {
-        return this.errCodeDes;
-    }
-
-    public String getDeviceInfo() {
-        return this.deviceInfo;
-    }
-
-    public String getOpenid() {
-        return this.openid;
-    }
-
-    public String getIsSubscribe() {
-        return this.isSubscribe;
-    }
-
-    public String getTradeType() {
-        return this.tradeType;
-    }
-
-    public String getTradeState() {
-        return this.tradeState;
-    }
-
-    public String getBankType() {
-        return this.bankType;
-    }
-
-    public String getTotalFee() {
-        return this.totalFee;
-    }
-
-    public String getSettlementTotalFee() {
-        return this.settlementTotalFee;
-    }
-
-    public String getFeeType() {
-        return this.feeType;
-    }
-
-    public String getCashFee() {
-        return this.cashFee;
-    }
-
-    public String getCashFeeType() {
-        return this.cashFeeType;
-    }
-
-    public String getCouponFee() {
-        return this.couponFee;
-    }
-
-    public String getCouponCount() {
-        return this.couponCount;
-    }
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public String getOutTradeNo() {
-        return this.outTradeNo;
-    }
-
-    public String getAttach() {
-        return this.attach;
-    }
-
-    public String getTimeEnd() {
-        return this.timeEnd;
-    }
-
-    public String getTradeStateDesc() {
-        return this.tradeStateDesc;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
+    }
+
+    public String getReturnMsg() {
+        return this.returnMsg;
     }
 
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
     }
 
+    public String getAppid() {
+        return this.appid;
+    }
+
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getMchId() {
+        return this.mchId;
     }
 
     public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
+    public String getNonceStr() {
+        return this.nonceStr;
+    }
+
     public void setNonceStr(String nonceStr) {
         this.nonceStr = nonceStr;
+    }
+
+    public String getSign() {
+        return this.sign;
     }
 
     public void setSign(String sign) {
         this.sign = sign;
     }
 
+    public String getResultCode() {
+        return this.resultCode;
+    }
+
     public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
+    }
+
+    public String getErrCode() {
+        return this.errCode;
     }
 
     public void setErrCode(String errCode) {
         this.errCode = errCode;
     }
 
+    public String getErrCodeDes() {
+        return this.errCodeDes;
+    }
+
     public void setErrCodeDes(String errCodeDes) {
         this.errCodeDes = errCodeDes;
+    }
+
+    public String getDeviceInfo() {
+        return this.deviceInfo;
     }
 
     public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
     }
 
+    public String getOpenid() {
+        return this.openid;
+    }
+
     public void setOpenid(String openid) {
         this.openid = openid;
+    }
+
+    public String getIsSubscribe() {
+        return this.isSubscribe;
     }
 
     public void setIsSubscribe(String isSubscribe) {
         this.isSubscribe = isSubscribe;
     }
 
+    public String getTradeType() {
+        return this.tradeType;
+    }
+
     public void setTradeType(String tradeType) {
         this.tradeType = tradeType;
+    }
+
+    public String getTradeState() {
+        return this.tradeState;
     }
 
     public void setTradeState(String tradeState) {
         this.tradeState = tradeState;
     }
 
+    public String getBankType() {
+        return this.bankType;
+    }
+
     public void setBankType(String bankType) {
         this.bankType = bankType;
+    }
+
+    public String getTotalFee() {
+        return this.totalFee;
     }
 
     public void setTotalFee(String totalFee) {
         this.totalFee = totalFee;
     }
 
+    public String getSettlementTotalFee() {
+        return this.settlementTotalFee;
+    }
+
     public void setSettlementTotalFee(String settlementTotalFee) {
         this.settlementTotalFee = settlementTotalFee;
+    }
+
+    public String getFeeType() {
+        return this.feeType;
     }
 
     public void setFeeType(String feeType) {
         this.feeType = feeType;
     }
 
+    public String getCashFee() {
+        return this.cashFee;
+    }
+
     public void setCashFee(String cashFee) {
         this.cashFee = cashFee;
+    }
+
+    public String getCashFeeType() {
+        return this.cashFeeType;
     }
 
     public void setCashFeeType(String cashFeeType) {
         this.cashFeeType = cashFeeType;
     }
 
+    public String getCouponFee() {
+        return this.couponFee;
+    }
+
     public void setCouponFee(String couponFee) {
         this.couponFee = couponFee;
+    }
+
+    public String getCouponCount() {
+        return this.couponCount;
     }
 
     public void setCouponCount(String couponCount) {
         this.couponCount = couponCount;
     }
 
+    public String getTransactionId() {
+        return this.transactionId;
+    }
+
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public String getOutTradeNo() {
+        return this.outTradeNo;
     }
 
     public void setOutTradeNo(String outTradeNo) {
         this.outTradeNo = outTradeNo;
     }
 
+    public String getAttach() {
+        return this.attach;
+    }
+
     public void setAttach(String attach) {
         this.attach = attach;
     }
 
+    public String getTimeEnd() {
+        return this.timeEnd;
+    }
+
     public void setTimeEnd(String timeEnd) {
         this.timeEnd = timeEnd;
+    }
+
+    public String getTradeStateDesc() {
+        return this.tradeStateDesc;
     }
 
     public void setTradeStateDesc(String tradeStateDesc) {

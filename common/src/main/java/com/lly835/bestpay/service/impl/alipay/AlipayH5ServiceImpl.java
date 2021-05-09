@@ -28,60 +28,50 @@ import java.time.LocalDateTime;
 public class AlipayH5ServiceImpl extends AliPayServiceImpl {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AlipayH5ServiceImpl.class);
-    private Retrofit retrofit = new Retrofit.Builder()
-			.baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN)
-			.addConverterFactory(GsonConverterFactory.create(
-					//下划线驼峰互转
-					new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
-			))
-			.client(new OkHttpClient.Builder()
-					.addInterceptor((new HttpLoggingInterceptor()
-							.setLevel(HttpLoggingInterceptor.Level.BODY)))
-					.build()
-			)
-			.build();
+    private Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
+            //下划线驼峰互转
+            new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create())).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
 
-	@Override
-	public PayResponse pay(PayRequest request) {
-		AliPayTradeCreateRequest aliPayOrderQueryRequest = new AliPayTradeCreateRequest();
-		aliPayOrderQueryRequest.setAppId(aliPayConfig.getAppId());
-		aliPayOrderQueryRequest.setTimestamp(LocalDateTime.now().format(formatter));
-		AliPayTradeCreateRequest.BizContent bizContent = new AliPayTradeCreateRequest.BizContent();
-		bizContent.setOutTradeNo(request.getOrderId());
-		bizContent.setTotalAmount(request.getOrderAmount());
-		bizContent.setSubject(request.getOrderName());
-		bizContent.setBuyerLogonId(request.getBuyerLogonId());
-		bizContent.setBuyerId(request.getBuyerId());
+    @Override
+    public PayResponse pay(PayRequest request) {
+        AliPayTradeCreateRequest aliPayOrderQueryRequest = new AliPayTradeCreateRequest();
+        aliPayOrderQueryRequest.setAppId(aliPayConfig.getAppId());
+        aliPayOrderQueryRequest.setTimestamp(LocalDateTime.now().format(formatter));
+        AliPayTradeCreateRequest.BizContent bizContent = new AliPayTradeCreateRequest.BizContent();
+        bizContent.setOutTradeNo(request.getOrderId());
+        bizContent.setTotalAmount(request.getOrderAmount());
+        bizContent.setSubject(request.getOrderName());
+        bizContent.setBuyerLogonId(request.getBuyerLogonId());
+        bizContent.setBuyerId(request.getBuyerId());
 
-		//必须传一个
-		if (StringUtil.isEmpty(bizContent.getBuyerId())
-				&& StringUtil.isEmpty(bizContent.getBuyerLogonId())) {
-			throw new RuntimeException("alipay.trade.create: buyer_logon_id 和 buyer_id不能同时为空");
-		}
+        //必须传一个
+        if (StringUtil.isEmpty(bizContent.getBuyerId()) && StringUtil.isEmpty(bizContent.getBuyerLogonId())) {
+            throw new RuntimeException("alipay.trade.create: buyer_logon_id 和 buyer_id不能同时为空");
+        }
 
-		aliPayOrderQueryRequest.setBizContent(JsonUtil.toJsonWithUnderscores(bizContent).replaceAll("\\s*",""));
-		aliPayOrderQueryRequest.setSign(AliPaySignature.sign(MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest), aliPayConfig.getPrivateKey()));
+        aliPayOrderQueryRequest.setBizContent(JsonUtil.toJsonWithUnderscores(bizContent).replaceAll("\\s*",""));
+        aliPayOrderQueryRequest.setSign(AliPaySignature.sign(MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest),aliPayConfig.getPrivateKey()));
 
-		Call<AliPayOrderCreateResponse> call = retrofit.create(AliPayApi.class).tradeCreate((MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest)));
-		Response<AliPayOrderCreateResponse> retrofitResponse  = null;
-		try{
-			retrofitResponse = call.execute();
-		}catch (IOException e) {
-			e.printStackTrace();
-		}
-		assert retrofitResponse != null;
-		if (!retrofitResponse.isSuccessful()) {
-			throw new RuntimeException("【支付宝创建订单】网络异常. alipay.trade.create");
-		}
-		assert retrofitResponse.body() != null;
-		AliPayOrderCreateResponse.AlipayTradeCreateResponse response = retrofitResponse.body().getAlipayTradeCreateResponse();
-		if(!response.getCode().equals(AliPayConstants.RESPONSE_CODE_SUCCESS)) {
-			throw new RuntimeException("【支付宝创建订单】alipay.trade.create. code=" + response.getCode() + ", returnMsg=" + response.getMsg() + String.format("|%s|%s", response.getSubCode(), response.getSubMsg()));
-		}
+        Call<AliPayOrderCreateResponse> call = retrofit.create(AliPayApi.class).tradeCreate((MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest)));
+        Response<AliPayOrderCreateResponse> retrofitResponse = null;
+        try {
+            retrofitResponse = call.execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert retrofitResponse != null;
+        if (!retrofitResponse.isSuccessful()) {
+            throw new RuntimeException("【支付宝创建订单】网络异常. alipay.trade.create");
+        }
+        assert retrofitResponse.body() != null;
+        AliPayOrderCreateResponse.AlipayTradeCreateResponse response = retrofitResponse.body().getAlipayTradeCreateResponse();
+        if (!response.getCode().equals(AliPayConstants.RESPONSE_CODE_SUCCESS)) {
+            throw new RuntimeException("【支付宝创建订单】alipay.trade.create. code=" + response.getCode() + ", returnMsg=" + response.getMsg() + String.format("|%s|%s",response.getSubCode(),response.getSubMsg()));
+        }
 
-		PayResponse payResponse = new PayResponse();
-		payResponse.setOutTradeNo(response.getTradeNo());
-		payResponse.setOrderId(response.getOutTradeNo());
-		return payResponse;
-	}
+        PayResponse payResponse = new PayResponse();
+        payResponse.setOutTradeNo(response.getTradeNo());
+        payResponse.setOrderId(response.getOutTradeNo());
+        return payResponse;
+    }
 }

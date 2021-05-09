@@ -58,7 +58,7 @@ public class BestPayServiceImpl implements BestPayService {
     }
 
     @Override
-    public boolean verify(Map<String, String> toBeVerifiedParamMap, SignType signType, String sign) {
+    public boolean verify(Map<String, String> toBeVerifiedParamMap,SignType signType,String sign) {
         return false;
     }
 
@@ -99,7 +99,7 @@ public class BestPayServiceImpl implements BestPayService {
             WxPayServiceImpl wxPayService = new WxPayServiceImpl();
             wxPayService.setWxPayConfig(this.wxPayConfig);
             return wxPayService.query(request);
-        }else if (request.getPlatformEnum() == BestPayPlatformEnum.ALIPAY) {
+        } else if (request.getPlatformEnum() == BestPayPlatformEnum.ALIPAY) {
             AliPayServiceImpl aliPayService = new AliPayServiceImpl();
             aliPayService.setAliPayConfig(this.aliPayConfig);
             return aliPayService.query(request);

@@ -6,16 +6,16 @@ package com.lly835.bestpay.enums;
  */
 public enum BestPayPlatformEnum {
 
-    ALIPAY("alipay", "支付宝"),
+    ALIPAY("alipay","支付宝"),
 
-    WX("wx", "微信"),
+    WX("wx","微信"),
     ;
 
     private String code;
 
     private String name;
 
-    BestPayPlatformEnum(String code, String name) {
+    BestPayPlatformEnum(String code,String name) {
         this.code = code;
         this.name = name;
     }

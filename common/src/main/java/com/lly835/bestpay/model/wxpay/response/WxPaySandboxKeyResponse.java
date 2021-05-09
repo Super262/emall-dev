@@ -29,28 +29,28 @@ public class WxPaySandboxKeyResponse {
         return this.returnCode;
     }
 
-    public String getReturnMsg() {
-        return this.returnMsg;
-    }
-
-    public String getMchId() {
-        return this.mchId;
-    }
-
-    public String getSandboxSignkey() {
-        return this.sandboxSignkey;
-    }
-
     public void setReturnCode(String returnCode) {
         this.returnCode = returnCode;
+    }
+
+    public String getReturnMsg() {
+        return this.returnMsg;
     }
 
     public void setReturnMsg(String returnMsg) {
         this.returnMsg = returnMsg;
     }
 
+    public String getMchId() {
+        return this.mchId;
+    }
+
     public void setMchId(String mchId) {
         this.mchId = mchId;
+    }
+
+    public String getSandboxSignkey() {
+        return this.sandboxSignkey;
     }
 
     public void setSandboxSignkey(String sandboxSignkey) {

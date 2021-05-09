@@ -29,29 +29,26 @@ public class WxPaySandboxKey {
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(WxPaySandboxKey.class);
 
     public void get(String mchId) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(WxPayConstants.WXPAY_GATEWAY)
-                .addConverterFactory(SimpleXmlConverterFactory.create())
-                .build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(WxPayConstants.WXPAY_GATEWAY).addConverterFactory(SimpleXmlConverterFactory.create()).build();
         SandboxParam sandboxParam = new SandboxParam();
         sandboxParam.setMchId(mchId);
         sandboxParam.setNonceStr(RandomUtil.getRandomStr());
-        sandboxParam.setSign(WxPaySignature.sign(sandboxParam.buildMap(), ""));
+        sandboxParam.setSign(WxPaySignature.sign(sandboxParam.buildMap(),""));
 
         String xml = XmlUtil.toString(sandboxParam);
-        RequestBody body = RequestBody.create(MediaType.parse("application/xml; charset=utf-8"), xml);
+        RequestBody body = RequestBody.create(MediaType.parse("application/xml; charset=utf-8"),xml);
         Call<WxPaySandboxKeyResponse> call = retrofit.create(WxPayApi.class).getsignkey(body);
-        Response<WxPaySandboxKeyResponse> retrofitResponse  = null;
-        try{
+        Response<WxPaySandboxKeyResponse> retrofitResponse = null;
+        try {
             retrofitResponse = call.execute();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         if (!retrofitResponse.isSuccessful()) {
             throw new RuntimeException("【微信统一支付】发起支付，网络异常，" + retrofitResponse);
         }
         Object response = retrofitResponse.body();
-        log.info("【获取微信沙箱密钥】response={}", JsonUtil.toJson(response));
+        log.info("【获取微信沙箱密钥】response={}",JsonUtil.toJson(response));
     }
 
 
@@ -72,8 +69,8 @@ public class WxPaySandboxKey {
 
         public Map<String, String> buildMap() {
             Map<String, String> map = new HashMap<>();
-            map.put("mch_id", this.mchId);
-            map.put("nonce_str", this.nonceStr);
+            map.put("mch_id",this.mchId);
+            map.put("nonce_str",this.nonceStr);
             return map;
         }
 
@@ -81,20 +78,20 @@ public class WxPaySandboxKey {
             return this.mchId;
         }
 
-        public String getNonceStr() {
-            return this.nonceStr;
-        }
-
-        public String getSign() {
-            return this.sign;
-        }
-
         public void setMchId(String mchId) {
             this.mchId = mchId;
         }
 
+        public String getNonceStr() {
+            return this.nonceStr;
+        }
+
         public void setNonceStr(String nonceStr) {
             this.nonceStr = nonceStr;
+        }
+
+        public String getSign() {
+            return this.sign;
         }
 
         public void setSign(String sign) {

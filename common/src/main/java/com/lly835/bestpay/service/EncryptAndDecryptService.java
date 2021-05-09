@@ -9,18 +9,20 @@ public interface EncryptAndDecryptService {
 
     /**
      * 加密
+     *
      * @param key
      * @param data
      * @return
      */
-    Object encrypt(String key, String data);
+    Object encrypt(String key,String data);
 
 
     /**
      * 解密
+     *
      * @param key
      * @param data
      * @return
      */
-    Object decrypt(String key, String data);
+    Object decrypt(String key,String data);
 }

@@ -43,44 +43,34 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
     protected final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AliPayServiceImpl.class);
     protected AliPayConfig aliPayConfig;
+    private Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
+            //下划线驼峰互转
+            new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create())).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
 
     public void setAliPayConfig(AliPayConfig aliPayConfig) {
         this.aliPayConfig = aliPayConfig;
     }
 
-    private Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN)
-            .addConverterFactory(GsonConverterFactory.create(
-                    //下划线驼峰互转
-                    new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
-            ))
-            .client(new OkHttpClient.Builder()
-                    .addInterceptor((new HttpLoggingInterceptor()
-                            .setLevel(HttpLoggingInterceptor.Level.BODY)))
-                    .build()
-            )
-            .build();
-
     @Override
     public PayResponse pay(PayRequest request) {
-		if (request.getPayTypeEnum() == BestPayTypeEnum.ALIPAY_H5){
-			AlipayH5ServiceImpl alipayH5Service = new AlipayH5ServiceImpl();
-			alipayH5Service.setAliPayConfig(aliPayConfig);
-			return alipayH5Service.pay(request);
-		}
+        if (request.getPayTypeEnum() == BestPayTypeEnum.ALIPAY_H5) {
+            AlipayH5ServiceImpl alipayH5Service = new AlipayH5ServiceImpl();
+            alipayH5Service.setAliPayConfig(aliPayConfig);
+            return alipayH5Service.pay(request);
+        }
         Map<String, String> requestParams = new HashMap<>();
         requestParams.put("out_trade_no",request.getOrderId());
         AliPayPcRequest aliPayRequest = new AliPayPcRequest();
-        if (request.getPayTypeEnum() == BestPayTypeEnum.ALIPAY_PC){
-            requestParams.put("product_code", AliPayConstants.FAST_INSTANT_TRADE_PAY);
+        if (request.getPayTypeEnum() == BestPayTypeEnum.ALIPAY_PC) {
+            requestParams.put("product_code",AliPayConstants.FAST_INSTANT_TRADE_PAY);
             aliPayRequest.setMethod(AliPayConstants.ALIPAY_TRADE_PAGE_PAY);
-        }else {
-            requestParams.put("product_code", AliPayConstants.QUICK_WAP_PAY);
+        } else {
+            requestParams.put("product_code",AliPayConstants.QUICK_WAP_PAY);
             aliPayRequest.setMethod(AliPayConstants.ALIPAY_TRADE_WAP_PAY);
         }
-        requestParams.put("product_code", AliPayConstants.FAST_INSTANT_TRADE_PAY);
-        requestParams.put("total_amount", String.valueOf(request.getOrderAmount()));
-        requestParams.put("subject", String.valueOf(request.getOrderName()));
+        requestParams.put("product_code",AliPayConstants.FAST_INSTANT_TRADE_PAY);
+        requestParams.put("total_amount",String.valueOf(request.getOrderAmount()));
+        requestParams.put("subject",String.valueOf(request.getOrderName()));
 
         aliPayRequest.setAppId(aliPayConfig.getAppId());
         aliPayRequest.setCharset("utf-8");
@@ -109,12 +99,13 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
 
 
     @Override
-    public boolean verify(Map<String, String> toBeVerifiedParamMap, SignType signType, String sign) {
-        return AliPaySignature.verify(toBeVerifiedParamMap, aliPayConfig.getAliPayPublicKey());
+    public boolean verify(Map<String, String> toBeVerifiedParamMap,SignType signType,String sign) {
+        return AliPaySignature.verify(toBeVerifiedParamMap,aliPayConfig.getAliPayPublicKey());
     }
 
     /**
      * 异步通知
+     *
      * @param notifyData
      * @return
      */
@@ -126,15 +117,14 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
             e.printStackTrace();
         }
         //签名校验
-        if (!AliPaySignature.verify(MapUtil.form2Map(notifyData), aliPayConfig.getAliPayPublicKey())) {
-            log.error("【支付宝支付异步通知】签名验证失败, response={}", notifyData);
+        if (!AliPaySignature.verify(MapUtil.form2Map(notifyData),aliPayConfig.getAliPayPublicKey())) {
+            log.error("【支付宝支付异步通知】签名验证失败, response={}",notifyData);
             throw new RuntimeException("【支付宝支付异步通知】签名验证失败");
         }
         HashMap<String, String> params = MapUtil.form2MapWithCamelCase(notifyData);
-        AliPayAsyncResponse response = MapUtil.mapToObject(params, AliPayAsyncResponse.class);
+        AliPayAsyncResponse response = MapUtil.mapToObject(params,AliPayAsyncResponse.class);
         String tradeStatus = response.getTradeStatus();
-        if(!tradeStatus.equals(AliPayConstants.TRADE_FINISHED) &&
-                !tradeStatus.equals(AliPayConstants.TRADE_SUCCESS)) {
+        if (!tradeStatus.equals(AliPayConstants.TRADE_FINISHED) && !tradeStatus.equals(AliPayConstants.TRADE_SUCCESS)) {
             throw new RuntimeException("【支付宝支付异步通知】发起支付, trade_status != SUCCESS | FINISHED");
         }
         return buildPayResponse(response);
@@ -154,13 +144,13 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
         bizContent.setOutTradeNo(request.getOrderId());
         bizContent.setTradeNo(request.getOutOrderId());
         aliPayOrderQueryRequest.setBizContent(JsonUtil.toJsonWithUnderscores(bizContent).replaceAll("\\s*",""));
-        aliPayOrderQueryRequest.setSign(AliPaySignature.sign(MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest), aliPayConfig.getPrivateKey()));
+        aliPayOrderQueryRequest.setSign(AliPaySignature.sign(MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest),aliPayConfig.getPrivateKey()));
 
         Call<AliPayOrderQueryResponse> call = retrofit.create(AliPayApi.class).orderQuery((MapUtil.object2MapWithUnderline(aliPayOrderQueryRequest)));
-        Response<AliPayOrderQueryResponse> retrofitResponse  = null;
-        try{
+        Response<AliPayOrderQueryResponse> retrofitResponse = null;
+        try {
             retrofitResponse = call.execute();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         assert retrofitResponse != null;
@@ -169,17 +159,11 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
         }
         assert retrofitResponse.body() != null;
         AliPayOrderQueryResponse.AlipayTradeQueryResponse response = retrofitResponse.body().getAlipayTradeQueryResponse();
-        if(!response.getCode().equals(AliPayConstants.RESPONSE_CODE_SUCCESS)) {
-            throw new RuntimeException("【查询支付宝订单】code=" + response.getCode() + ", returnMsg=" + response.getMsg() + String.format("|%s|%s", response.getSubCode(), response.getSubMsg()));
+        if (!response.getCode().equals(AliPayConstants.RESPONSE_CODE_SUCCESS)) {
+            throw new RuntimeException("【查询支付宝订单】code=" + response.getCode() + ", returnMsg=" + response.getMsg() + String.format("|%s|%s",response.getSubCode(),response.getSubMsg()));
         }
 
-        return OrderQueryResponse.builder()
-                .orderStatusEnum(AlipayTradeStatusEnum.findByName(response.getTradeStatus()).getOrderStatusEnum())
-                .outTradeNo(response.getTradeNo())
-                .orderId(response.getOutTradeNo())
-                .resultMsg(response.getMsg())
-                .finishTime(response.getSendPayDate())
-                .build();
+        return OrderQueryResponse.builder().orderStatusEnum(AlipayTradeStatusEnum.findByName(response.getTradeStatus()).getOrderStatusEnum()).outTradeNo(response.getTradeNo()).orderId(response.getOutTradeNo()).resultMsg(response.getMsg()).finishTime(response.getSendPayDate()).build();
     }
 
     @Override

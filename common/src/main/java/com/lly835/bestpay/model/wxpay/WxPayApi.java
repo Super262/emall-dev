@@ -18,6 +18,7 @@ public interface WxPayApi {
 
     /**
      * 统一下单
+     *
      * @param body
      * @return
      */
@@ -26,6 +27,7 @@ public interface WxPayApi {
 
     /**
      * 申请退款
+     *
      * @param body
      * @return
      */
@@ -34,6 +36,7 @@ public interface WxPayApi {
 
     /**
      * 申请沙箱密钥
+     *
      * @param body
      * @return
      */
@@ -42,6 +45,7 @@ public interface WxPayApi {
 
     /**
      * 订单查询
+     *
      * @param body
      * @return
      */

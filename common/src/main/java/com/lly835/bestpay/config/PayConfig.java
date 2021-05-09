@@ -31,7 +31,7 @@ class PayConfig {
     }
 
     public void check() {
-        Objects.requireNonNull(notifyUrl, "config param 'notifyUrl' is null.");
+        Objects.requireNonNull(notifyUrl,"config param 'notifyUrl' is null.");
         if (!notifyUrl.startsWith("http") && !notifyUrl.startsWith("https")) {
             throw new IllegalArgumentException("config param 'notifyUrl' does not start with http/https.");
         }
