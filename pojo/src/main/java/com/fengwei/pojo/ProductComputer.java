@@ -121,7 +121,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param brand
      */
     public void setBrand(String brand) {
         this.brand = brand;
@@ -135,7 +134,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param series
      */
     public void setSeries(String series) {
         this.series = series;
@@ -149,7 +147,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param model
      */
     public void setModel(String model) {
         this.model = model;
@@ -163,7 +160,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param color
      */
     public void setColor(String color) {
         this.color = color;
@@ -177,7 +173,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param cpuType
      */
     public void setCpuType(String cpuType) {
         this.cpuType = cpuType;
@@ -191,7 +186,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param cpuSpeed
      */
     public void setCpuSpeed(Integer cpuSpeed) {
         this.cpuSpeed = cpuSpeed;
@@ -205,7 +199,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param turboFrequency
      */
     public void setTurboFrequency(Integer turboFrequency) {
         this.turboFrequency = turboFrequency;
@@ -219,7 +212,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param numberOfCores
      */
     public void setNumberOfCores(Integer numberOfCores) {
         this.numberOfCores = numberOfCores;
@@ -233,7 +225,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param screenSize
      */
     public void setScreenSize(Integer screenSize) {
         this.screenSize = screenSize;
@@ -247,7 +238,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param resolution
      */
     public void setResolution(String resolution) {
         this.resolution = resolution;
@@ -261,7 +251,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param operatingSystem
      */
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
@@ -275,7 +264,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param videoMemory
      */
     public void setVideoMemory(Integer videoMemory) {
         this.videoMemory = videoMemory;
@@ -289,7 +277,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param storage
      */
     public void setStorage(Integer storage) {
         this.storage = storage;
@@ -303,7 +290,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param memoryCapacity
      */
     public void setMemoryCapacity(Integer memoryCapacity) {
         this.memoryCapacity = memoryCapacity;
@@ -317,7 +303,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param memorySpeed
      */
     public void setMemorySpeed(Integer memorySpeed) {
         this.memorySpeed = memorySpeed;
@@ -331,7 +316,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param battery
      */
     public void setBattery(Integer battery) {
         this.battery = battery;
@@ -345,7 +329,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param dimension
      */
     public void setDimension(String dimension) {
         this.dimension = dimension;
@@ -359,7 +342,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param weight
      */
     public void setWeight(Integer weight) {
         this.weight = weight;
@@ -373,7 +355,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param mainImage
      */
     public void setMainImage(String mainImage) {
         this.mainImage = mainImage;
@@ -387,7 +368,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param price
      */
     public void setPrice(Long price) {
         this.price = price;
@@ -401,7 +381,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param stock
      */
     public void setStock(Integer stock) {
         this.stock = stock;
@@ -433,7 +412,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param createdTime
      */
     public void setCreatedTime(Date createdTime) {
         this.createdTime = createdTime;
@@ -447,7 +425,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param updatedTime
      */
     public void setUpdatedTime(Date updatedTime) {
         this.updatedTime = updatedTime;
@@ -461,7 +438,6 @@ public class ProductComputer {
     }
 
     /**
-     * @param subImages
      */
     public void setSubImages(String subImages) {
         this.subImages = subImages;
