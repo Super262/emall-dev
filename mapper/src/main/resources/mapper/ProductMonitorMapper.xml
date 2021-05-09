@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengwei.mapper.ProductMonitorMapper" >
+  <resultMap id="BaseResultMap" type="com.fengwei.pojo.ProductMonitor" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="cabinet_color" property="cabinetColor" jdbcType="VARCHAR" />
+    <result column="usage" property="usage" jdbcType="VARCHAR" />
+    <result column="screen_size" property="screenSize" jdbcType="DECIMAL" />
+    <result column="widescreen" property="widescreen" jdbcType="INTEGER" />
+    <result column="recommended_resolution" property="recommendedResolution" jdbcType="VARCHAR" />
+    <result column="refresh_rate" property="refreshRate" jdbcType="DECIMAL" />
+    <result column="viewing_angle" property="viewingAngle" jdbcType="VARCHAR" />
+    <result column="pixel_pitch" property="pixelPitch" jdbcType="VARCHAR" />
+    <result column="display_colors" property="displayColors" jdbcType="VARCHAR" />
+    <result column="brightness" property="brightness" jdbcType="INTEGER" />
+    <result column="contrast_ratio" property="contrastRatio" jdbcType="VARCHAR" />
+    <result column="aspect_ratio" property="aspectRatio" jdbcType="VARCHAR" />
+    <result column="response_time" property="responseTime" jdbcType="INTEGER" />
+    <result column="panel" property="panel" jdbcType="VARCHAR" />
+    <result column="power_supply" property="powerSupply" jdbcType="VARCHAR" />
+    <result column="power_consumption" property="powerConsumption" jdbcType="VARCHAR" />
+    <result column="stand_adjustments" property="standAdjustments" jdbcType="VARCHAR" />
+    <result column="features" property="features" jdbcType="VARCHAR" />
+    <result column="dimensions" property="dimensions" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="INTEGER" />
+    <result column="main_image" property="mainImage" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+    <result column="connectors" property="connectors" jdbcType="LONGVARCHAR" />
+    <result column="sub_images" property="subImages" jdbcType="LONGVARCHAR" />
+  </resultMap>
+</mapper>

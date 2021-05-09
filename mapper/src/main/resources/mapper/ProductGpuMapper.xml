@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengwei.mapper.ProductGpuMapper" >
+  <resultMap id="BaseResultMap" type="com.fengwei.pojo.ProductGpu" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="interfaces" property="interfaces" jdbcType="VARCHAR" />
+    <result column="chipset_manufacturer" property="chipsetManufacturer" jdbcType="VARCHAR" />
+    <result column="gpu" property="gpu" jdbcType="VARCHAR" />
+    <result column="core_clock" property="coreClock" jdbcType="INTEGER" />
+    <result column="memory_clock" property="memoryClock" jdbcType="INTEGER" />
+    <result column="memory_size" property="memorySize" jdbcType="INTEGER" />
+    <result column="memory_interface" property="memoryInterface" jdbcType="INTEGER" />
+    <result column="memory_type" property="memoryType" jdbcType="VARCHAR" />
+    <result column="length" property="length" jdbcType="INTEGER" />
+    <result column="tdp" property="tdp" jdbcType="INTEGER" />
+    <result column="main_image" property="mainImage" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+    <result column="features" property="features" jdbcType="LONGVARCHAR" />
+    <result column="sub_images" property="subImages" jdbcType="LONGVARCHAR" />
+  </resultMap>
+</mapper>
