@@ -33,17 +33,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-/**
- * Created by 廖师兄
- * 2017-07-02 13:40
- */
 public class WxPayServiceImpl extends BestPayServiceImpl {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(WxPayServiceImpl.class);
+    private final Retrofit retrofit = new Retrofit.Builder().baseUrl(WxPayConstants.WXPAY_GATEWAY).addConverterFactory(SimpleXmlConverterFactory.create()).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
     private WxPayConfig wxPayConfig;
-
-    private Retrofit retrofit = new Retrofit.Builder().baseUrl(WxPayConstants.WXPAY_GATEWAY).addConverterFactory(SimpleXmlConverterFactory.create()).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
 
     public void setWxPayConfig(WxPayConfig wxPayConfig) {
         this.wxPayConfig = wxPayConfig;
@@ -99,7 +95,7 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
     }
 
     @Override
-    public boolean verify(Map map,SignType signType,String sign) {
+    public boolean verify(Map<String, String> map,SignType signType,String sign) {
         return WxPaySignature.verify(map,wxPayConfig.getMchKey());
     }
 
@@ -110,9 +106,6 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 异步通知
-     *
-     * @param notifyData
-     * @return
      */
     @Override
     public PayResponse asyncNotify(String notifyData) {
@@ -125,7 +118,7 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
         //xml解析为对象
         WxPayAsyncResponse asyncResponse = (WxPayAsyncResponse) XmlUtil.toObject(notifyData,WxPayAsyncResponse.class);
 
-        if (!asyncResponse.getReturnCode().equals(WxPayConstants.SUCCESS)) {
+        if (!Objects.requireNonNull(asyncResponse).getReturnCode().equals(WxPayConstants.SUCCESS)) {
             throw new RuntimeException("【微信支付异步通知】发起支付, returnCode != SUCCESS, returnMsg = " + asyncResponse.getReturnMsg());
         }
         //该订单已支付直接返回
@@ -142,9 +135,6 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 微信退款
-     *
-     * @param request
-     * @return
      */
     public RefundResponse refund(RefundRequest request) {
         WxPayRefundRequest wxRequest = new WxPayRefundRequest();
@@ -174,12 +164,12 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (!retrofitResponse.isSuccessful()) {
+        if (!Objects.requireNonNull(retrofitResponse).isSuccessful()) {
             throw new RuntimeException("【微信退款】发起退款, 网络异常");
         }
         WxRefundResponse response = retrofitResponse.body();
 
-        if (!response.getReturnCode().equals(WxPayConstants.SUCCESS)) {
+        if (!Objects.requireNonNull(response).getReturnCode().equals(WxPayConstants.SUCCESS)) {
             throw new RuntimeException("【微信退款】发起退款, returnCode != SUCCESS, returnMsg = " + response.getReturnMsg());
         }
         if (!response.getResultCode().equals(WxPayConstants.SUCCESS)) {
@@ -191,9 +181,6 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 查询订单
-     *
-     * @param request
-     * @return
      */
     @Override
     public OrderQueryResponse query(OrderQueryRequest request) {
@@ -256,9 +243,6 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 返回给h5的参数
-     *
-     * @param response
-     * @return
      */
     private PayResponse buildPayResponse(WxPaySyncResponse response) {
         String timeStamp = String.valueOf(System.currentTimeMillis() / 1000);
@@ -302,8 +286,7 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
     }
 
     /**
-     * @param request
-     * @return
+     *
      */
     @Override
     public String downloadBill(DownloadBillRequest request) {
@@ -325,18 +308,18 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
             e.printStackTrace();
         }
 
-        if (!retrofitResponse.isSuccessful()) {
+        if (!Objects.requireNonNull(retrofitResponse).isSuccessful()) {
             throw new RuntimeException("【微信订单查询】网络异常");
         }
 
         String response = null;
         try {
-            response = retrofitResponse.body().string();
+            response = Objects.requireNonNull(retrofitResponse.body()).string();
 
             //如果返回xml格式，表示返回异常
             if (response.startsWith("<")) {
                 WxDownloadBillResponse downloadBillResponse = (WxDownloadBillResponse) XmlUtil.toObject(response,WxDownloadBillResponse.class);
-                throw new RuntimeException("【对账文件】返回异常 错误码: " + downloadBillResponse.getErrorCode() + " 错误信息: " + downloadBillResponse.getReturnMsg());
+                throw new RuntimeException("【对账文件】返回异常 错误码: " + Objects.requireNonNull(downloadBillResponse).getErrorCode() + " 错误信息: " + downloadBillResponse.getReturnMsg());
             }
 
         } catch (IOException e) {
@@ -349,8 +332,6 @@ public class WxPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 根据微信规则生成扫码二维码的URL
-     *
-     * @return
      */
     @Override
     public String getQrCodeUrl(String productId) {

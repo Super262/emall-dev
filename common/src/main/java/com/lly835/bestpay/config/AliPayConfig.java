@@ -2,9 +2,6 @@ package com.lly835.bestpay.config;
 
 import java.util.Objects;
 
-/**
- * Created by this on 2019/9/8 16:31
- */
 public class AliPayConfig extends PayConfig {
     /**
      * appId
@@ -72,20 +69,17 @@ public class AliPayConfig extends PayConfig {
         if (o == this) return true;
         if (!(o instanceof AliPayConfig)) return false;
         final AliPayConfig other = (AliPayConfig) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$privateKey = this.getPrivateKey();
         final Object other$privateKey = other.getPrivateKey();
-        if (this$privateKey == null ? other$privateKey != null : !this$privateKey.equals(other$privateKey))
-            return false;
+        if (!Objects.equals(this$privateKey,other$privateKey)) return false;
         final Object this$aliPayPublicKey = this.getAliPayPublicKey();
         final Object other$aliPayPublicKey = other.getAliPayPublicKey();
-        if (this$aliPayPublicKey == null ? other$aliPayPublicKey != null : !this$aliPayPublicKey.equals(other$aliPayPublicKey))
-            return false;
-        if (this.isSandbox() != other.isSandbox()) return false;
-        return true;
+        if (!Objects.equals(this$aliPayPublicKey,other$aliPayPublicKey)) return false;
+        return this.isSandbox() == other.isSandbox();
     }
 
     protected boolean canEqual(final Object other) {

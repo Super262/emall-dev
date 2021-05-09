@@ -19,7 +19,7 @@ public class XmlUtil {
     /**
      * xml转对象
      */
-    public static Object toObject(String xml,Class objClass) {
+    public static Object toObject(String xml,Class<?> objClass) {
         Serializer serializer = new Persister();
         try {
             return serializer.read(objClass,xml);

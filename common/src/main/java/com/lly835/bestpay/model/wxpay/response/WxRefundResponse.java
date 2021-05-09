@@ -3,10 +3,10 @@ package com.lly835.bestpay.model.wxpay.response;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.Objects;
+
 /**
  * 微信退款返回参数
- * Created by 廖师兄
- * 2017-07-02 13:33
  */
 @Root(name = "xml", strict = false) //name:要解析的xml数据的头部
 public class WxRefundResponse {
@@ -274,89 +274,76 @@ public class WxRefundResponse {
         if (o == this) return true;
         if (!(o instanceof WxRefundResponse)) return false;
         final WxRefundResponse other = (WxRefundResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$returnCode = this.getReturnCode();
         final Object other$returnCode = other.getReturnCode();
-        if (this$returnCode == null ? other$returnCode != null : !this$returnCode.equals(other$returnCode))
-            return false;
+        if (!Objects.equals(this$returnCode,other$returnCode)) return false;
         final Object this$returnMsg = this.getReturnMsg();
         final Object other$returnMsg = other.getReturnMsg();
-        if (this$returnMsg == null ? other$returnMsg != null : !this$returnMsg.equals(other$returnMsg)) return false;
+        if (!Objects.equals(this$returnMsg,other$returnMsg)) return false;
         final Object this$resultCode = this.getResultCode();
         final Object other$resultCode = other.getResultCode();
-        if (this$resultCode == null ? other$resultCode != null : !this$resultCode.equals(other$resultCode))
-            return false;
+        if (!Objects.equals(this$resultCode,other$resultCode)) return false;
         final Object this$errCode = this.getErrCode();
         final Object other$errCode = other.getErrCode();
-        if (this$errCode == null ? other$errCode != null : !this$errCode.equals(other$errCode)) return false;
+        if (!Objects.equals(this$errCode,other$errCode)) return false;
         final Object this$errCodeDes = this.getErrCodeDes();
         final Object other$errCodeDes = other.getErrCodeDes();
-        if (this$errCodeDes == null ? other$errCodeDes != null : !this$errCodeDes.equals(other$errCodeDes))
-            return false;
+        if (!Objects.equals(this$errCodeDes,other$errCodeDes)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$transactionId = this.getTransactionId();
         final Object other$transactionId = other.getTransactionId();
-        if (this$transactionId == null ? other$transactionId != null : !this$transactionId.equals(other$transactionId))
-            return false;
+        if (!Objects.equals(this$transactionId,other$transactionId)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$outRefundNo = this.getOutRefundNo();
         final Object other$outRefundNo = other.getOutRefundNo();
-        if (this$outRefundNo == null ? other$outRefundNo != null : !this$outRefundNo.equals(other$outRefundNo))
-            return false;
+        if (!Objects.equals(this$outRefundNo,other$outRefundNo)) return false;
         final Object this$refundId = this.getRefundId();
         final Object other$refundId = other.getRefundId();
-        if (this$refundId == null ? other$refundId != null : !this$refundId.equals(other$refundId)) return false;
+        if (!Objects.equals(this$refundId,other$refundId)) return false;
         final Object this$refundFee = this.getRefundFee();
         final Object other$refundFee = other.getRefundFee();
-        if (this$refundFee == null ? other$refundFee != null : !this$refundFee.equals(other$refundFee)) return false;
+        if (!Objects.equals(this$refundFee,other$refundFee)) return false;
         final Object this$settlementRefundFee = this.getSettlementRefundFee();
         final Object other$settlementRefundFee = other.getSettlementRefundFee();
-        if (this$settlementRefundFee == null ? other$settlementRefundFee != null : !this$settlementRefundFee.equals(other$settlementRefundFee))
-            return false;
+        if (!Objects.equals(this$settlementRefundFee,other$settlementRefundFee)) return false;
         final Object this$totalFee = this.getTotalFee();
         final Object other$totalFee = other.getTotalFee();
-        if (this$totalFee == null ? other$totalFee != null : !this$totalFee.equals(other$totalFee)) return false;
+        if (!Objects.equals(this$totalFee,other$totalFee)) return false;
         final Object this$settlementTotalFee = this.getSettlementTotalFee();
         final Object other$settlementTotalFee = other.getSettlementTotalFee();
-        if (this$settlementTotalFee == null ? other$settlementTotalFee != null : !this$settlementTotalFee.equals(other$settlementTotalFee))
-            return false;
+        if (!Objects.equals(this$settlementTotalFee,other$settlementTotalFee)) return false;
         final Object this$feeType = this.getFeeType();
         final Object other$feeType = other.getFeeType();
-        if (this$feeType == null ? other$feeType != null : !this$feeType.equals(other$feeType)) return false;
+        if (!Objects.equals(this$feeType,other$feeType)) return false;
         final Object this$cashFee = this.getCashFee();
         final Object other$cashFee = other.getCashFee();
-        if (this$cashFee == null ? other$cashFee != null : !this$cashFee.equals(other$cashFee)) return false;
+        if (!Objects.equals(this$cashFee,other$cashFee)) return false;
         final Object this$cashFeeType = this.getCashFeeType();
         final Object other$cashFeeType = other.getCashFeeType();
-        if (this$cashFeeType == null ? other$cashFeeType != null : !this$cashFeeType.equals(other$cashFeeType))
-            return false;
+        if (!Objects.equals(this$cashFeeType,other$cashFeeType)) return false;
         final Object this$cashRefundFee = this.getCashRefundFee();
         final Object other$cashRefundFee = other.getCashRefundFee();
-        if (this$cashRefundFee == null ? other$cashRefundFee != null : !this$cashRefundFee.equals(other$cashRefundFee))
-            return false;
+        if (!Objects.equals(this$cashRefundFee,other$cashRefundFee)) return false;
         final Object this$couponRefundFee = this.getCouponRefundFee();
         final Object other$couponRefundFee = other.getCouponRefundFee();
-        if (this$couponRefundFee == null ? other$couponRefundFee != null : !this$couponRefundFee.equals(other$couponRefundFee))
-            return false;
+        if (!Objects.equals(this$couponRefundFee,other$couponRefundFee)) return false;
         final Object this$couponRefundCount = this.getCouponRefundCount();
         final Object other$couponRefundCount = other.getCouponRefundCount();
-        if (this$couponRefundCount == null ? other$couponRefundCount != null : !this$couponRefundCount.equals(other$couponRefundCount))
-            return false;
-        return true;
+        return Objects.equals(this$couponRefundCount,other$couponRefundCount);
     }
 
     protected boolean canEqual(final Object other) {

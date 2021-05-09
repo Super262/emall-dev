@@ -1,9 +1,10 @@
 package com.lly835.bestpay.model.alipay.response;
 
+import java.util.Objects;
+
 /**
  * alipay.trade.query(统一收单线下交易查询) 响应
  * https://docs.open.alipay.com/api_1/alipay.trade.query
- * Created by 廖师兄
  */
 public class AliPayOrderQueryResponse {
 
@@ -34,15 +35,13 @@ public class AliPayOrderQueryResponse {
         if (o == this) return true;
         if (!(o instanceof AliPayOrderQueryResponse)) return false;
         final AliPayOrderQueryResponse other = (AliPayOrderQueryResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$alipayTradeQueryResponse = this.getAlipayTradeQueryResponse();
         final Object other$alipayTradeQueryResponse = other.getAlipayTradeQueryResponse();
-        if (this$alipayTradeQueryResponse == null ? other$alipayTradeQueryResponse != null : !this$alipayTradeQueryResponse.equals(other$alipayTradeQueryResponse))
-            return false;
+        if (!Objects.equals(this$alipayTradeQueryResponse,other$alipayTradeQueryResponse)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
-        return true;
+        return Objects.equals(this$sign,other$sign);
     }
 
     protected boolean canEqual(final Object other) {
@@ -231,53 +230,46 @@ public class AliPayOrderQueryResponse {
             if (o == this) return true;
             if (!(o instanceof AlipayTradeQueryResponse)) return false;
             final AlipayTradeQueryResponse other = (AlipayTradeQueryResponse) o;
-            if (!other.canEqual((Object) this)) return false;
+            if (!other.canEqual(this)) return false;
             final Object this$code = this.getCode();
             final Object other$code = other.getCode();
-            if (this$code == null ? other$code != null : !this$code.equals(other$code)) return false;
+            if (!Objects.equals(this$code,other$code)) return false;
             final Object this$msg = this.getMsg();
             final Object other$msg = other.getMsg();
-            if (this$msg == null ? other$msg != null : !this$msg.equals(other$msg)) return false;
+            if (!Objects.equals(this$msg,other$msg)) return false;
             final Object this$subCode = this.getSubCode();
             final Object other$subCode = other.getSubCode();
-            if (this$subCode == null ? other$subCode != null : !this$subCode.equals(other$subCode)) return false;
+            if (!Objects.equals(this$subCode,other$subCode)) return false;
             final Object this$subMsg = this.getSubMsg();
             final Object other$subMsg = other.getSubMsg();
-            if (this$subMsg == null ? other$subMsg != null : !this$subMsg.equals(other$subMsg)) return false;
+            if (!Objects.equals(this$subMsg,other$subMsg)) return false;
             final Object this$tradeNo = this.getTradeNo();
             final Object other$tradeNo = other.getTradeNo();
-            if (this$tradeNo == null ? other$tradeNo != null : !this$tradeNo.equals(other$tradeNo)) return false;
+            if (!Objects.equals(this$tradeNo,other$tradeNo)) return false;
             final Object this$outTradeNo = this.getOutTradeNo();
             final Object other$outTradeNo = other.getOutTradeNo();
-            if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-                return false;
+            if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
             final Object this$buyerLogonId = this.getBuyerLogonId();
             final Object other$buyerLogonId = other.getBuyerLogonId();
-            if (this$buyerLogonId == null ? other$buyerLogonId != null : !this$buyerLogonId.equals(other$buyerLogonId))
-                return false;
+            if (!Objects.equals(this$buyerLogonId,other$buyerLogonId)) return false;
             final Object this$tradeStatus = this.getTradeStatus();
             final Object other$tradeStatus = other.getTradeStatus();
-            if (this$tradeStatus == null ? other$tradeStatus != null : !this$tradeStatus.equals(other$tradeStatus))
-                return false;
+            if (!Objects.equals(this$tradeStatus,other$tradeStatus)) return false;
             final Object this$totalAmount = this.getTotalAmount();
             final Object other$totalAmount = other.getTotalAmount();
-            if (this$totalAmount == null ? other$totalAmount != null : !this$totalAmount.equals(other$totalAmount))
-                return false;
+            if (!Objects.equals(this$totalAmount,other$totalAmount)) return false;
             final Object this$sendPayDate = this.getSendPayDate();
             final Object other$sendPayDate = other.getSendPayDate();
-            if (this$sendPayDate == null ? other$sendPayDate != null : !this$sendPayDate.equals(other$sendPayDate))
-                return false;
+            if (!Objects.equals(this$sendPayDate,other$sendPayDate)) return false;
             final Object this$buyerUserId = this.getBuyerUserId();
             final Object other$buyerUserId = other.getBuyerUserId();
-            if (this$buyerUserId == null ? other$buyerUserId != null : !this$buyerUserId.equals(other$buyerUserId))
-                return false;
+            if (!Objects.equals(this$buyerUserId,other$buyerUserId)) return false;
             final Object this$subject = this.getSubject();
             final Object other$subject = other.getSubject();
-            if (this$subject == null ? other$subject != null : !this$subject.equals(other$subject)) return false;
+            if (!Objects.equals(this$subject,other$subject)) return false;
             final Object this$body = this.getBody();
             final Object other$body = other.getBody();
-            if (this$body == null ? other$body != null : !this$body.equals(other$body)) return false;
-            return true;
+            return Objects.equals(this$body,other$body);
         }
 
         protected boolean canEqual(final Object other) {

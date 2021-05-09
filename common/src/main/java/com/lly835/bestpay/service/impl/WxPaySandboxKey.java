@@ -19,11 +19,9 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-/**
- * Created by lly835@163.com
- * 2018-05-16 20:35
- */
+
 public class WxPaySandboxKey {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(WxPaySandboxKey.class);
@@ -44,7 +42,7 @@ public class WxPaySandboxKey {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (!retrofitResponse.isSuccessful()) {
+        if (!Objects.requireNonNull(retrofitResponse).isSuccessful()) {
             throw new RuntimeException("【微信统一支付】发起支付，网络异常，" + retrofitResponse);
         }
         Object response = retrofitResponse.body();
@@ -102,17 +100,16 @@ public class WxPaySandboxKey {
             if (o == this) return true;
             if (!(o instanceof SandboxParam)) return false;
             final SandboxParam other = (SandboxParam) o;
-            if (!other.canEqual((Object) this)) return false;
+            if (!other.canEqual(this)) return false;
             final Object this$mchId = this.getMchId();
             final Object other$mchId = other.getMchId();
-            if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+            if (!Objects.equals(this$mchId,other$mchId)) return false;
             final Object this$nonceStr = this.getNonceStr();
             final Object other$nonceStr = other.getNonceStr();
-            if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+            if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
             final Object this$sign = this.getSign();
             final Object other$sign = other.getSign();
-            if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
-            return true;
+            return Objects.equals(this$sign,other$sign);
         }
 
         protected boolean canEqual(final Object other) {

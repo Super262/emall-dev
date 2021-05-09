@@ -49,9 +49,6 @@ public class BestPayServiceImpl implements BestPayService {
 
     /**
      * 同步返回
-     *
-     * @param request
-     * @return
      */
     public PayResponse syncNotify(HttpServletRequest request) {
         return null;
@@ -64,8 +61,6 @@ public class BestPayServiceImpl implements BestPayService {
 
     /**
      * 异步回调
-     *
-     * @return
      */
     public PayResponse asyncNotify(String notifyData) {
         //<xml>开头的是微信通知
@@ -89,9 +84,6 @@ public class BestPayServiceImpl implements BestPayService {
 
     /**
      * 查询订单
-     *
-     * @param request
-     * @return
      */
     @Override
     public OrderQueryResponse query(OrderQueryRequest request) {

@@ -3,10 +3,9 @@ package com.lly835.bestpay.model.wxpay.request;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-/**
- * Created by 廖师兄
- * 2017-07-02 13:42
- */
+import java.util.Objects;
+
+
 @Root(name = "xml", strict = false)
 public class WxPayUnifiedorderRequest {
 
@@ -160,49 +159,46 @@ public class WxPayUnifiedorderRequest {
         if (o == this) return true;
         if (!(o instanceof WxPayUnifiedorderRequest)) return false;
         final WxPayUnifiedorderRequest other = (WxPayUnifiedorderRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$attach = this.getAttach();
         final Object other$attach = other.getAttach();
-        if (this$attach == null ? other$attach != null : !this$attach.equals(other$attach)) return false;
+        if (!Objects.equals(this$attach,other$attach)) return false;
         final Object this$body = this.getBody();
         final Object other$body = other.getBody();
-        if (this$body == null ? other$body != null : !this$body.equals(other$body)) return false;
+        if (!Objects.equals(this$body,other$body)) return false;
         final Object this$detail = this.getDetail();
         final Object other$detail = other.getDetail();
-        if (this$detail == null ? other$detail != null : !this$detail.equals(other$detail)) return false;
+        if (!Objects.equals(this$detail,other$detail)) return false;
         final Object this$notifyUrl = this.getNotifyUrl();
         final Object other$notifyUrl = other.getNotifyUrl();
-        if (this$notifyUrl == null ? other$notifyUrl != null : !this$notifyUrl.equals(other$notifyUrl)) return false;
+        if (!Objects.equals(this$notifyUrl,other$notifyUrl)) return false;
         final Object this$openid = this.getOpenid();
         final Object other$openid = other.getOpenid();
-        if (this$openid == null ? other$openid != null : !this$openid.equals(other$openid)) return false;
+        if (!Objects.equals(this$openid,other$openid)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$spbillCreateIp = this.getSpbillCreateIp();
         final Object other$spbillCreateIp = other.getSpbillCreateIp();
-        if (this$spbillCreateIp == null ? other$spbillCreateIp != null : !this$spbillCreateIp.equals(other$spbillCreateIp))
-            return false;
+        if (!Objects.equals(this$spbillCreateIp,other$spbillCreateIp)) return false;
         final Object this$totalFee = this.getTotalFee();
         final Object other$totalFee = other.getTotalFee();
-        if (this$totalFee == null ? other$totalFee != null : !this$totalFee.equals(other$totalFee)) return false;
+        if (!Objects.equals(this$totalFee,other$totalFee)) return false;
         final Object this$tradeType = this.getTradeType();
         final Object other$tradeType = other.getTradeType();
-        if (this$tradeType == null ? other$tradeType != null : !this$tradeType.equals(other$tradeType)) return false;
-        return true;
+        return Objects.equals(this$tradeType,other$tradeType);
     }
 
     protected boolean canEqual(final Object other) {

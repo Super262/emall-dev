@@ -1,5 +1,7 @@
 package com.lly835.bestpay.model;
 
+import java.util.Objects;
+
 /**
  * 下载对账文件请求
  */
@@ -23,11 +25,10 @@ public class DownloadBillRequest {
         if (o == this) return true;
         if (!(o instanceof DownloadBillRequest)) return false;
         final DownloadBillRequest other = (DownloadBillRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$billDate = this.getBillDate();
         final Object other$billDate = other.getBillDate();
-        if (this$billDate == null ? other$billDate != null : !this$billDate.equals(other$billDate)) return false;
-        return true;
+        return Objects.equals(this$billDate,other$billDate);
     }
 
     protected boolean canEqual(final Object other) {

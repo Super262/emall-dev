@@ -2,10 +2,10 @@ package com.lly835.bestpay.model;
 
 import com.lly835.bestpay.enums.OrderStatusEnum;
 
+import java.util.Objects;
+
 /**
  * 订单查询结果
- * Created by 廖师兄
- * 2018-06-04 16:52
  */
 public class OrderQueryResponse {
 
@@ -104,29 +104,25 @@ public class OrderQueryResponse {
         if (o == this) return true;
         if (!(o instanceof OrderQueryResponse)) return false;
         final OrderQueryResponse other = (OrderQueryResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$orderStatusEnum = this.getOrderStatusEnum();
         final Object other$orderStatusEnum = other.getOrderStatusEnum();
-        if (this$orderStatusEnum == null ? other$orderStatusEnum != null : !this$orderStatusEnum.equals(other$orderStatusEnum))
-            return false;
+        if (!Objects.equals(this$orderStatusEnum,other$orderStatusEnum)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$attach = this.getAttach();
         final Object other$attach = other.getAttach();
-        if (this$attach == null ? other$attach != null : !this$attach.equals(other$attach)) return false;
+        if (!Objects.equals(this$attach,other$attach)) return false;
         final Object this$resultMsg = this.getResultMsg();
         final Object other$resultMsg = other.getResultMsg();
-        if (this$resultMsg == null ? other$resultMsg != null : !this$resultMsg.equals(other$resultMsg)) return false;
+        if (!Objects.equals(this$resultMsg,other$resultMsg)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$finishTime = this.getFinishTime();
         final Object other$finishTime = other.getFinishTime();
-        if (this$finishTime == null ? other$finishTime != null : !this$finishTime.equals(other$finishTime))
-            return false;
-        return true;
+        return Objects.equals(this$finishTime,other$finishTime);
     }
 
     protected boolean canEqual(final Object other) {

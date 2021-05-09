@@ -2,9 +2,8 @@ package com.lly835.bestpay.model.alipay.request;
 
 import com.lly835.bestpay.constants.AliPayConstants;
 
-/**
- * Created by 廖师兄
- */
+import java.util.Objects;
+
 public class AliPayOrderQueryRequest {
     /**
      * app_id
@@ -126,37 +125,34 @@ public class AliPayOrderQueryRequest {
         if (o == this) return true;
         if (!(o instanceof AliPayOrderQueryRequest)) return false;
         final AliPayOrderQueryRequest other = (AliPayOrderQueryRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$method = this.getMethod();
         final Object other$method = other.getMethod();
-        if (this$method == null ? other$method != null : !this$method.equals(other$method)) return false;
+        if (!Objects.equals(this$method,other$method)) return false;
         final Object this$charset = this.getCharset();
         final Object other$charset = other.getCharset();
-        if (this$charset == null ? other$charset != null : !this$charset.equals(other$charset)) return false;
+        if (!Objects.equals(this$charset,other$charset)) return false;
         final Object this$signType = this.getSignType();
         final Object other$signType = other.getSignType();
-        if (this$signType == null ? other$signType != null : !this$signType.equals(other$signType)) return false;
+        if (!Objects.equals(this$signType,other$signType)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$timestamp = this.getTimestamp();
         final Object other$timestamp = other.getTimestamp();
-        if (this$timestamp == null ? other$timestamp != null : !this$timestamp.equals(other$timestamp)) return false;
+        if (!Objects.equals(this$timestamp,other$timestamp)) return false;
         final Object this$version = this.getVersion();
         final Object other$version = other.getVersion();
-        if (this$version == null ? other$version != null : !this$version.equals(other$version)) return false;
+        if (!Objects.equals(this$version,other$version)) return false;
         final Object this$appAuthToken = this.getAppAuthToken();
         final Object other$appAuthToken = other.getAppAuthToken();
-        if (this$appAuthToken == null ? other$appAuthToken != null : !this$appAuthToken.equals(other$appAuthToken))
-            return false;
+        if (!Objects.equals(this$appAuthToken,other$appAuthToken)) return false;
         final Object this$bizContent = this.getBizContent();
         final Object other$bizContent = other.getBizContent();
-        if (this$bizContent == null ? other$bizContent != null : !this$bizContent.equals(other$bizContent))
-            return false;
-        return true;
+        return Objects.equals(this$bizContent,other$bizContent);
     }
 
     protected boolean canEqual(final Object other) {
@@ -253,22 +249,19 @@ public class AliPayOrderQueryRequest {
             if (o == this) return true;
             if (!(o instanceof BizContent)) return false;
             final BizContent other = (BizContent) o;
-            if (!other.canEqual((Object) this)) return false;
+            if (!other.canEqual(this)) return false;
             final Object this$outTradeNo = this.getOutTradeNo();
             final Object other$outTradeNo = other.getOutTradeNo();
-            if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-                return false;
+            if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
             final Object this$tradeNo = this.getTradeNo();
             final Object other$tradeNo = other.getTradeNo();
-            if (this$tradeNo == null ? other$tradeNo != null : !this$tradeNo.equals(other$tradeNo)) return false;
+            if (!Objects.equals(this$tradeNo,other$tradeNo)) return false;
             final Object this$orgPid = this.getOrgPid();
             final Object other$orgPid = other.getOrgPid();
-            if (this$orgPid == null ? other$orgPid != null : !this$orgPid.equals(other$orgPid)) return false;
+            if (!Objects.equals(this$orgPid,other$orgPid)) return false;
             final Object this$queryOptions = this.getQueryOptions();
             final Object other$queryOptions = other.getQueryOptions();
-            if (this$queryOptions == null ? other$queryOptions != null : !this$queryOptions.equals(other$queryOptions))
-                return false;
-            return true;
+            return Objects.equals(this$queryOptions,other$queryOptions);
         }
 
         protected boolean canEqual(final Object other) {

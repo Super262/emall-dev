@@ -4,10 +4,6 @@ import static com.lly835.bestpay.enums.OrderStatusEnum.*;
 
 /**
  * 支付宝交易状态枚举.
- *
- * @version 1.0 2017/2/27
- * @auther <a href="mailto:lly835@163.com">廖师兄</a>
- * @since 1.0
  */
 public enum AlipayTradeStatusEnum {
 
@@ -41,7 +37,7 @@ public enum AlipayTradeStatusEnum {
 
     ;
 
-    private OrderStatusEnum orderStatusEnum;
+    private final OrderStatusEnum orderStatusEnum;
 
     AlipayTradeStatusEnum(OrderStatusEnum orderStatusEnum) {
         this.orderStatusEnum = orderStatusEnum;
@@ -49,7 +45,7 @@ public enum AlipayTradeStatusEnum {
 
     public static AlipayTradeStatusEnum findByName(String name) {
         for (AlipayTradeStatusEnum statusEnum : AlipayTradeStatusEnum.values()) {
-            if (name.toLowerCase().equals(statusEnum.name().toLowerCase())) {
+            if (name.equalsIgnoreCase(statusEnum.name())) {
                 return statusEnum;
             }
         }

@@ -3,10 +3,10 @@ package com.lly835.bestpay.model.wxpay.response;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.Objects;
+
 /**
  * 下载对账文件返回-只有发生错误的时候才会返回
- * Created by steven ma
- * 2019/3/20 16:48
  */
 @Root(name = "xml", strict = false)
 public class WxDownloadBillResponse {
@@ -51,18 +51,16 @@ public class WxDownloadBillResponse {
         if (o == this) return true;
         if (!(o instanceof WxDownloadBillResponse)) return false;
         final WxDownloadBillResponse other = (WxDownloadBillResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$returnCode = this.getReturnCode();
         final Object other$returnCode = other.getReturnCode();
-        if (this$returnCode == null ? other$returnCode != null : !this$returnCode.equals(other$returnCode))
-            return false;
+        if (!Objects.equals(this$returnCode,other$returnCode)) return false;
         final Object this$returnMsg = this.getReturnMsg();
         final Object other$returnMsg = other.getReturnMsg();
-        if (this$returnMsg == null ? other$returnMsg != null : !this$returnMsg.equals(other$returnMsg)) return false;
+        if (!Objects.equals(this$returnMsg,other$returnMsg)) return false;
         final Object this$errorCode = this.getErrorCode();
         final Object other$errorCode = other.getErrorCode();
-        if (this$errorCode == null ? other$errorCode != null : !this$errorCode.equals(other$errorCode)) return false;
-        return true;
+        return Objects.equals(this$errorCode,other$errorCode);
     }
 
     protected boolean canEqual(final Object other) {

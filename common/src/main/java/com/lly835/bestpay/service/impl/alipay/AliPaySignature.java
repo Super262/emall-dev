@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -23,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created By this
  * 普通公钥方式实现
  */
 public class AliPaySignature {
@@ -33,7 +33,6 @@ public class AliPaySignature {
     /**
      * @param params     参数map
      * @param privateKey 商户私钥
-     * @return
      */
     public static String sign(Map<String, String> params,String privateKey) {
         String signType = params.get("sign_type");
@@ -48,15 +47,14 @@ public class AliPaySignature {
     }
 
     public static String getSignContent(Map<String, String> params) {
-        StringBuffer content = new StringBuffer();
+        StringBuilder content = new StringBuilder();
         List<String> keys = new ArrayList<>(params.keySet());
         Collections.sort(keys);
         int index = 0;
-        for (int i = 0; i < keys.size(); i++) {
-            String key = keys.get(i);
+        for (String key : keys) {
             String value = params.get(key);
             if (StringUtils.isNotBlank(key) && StringUtils.isNotBlank(value)) {
-                content.append((index == 0 ? "" : "&") + key + "=" + value);
+                content.append(index == 0 ? "" : "&").append(key).append("=").append(value);
                 index++;
             }
         }
@@ -65,11 +63,6 @@ public class AliPaySignature {
 
     /**
      * sha1WithRsa 加签
-     *
-     * @param content
-     * @param privateKey
-     * @return
-     * @throws RuntimeException
      */
     public static String rsaSign(String content,String privateKey) {
         try {
@@ -78,7 +71,7 @@ public class AliPaySignature {
             Signature signature = Signature.getInstance(AliPayConstants.SIGN_ALGORITHMS);
 
             signature.initSign(priKey);
-            signature.update(content.getBytes(AliPayConstants.CHARSET_UTF8));
+            signature.update(content.getBytes(StandardCharsets.UTF_8));
             byte[] signed = signature.sign();
 
             return new String(Base64.encodeBase64(signed));
@@ -91,11 +84,6 @@ public class AliPaySignature {
 
     /**
      * sha256WithRsa 加签
-     *
-     * @param content
-     * @param privateKey
-     * @return
-     * @throws RuntimeException
      */
     public static String rsa256Sign(String content,String privateKey) {
 
@@ -105,7 +93,7 @@ public class AliPaySignature {
             Signature signature = Signature.getInstance(AliPayConstants.SIGN_SHA256RSA_ALGORITHMS);
 
             signature.initSign(priKey);
-            signature.update(content.getBytes(AliPayConstants.CHARSET_UTF8));
+            signature.update(content.getBytes(StandardCharsets.UTF_8));
             byte[] signed = signature.sign();
 
             return new String(Base64.encodeBase64(signed));
@@ -129,10 +117,6 @@ public class AliPaySignature {
 
     /**
      * 校验签名
-     *
-     * @param params
-     * @param publicKey
-     * @return
      */
     public static Boolean verify(Map<String, String> params,String publicKey) {
         return rsaCheckV1(params,publicKey,"UTF-8",AliPayConstants.SIGN_TYPE_RSA2);
@@ -146,14 +130,14 @@ public class AliPaySignature {
         params.remove("sign");
         params.remove("sign_type");
 
-        StringBuffer content = new StringBuffer();
-        List<String> keys = new ArrayList<String>(params.keySet());
+        StringBuilder content = new StringBuilder();
+        List<String> keys = new ArrayList<>(params.keySet());
         Collections.sort(keys);
 
         for (int i = 0; i < keys.size(); i++) {
             String key = keys.get(i);
             String value = params.get(key);
-            content.append((i == 0 ? "" : "&") + key + "=" + value);
+            content.append(i == 0 ? "" : "&").append(key).append("=").append(value);
         }
 
         return content.toString();

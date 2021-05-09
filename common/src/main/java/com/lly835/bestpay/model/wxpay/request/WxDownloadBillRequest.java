@@ -3,10 +3,8 @@ package com.lly835.bestpay.model.wxpay.request;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-/**
- * Created by steven ma
- * 2019-03-15 11:49
- */
+import java.util.Objects;
+
 @Root(name = "xml", strict = false)
 public class WxDownloadBillRequest {
 
@@ -89,26 +87,25 @@ public class WxDownloadBillRequest {
         if (o == this) return true;
         if (!(o instanceof WxDownloadBillRequest)) return false;
         final WxDownloadBillRequest other = (WxDownloadBillRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$billDate = this.getBillDate();
         final Object other$billDate = other.getBillDate();
-        if (this$billDate == null ? other$billDate != null : !this$billDate.equals(other$billDate)) return false;
+        if (!Objects.equals(this$billDate,other$billDate)) return false;
         final Object this$billType = this.getBillType();
         final Object other$billType = other.getBillType();
-        if (this$billType == null ? other$billType != null : !this$billType.equals(other$billType)) return false;
-        return true;
+        return Objects.equals(this$billType,other$billType);
     }
 
     protected boolean canEqual(final Object other) {

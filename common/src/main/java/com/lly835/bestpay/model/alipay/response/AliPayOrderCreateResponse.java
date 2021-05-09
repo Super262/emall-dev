@@ -1,9 +1,10 @@
 package com.lly835.bestpay.model.alipay.response;
 
+import java.util.Objects;
+
 /**
  * alipay.trade.create(统一收单交易创建接口)
  * https://docs.open.alipay.com/api_1/alipay.trade.create
- * Created by 廖师兄
  */
 public class AliPayOrderCreateResponse {
 
@@ -34,15 +35,13 @@ public class AliPayOrderCreateResponse {
         if (o == this) return true;
         if (!(o instanceof AliPayOrderCreateResponse)) return false;
         final AliPayOrderCreateResponse other = (AliPayOrderCreateResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$alipayTradeCreateResponse = this.getAlipayTradeCreateResponse();
         final Object other$alipayTradeCreateResponse = other.getAlipayTradeCreateResponse();
-        if (this$alipayTradeCreateResponse == null ? other$alipayTradeCreateResponse != null : !this$alipayTradeCreateResponse.equals(other$alipayTradeCreateResponse))
-            return false;
+        if (!Objects.equals(this$alipayTradeCreateResponse,other$alipayTradeCreateResponse)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
-        return true;
+        return Objects.equals(this$sign,other$sign);
     }
 
     protected boolean canEqual(final Object other) {
@@ -138,27 +137,25 @@ public class AliPayOrderCreateResponse {
             if (o == this) return true;
             if (!(o instanceof AlipayTradeCreateResponse)) return false;
             final AlipayTradeCreateResponse other = (AlipayTradeCreateResponse) o;
-            if (!other.canEqual((Object) this)) return false;
+            if (!other.canEqual(this)) return false;
             final Object this$code = this.getCode();
             final Object other$code = other.getCode();
-            if (this$code == null ? other$code != null : !this$code.equals(other$code)) return false;
+            if (!Objects.equals(this$code,other$code)) return false;
             final Object this$msg = this.getMsg();
             final Object other$msg = other.getMsg();
-            if (this$msg == null ? other$msg != null : !this$msg.equals(other$msg)) return false;
+            if (!Objects.equals(this$msg,other$msg)) return false;
             final Object this$subCode = this.getSubCode();
             final Object other$subCode = other.getSubCode();
-            if (this$subCode == null ? other$subCode != null : !this$subCode.equals(other$subCode)) return false;
+            if (!Objects.equals(this$subCode,other$subCode)) return false;
             final Object this$subMsg = this.getSubMsg();
             final Object other$subMsg = other.getSubMsg();
-            if (this$subMsg == null ? other$subMsg != null : !this$subMsg.equals(other$subMsg)) return false;
+            if (!Objects.equals(this$subMsg,other$subMsg)) return false;
             final Object this$tradeNo = this.getTradeNo();
             final Object other$tradeNo = other.getTradeNo();
-            if (this$tradeNo == null ? other$tradeNo != null : !this$tradeNo.equals(other$tradeNo)) return false;
+            if (!Objects.equals(this$tradeNo,other$tradeNo)) return false;
             final Object this$outTradeNo = this.getOutTradeNo();
             final Object other$outTradeNo = other.getOutTradeNo();
-            if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-                return false;
-            return true;
+            return Objects.equals(this$outTradeNo,other$outTradeNo);
         }
 
         protected boolean canEqual(final Object other) {

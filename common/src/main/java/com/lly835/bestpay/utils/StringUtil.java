@@ -5,7 +5,6 @@ public class StringUtil {
     public static boolean areNotEmpty(String... values) {
         boolean result = true;
         if (values != null && values.length != 0) {
-            int var3 = values.length;
 
             for (String value : values) {
                 result &= !isEmpty(value);

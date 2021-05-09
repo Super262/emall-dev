@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Element;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.util.*;
@@ -161,9 +162,17 @@ public class MapUtil {
                 break;
             }
             if (i == keys.size() - 1) {//拼接时，不包括最后一个&字符
-                prestr.append(key).append("=").append(URLEncoder.encode(value));
+                try {
+                    prestr.append(key).append("=").append(URLEncoder.encode(value,"utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             } else {
-                prestr.append(key).append("=").append(URLEncoder.encode(value)).append("&");
+                try {
+                    prestr.append(key).append("=").append(URLEncoder.encode(value,"utf-8")).append("&");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
         }
         return prestr.toString();
@@ -174,7 +183,7 @@ public class MapUtil {
      */
     public static HashMap<String, String> form2Map(String orderinfo) {
         String[] listinfo;
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         listinfo = orderinfo.split("&");
         for (String s : listinfo) {
             String[] list = s.split("=");
@@ -190,7 +199,7 @@ public class MapUtil {
      */
     public static HashMap<String, String> form2MapWithCamelCase(String orderinfo) {
         String[] listinfo;
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         listinfo = orderinfo.split("&");
         for (String s : listinfo) {
             String[] list = s.split("=");

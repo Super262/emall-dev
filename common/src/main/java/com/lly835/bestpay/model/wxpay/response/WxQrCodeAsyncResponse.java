@@ -3,10 +3,10 @@ package com.lly835.bestpay.model.wxpay.response;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.Objects;
+
 /**
  * 微信扫码异步调用请求
- * Created by steven ma
- * 2019/9/10 17:56
  */
 
 @Root(name = "xml", strict = false)
@@ -96,30 +96,28 @@ public class WxQrCodeAsyncResponse {
         if (o == this) return true;
         if (!(o instanceof WxQrCodeAsyncResponse)) return false;
         final WxQrCodeAsyncResponse other = (WxQrCodeAsyncResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$openId = this.getOpenId();
         final Object other$openId = other.getOpenId();
-        if (this$openId == null ? other$openId != null : !this$openId.equals(other$openId)) return false;
+        if (!Objects.equals(this$openId,other$openId)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$isSubscribe = this.getIsSubscribe();
         final Object other$isSubscribe = other.getIsSubscribe();
-        if (this$isSubscribe == null ? other$isSubscribe != null : !this$isSubscribe.equals(other$isSubscribe))
-            return false;
+        if (!Objects.equals(this$isSubscribe,other$isSubscribe)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$productId = this.getProductId();
         final Object other$productId = other.getProductId();
-        if (this$productId == null ? other$productId != null : !this$productId.equals(other$productId)) return false;
+        if (!Objects.equals(this$productId,other$productId)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
-        return true;
+        return Objects.equals(this$sign,other$sign);
     }
 
     protected boolean canEqual(final Object other) {

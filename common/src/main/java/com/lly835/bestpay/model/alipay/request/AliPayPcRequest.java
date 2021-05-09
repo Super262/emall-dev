@@ -1,10 +1,7 @@
 package com.lly835.bestpay.model.alipay.request;
 
-/**
- * Created by this
- *
- * @date 2019/9/8 15:19
- */
+import java.util.Objects;
+
 public class AliPayPcRequest {
 
     /**
@@ -135,39 +132,37 @@ public class AliPayPcRequest {
         if (o == this) return true;
         if (!(o instanceof AliPayPcRequest)) return false;
         final AliPayPcRequest other = (AliPayPcRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$method = this.getMethod();
         final Object other$method = other.getMethod();
-        if (this$method == null ? other$method != null : !this$method.equals(other$method)) return false;
+        if (!Objects.equals(this$method,other$method)) return false;
         final Object this$charset = this.getCharset();
         final Object other$charset = other.getCharset();
-        if (this$charset == null ? other$charset != null : !this$charset.equals(other$charset)) return false;
+        if (!Objects.equals(this$charset,other$charset)) return false;
         final Object this$signType = this.getSignType();
         final Object other$signType = other.getSignType();
-        if (this$signType == null ? other$signType != null : !this$signType.equals(other$signType)) return false;
+        if (!Objects.equals(this$signType,other$signType)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$timestamp = this.getTimestamp();
         final Object other$timestamp = other.getTimestamp();
-        if (this$timestamp == null ? other$timestamp != null : !this$timestamp.equals(other$timestamp)) return false;
+        if (!Objects.equals(this$timestamp,other$timestamp)) return false;
         final Object this$version = this.getVersion();
         final Object other$version = other.getVersion();
-        if (this$version == null ? other$version != null : !this$version.equals(other$version)) return false;
+        if (!Objects.equals(this$version,other$version)) return false;
         final Object this$notifyUrl = this.getNotifyUrl();
         final Object other$notifyUrl = other.getNotifyUrl();
-        if (this$notifyUrl == null ? other$notifyUrl != null : !this$notifyUrl.equals(other$notifyUrl)) return false;
+        if (!Objects.equals(this$notifyUrl,other$notifyUrl)) return false;
         final Object this$bizContent = this.getBizContent();
         final Object other$bizContent = other.getBizContent();
-        if (this$bizContent == null ? other$bizContent != null : !this$bizContent.equals(other$bizContent))
-            return false;
+        if (!Objects.equals(this$bizContent,other$bizContent)) return false;
         final Object this$returnUrl = this.getReturnUrl();
         final Object other$returnUrl = other.getReturnUrl();
-        if (this$returnUrl == null ? other$returnUrl != null : !this$returnUrl.equals(other$returnUrl)) return false;
-        return true;
+        return Objects.equals(this$returnUrl,other$returnUrl);
     }
 
     protected boolean canEqual(final Object other) {

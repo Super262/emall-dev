@@ -12,11 +12,9 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
 import java.util.Base64;
+import java.util.Objects;
 
-/**
- * Created by 廖师兄
- * 2018-05-30 16:26
- */
+
 public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptServiceImpl {
     /**
      * 密钥算法
@@ -29,10 +27,6 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
 
     /**
      * 加密
-     *
-     * @param key
-     * @param data
-     * @return
      */
     @Override
     public Object encrypt(String key,String data) {
@@ -42,10 +36,6 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
     /**
      * 解密
      * https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_16#menu1
-     *
-     * @param key
-     * @param data
-     * @return
      */
     @Override
     public Object decrypt(String key,String data) {
@@ -54,21 +44,17 @@ public class WxEncryptAndDecryptServiceImpl extends AbstractEncryptAndDecryptSer
         Cipher cipher = null;
         try {
             cipher = Cipher.getInstance(ALGORITHM_MODE_PADDING);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             e.printStackTrace();
         }
         try {
-            cipher.init(Cipher.DECRYPT_MODE,aesKey);
+            Objects.requireNonNull(cipher).init(Cipher.DECRYPT_MODE,aesKey);
         } catch (InvalidKeyException e) {
             e.printStackTrace();
         }
         try {
-            return new String(cipher.doFinal(Base64.getDecoder().decode(data)));
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
+            return new String(Objects.requireNonNull(cipher).doFinal(Base64.getDecoder().decode(data)));
+        } catch (IllegalBlockSizeException | BadPaddingException e) {
             e.printStackTrace();
         }
 

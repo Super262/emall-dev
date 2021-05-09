@@ -4,10 +4,10 @@ import org.apache.http.ssl.SSLContexts;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import javax.net.ssl.SSLContext;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.KeyStore;
+import java.util.Objects;
 
 public class WxPayConfig extends PayConfig {
 
@@ -56,13 +56,11 @@ public class WxPayConfig extends PayConfig {
 
     /**
      * 初始化证书
-     *
-     * @return
      */
-    public SSLContext initSSLContext() {
-        FileInputStream inputStream = null;
+    public void initSSLContext() {
+        FileInputStream inputStream;
         try {
-            inputStream = new FileInputStream(new File(this.keyPath));
+            inputStream = new FileInputStream(this.keyPath);
         } catch (IOException e) {
             throw new RuntimeException("读取微信商户证书文件出错",e);
         }
@@ -72,7 +70,6 @@ public class WxPayConfig extends PayConfig {
             char[] partnerId2charArray = mchId.toCharArray();
             keystore.load(inputStream,partnerId2charArray);
             this.sslContext = SSLContexts.custom().loadKeyMaterial(keystore,partnerId2charArray).build();
-            return this.sslContext;
         } catch (Exception e) {
             throw new RuntimeException("证书文件有问题，请核实！",e);
         } finally {
@@ -148,33 +145,31 @@ public class WxPayConfig extends PayConfig {
         if (o == this) return true;
         if (!(o instanceof WxPayConfig)) return false;
         final WxPayConfig other = (WxPayConfig) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$appSecret = this.getAppSecret();
         final Object other$appSecret = other.getAppSecret();
-        if (this$appSecret == null ? other$appSecret != null : !this$appSecret.equals(other$appSecret)) return false;
+        if (!Objects.equals(this$appSecret,other$appSecret)) return false;
         final Object this$miniAppId = this.getMiniAppId();
         final Object other$miniAppId = other.getMiniAppId();
-        if (this$miniAppId == null ? other$miniAppId != null : !this$miniAppId.equals(other$miniAppId)) return false;
+        if (!Objects.equals(this$miniAppId,other$miniAppId)) return false;
         final Object this$appAppId = this.getAppAppId();
         final Object other$appAppId = other.getAppAppId();
-        if (this$appAppId == null ? other$appAppId != null : !this$appAppId.equals(other$appAppId)) return false;
+        if (!Objects.equals(this$appAppId,other$appAppId)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$mchKey = this.getMchKey();
         final Object other$mchKey = other.getMchKey();
-        if (this$mchKey == null ? other$mchKey != null : !this$mchKey.equals(other$mchKey)) return false;
+        if (!Objects.equals(this$mchKey,other$mchKey)) return false;
         final Object this$keyPath = this.getKeyPath();
         final Object other$keyPath = other.getKeyPath();
-        if (this$keyPath == null ? other$keyPath != null : !this$keyPath.equals(other$keyPath)) return false;
+        if (!Objects.equals(this$keyPath,other$keyPath)) return false;
         final Object this$sslContext = this.getSslContext();
         final Object other$sslContext = other.getSslContext();
-        if (this$sslContext == null ? other$sslContext != null : !this$sslContext.equals(other$sslContext))
-            return false;
-        return true;
+        return Objects.equals(this$sslContext,other$sslContext);
     }
 
     protected boolean canEqual(final Object other) {

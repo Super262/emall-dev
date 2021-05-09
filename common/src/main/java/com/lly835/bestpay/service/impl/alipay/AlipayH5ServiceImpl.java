@@ -22,13 +22,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-/**
- * Created by 廖师兄
- */
 public class AlipayH5ServiceImpl extends AliPayServiceImpl {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AlipayH5ServiceImpl.class);
-    private Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
+    private final Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
             //下划线驼峰互转
             new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create())).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
 

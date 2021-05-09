@@ -2,10 +2,10 @@ package com.lly835.bestpay.model;
 
 import com.lly835.bestpay.enums.BestPayPlatformEnum;
 
+import java.util.Objects;
+
 /**
  * 支付订单查询
- * Created by 廖师兄
- * 2018-05-31 17:52
  */
 public class OrderQueryRequest {
 
@@ -55,19 +55,16 @@ public class OrderQueryRequest {
         if (o == this) return true;
         if (!(o instanceof OrderQueryRequest)) return false;
         final OrderQueryRequest other = (OrderQueryRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$platformEnum = this.getPlatformEnum();
         final Object other$platformEnum = other.getPlatformEnum();
-        if (this$platformEnum == null ? other$platformEnum != null : !this$platformEnum.equals(other$platformEnum))
-            return false;
+        if (!Objects.equals(this$platformEnum,other$platformEnum)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$outOrderId = this.getOutOrderId();
         final Object other$outOrderId = other.getOutOrderId();
-        if (this$outOrderId == null ? other$outOrderId != null : !this$outOrderId.equals(other$outOrderId))
-            return false;
-        return true;
+        return Objects.equals(this$outOrderId,other$outOrderId);
     }
 
     protected boolean canEqual(final Object other) {

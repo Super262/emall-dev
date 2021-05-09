@@ -2,6 +2,8 @@ package com.lly835.bestpay.model;
 
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 
+import java.util.Objects;
+
 /**
  * 支付时请求参数
  */
@@ -53,19 +55,16 @@ public class RefundRequest {
         if (o == this) return true;
         if (!(o instanceof RefundRequest)) return false;
         final RefundRequest other = (RefundRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$payTypeEnum = this.getPayTypeEnum();
         final Object other$payTypeEnum = other.getPayTypeEnum();
-        if (this$payTypeEnum == null ? other$payTypeEnum != null : !this$payTypeEnum.equals(other$payTypeEnum))
-            return false;
+        if (!Objects.equals(this$payTypeEnum,other$payTypeEnum)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$orderAmount = this.getOrderAmount();
         final Object other$orderAmount = other.getOrderAmount();
-        if (this$orderAmount == null ? other$orderAmount != null : !this$orderAmount.equals(other$orderAmount))
-            return false;
-        return true;
+        return Objects.equals(this$orderAmount,other$orderAmount);
     }
 
     protected boolean canEqual(final Object other) {

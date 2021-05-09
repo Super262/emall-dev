@@ -3,10 +3,10 @@ package com.lly835.bestpay.model.wxpay.response;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.util.Objects;
+
 /**
  * 同步返回参数
- * Created by 廖师兄
- * 2017-07-02 13:46
  */
 @Root(name = "xml", strict = false)
 public class WxPaySyncResponse {
@@ -177,54 +177,49 @@ public class WxPaySyncResponse {
         if (o == this) return true;
         if (!(o instanceof WxPaySyncResponse)) return false;
         final WxPaySyncResponse other = (WxPaySyncResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$returnCode = this.getReturnCode();
         final Object other$returnCode = other.getReturnCode();
-        if (this$returnCode == null ? other$returnCode != null : !this$returnCode.equals(other$returnCode))
-            return false;
+        if (!Objects.equals(this$returnCode,other$returnCode)) return false;
         final Object this$returnMsg = this.getReturnMsg();
         final Object other$returnMsg = other.getReturnMsg();
-        if (this$returnMsg == null ? other$returnMsg != null : !this$returnMsg.equals(other$returnMsg)) return false;
+        if (!Objects.equals(this$returnMsg,other$returnMsg)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$deviceInfo = this.getDeviceInfo();
         final Object other$deviceInfo = other.getDeviceInfo();
-        if (this$deviceInfo == null ? other$deviceInfo != null : !this$deviceInfo.equals(other$deviceInfo))
-            return false;
+        if (!Objects.equals(this$deviceInfo,other$deviceInfo)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$resultCode = this.getResultCode();
         final Object other$resultCode = other.getResultCode();
-        if (this$resultCode == null ? other$resultCode != null : !this$resultCode.equals(other$resultCode))
-            return false;
+        if (!Objects.equals(this$resultCode,other$resultCode)) return false;
         final Object this$errCode = this.getErrCode();
         final Object other$errCode = other.getErrCode();
-        if (this$errCode == null ? other$errCode != null : !this$errCode.equals(other$errCode)) return false;
+        if (!Objects.equals(this$errCode,other$errCode)) return false;
         final Object this$errCodeDes = this.getErrCodeDes();
         final Object other$errCodeDes = other.getErrCodeDes();
-        if (this$errCodeDes == null ? other$errCodeDes != null : !this$errCodeDes.equals(other$errCodeDes))
-            return false;
+        if (!Objects.equals(this$errCodeDes,other$errCodeDes)) return false;
         final Object this$tradeType = this.getTradeType();
         final Object other$tradeType = other.getTradeType();
-        if (this$tradeType == null ? other$tradeType != null : !this$tradeType.equals(other$tradeType)) return false;
+        if (!Objects.equals(this$tradeType,other$tradeType)) return false;
         final Object this$prepayId = this.getPrepayId();
         final Object other$prepayId = other.getPrepayId();
-        if (this$prepayId == null ? other$prepayId != null : !this$prepayId.equals(other$prepayId)) return false;
+        if (!Objects.equals(this$prepayId,other$prepayId)) return false;
         final Object this$codeUrl = this.getCodeUrl();
         final Object other$codeUrl = other.getCodeUrl();
-        if (this$codeUrl == null ? other$codeUrl != null : !this$codeUrl.equals(other$codeUrl)) return false;
+        if (!Objects.equals(this$codeUrl,other$codeUrl)) return false;
         final Object this$mwebUrl = this.getMwebUrl();
         final Object other$mwebUrl = other.getMwebUrl();
-        if (this$mwebUrl == null ? other$mwebUrl != null : !this$mwebUrl.equals(other$mwebUrl)) return false;
-        return true;
+        return Objects.equals(this$mwebUrl,other$mwebUrl);
     }
 
     protected boolean canEqual(final Object other) {

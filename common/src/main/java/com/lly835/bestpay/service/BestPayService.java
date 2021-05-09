@@ -6,10 +6,7 @@ import com.lly835.bestpay.model.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-/**
- * 支付相关
- * Created by null on 2017/2/14.
- */
+
 public interface BestPayService {
 
     /**
@@ -29,42 +26,27 @@ public interface BestPayService {
 
     /**
      * 同步回调
-     *
-     * @param request
-     * @return
      */
     PayResponse syncNotify(HttpServletRequest request);
 
     /**
      * 异步回调
-     *
-     * @param notifyData
-     * @return
      */
     PayResponse asyncNotify(String notifyData);
 
     /**
      * 退款
-     *
-     * @param request
-     * @return
      */
     RefundResponse refund(RefundRequest request);
 
     /**
      * 查询订单
-     *
-     * @param request
-     * @return
      */
     OrderQueryResponse query(OrderQueryRequest request);
 
 
     /**
      * 下载对账单
-     *
-     * @param request
-     * @return
      */
     String downloadBill(DownloadBillRequest request);
 

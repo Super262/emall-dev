@@ -1,9 +1,9 @@
 package com.lly835.bestpay.model;
 
+import java.util.Objects;
+
 /**
  * 退款返回的参数
- * Created by 廖师兄
- * 2017-07-08 23:40
  */
 public class RefundResponse {
 
@@ -80,26 +80,22 @@ public class RefundResponse {
         if (o == this) return true;
         if (!(o instanceof RefundResponse)) return false;
         final RefundResponse other = (RefundResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$orderAmount = this.getOrderAmount();
         final Object other$orderAmount = other.getOrderAmount();
-        if (this$orderAmount == null ? other$orderAmount != null : !this$orderAmount.equals(other$orderAmount))
-            return false;
+        if (!Objects.equals(this$orderAmount,other$orderAmount)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$refundId = this.getRefundId();
         final Object other$refundId = other.getRefundId();
-        if (this$refundId == null ? other$refundId != null : !this$refundId.equals(other$refundId)) return false;
+        if (!Objects.equals(this$refundId,other$refundId)) return false;
         final Object this$outRefundNo = this.getOutRefundNo();
         final Object other$outRefundNo = other.getOutRefundNo();
-        if (this$outRefundNo == null ? other$outRefundNo != null : !this$outRefundNo.equals(other$outRefundNo))
-            return false;
-        return true;
+        return Objects.equals(this$outRefundNo,other$outRefundNo);
     }
 
     protected boolean canEqual(final Object other) {

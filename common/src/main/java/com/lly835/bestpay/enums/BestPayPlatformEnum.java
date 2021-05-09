@@ -2,7 +2,6 @@ package com.lly835.bestpay.enums;
 
 /**
  * 支付平台
- * Created by null on 2019/9/19.
  */
 public enum BestPayPlatformEnum {
 
@@ -11,9 +10,9 @@ public enum BestPayPlatformEnum {
     WX("wx","微信"),
     ;
 
-    private String code;
+    private final String code;
 
-    private String name;
+    private final String name;
 
     BestPayPlatformEnum(String code,String name) {
         this.code = code;

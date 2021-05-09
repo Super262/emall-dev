@@ -2,8 +2,6 @@ package com.lly835.bestpay.enums;
 
 /**
  * 订单状态
- * Created by 廖师兄
- * 2018-06-04 16:58
  */
 public enum OrderStatusEnum {
 
@@ -27,7 +25,7 @@ public enum OrderStatusEnum {
     /**
      * 描述 微信退款后有内容
      */
-    private String desc;
+    private final String desc;
 
     OrderStatusEnum(String desc) {
         this.desc = desc;
@@ -35,7 +33,7 @@ public enum OrderStatusEnum {
 
     public static OrderStatusEnum findByName(String name) {
         for (OrderStatusEnum orderStatusEnum : OrderStatusEnum.values()) {
-            if (name.toLowerCase().equals(orderStatusEnum.name().toLowerCase())) {
+            if (name.equalsIgnoreCase(orderStatusEnum.name())) {
                 return orderStatusEnum;
             }
         }

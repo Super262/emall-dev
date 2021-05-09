@@ -7,7 +7,6 @@ import static com.lly835.bestpay.enums.BestPayPlatformEnum.WX;
 
 /**
  * 支付方式
- * Created by null on 2017/2/14.
  */
 public enum BestPayTypeEnum {
 
@@ -30,11 +29,11 @@ public enum BestPayTypeEnum {
     WXPAY_APP("APP",WX,"微信APP支付"),
     ;
 
-    private String code;
+    private final String code;
 
-    private BestPayPlatformEnum platform;
+    private final BestPayPlatformEnum platform;
 
-    private String desc;
+    private final String desc;
 
     BestPayTypeEnum(String code,BestPayPlatformEnum platform,String desc) {
         this.code = code;

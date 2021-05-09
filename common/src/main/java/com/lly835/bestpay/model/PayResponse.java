@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.lly835.bestpay.enums.BestPayPlatformEnum;
 
 import java.net.URI;
+import java.util.Objects;
 
 /**
  * 支付时的同步/异步返回参数
@@ -210,63 +211,58 @@ public class PayResponse {
         if (o == this) return true;
         if (!(o instanceof PayResponse)) return false;
         final PayResponse other = (PayResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$prePayParams = this.getPrePayParams();
         final Object other$prePayParams = other.getPrePayParams();
-        if (this$prePayParams == null ? other$prePayParams != null : !this$prePayParams.equals(other$prePayParams))
-            return false;
+        if (!Objects.equals(this$prePayParams,other$prePayParams)) return false;
         final Object this$payUri = this.getPayUri();
         final Object other$payUri = other.getPayUri();
-        if (this$payUri == null ? other$payUri != null : !this$payUri.equals(other$payUri)) return false;
+        if (!Objects.equals(this$payUri,other$payUri)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$timeStamp = this.getTimeStamp();
         final Object other$timeStamp = other.getTimeStamp();
-        if (this$timeStamp == null ? other$timeStamp != null : !this$timeStamp.equals(other$timeStamp)) return false;
+        if (!Objects.equals(this$timeStamp,other$timeStamp)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$packAge = this.getPackAge();
         final Object other$packAge = other.getPackAge();
-        if (this$packAge == null ? other$packAge != null : !this$packAge.equals(other$packAge)) return false;
+        if (!Objects.equals(this$packAge,other$packAge)) return false;
         final Object this$signType = this.getSignType();
         final Object other$signType = other.getSignType();
-        if (this$signType == null ? other$signType != null : !this$signType.equals(other$signType)) return false;
+        if (!Objects.equals(this$signType,other$signType)) return false;
         final Object this$paySign = this.getPaySign();
         final Object other$paySign = other.getPaySign();
-        if (this$paySign == null ? other$paySign != null : !this$paySign.equals(other$paySign)) return false;
+        if (!Objects.equals(this$paySign,other$paySign)) return false;
         final Object this$orderAmount = this.getOrderAmount();
         final Object other$orderAmount = other.getOrderAmount();
-        if (this$orderAmount == null ? other$orderAmount != null : !this$orderAmount.equals(other$orderAmount))
-            return false;
+        if (!Objects.equals(this$orderAmount,other$orderAmount)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$mwebUrl = this.getMwebUrl();
         final Object other$mwebUrl = other.getMwebUrl();
-        if (this$mwebUrl == null ? other$mwebUrl != null : !this$mwebUrl.equals(other$mwebUrl)) return false;
+        if (!Objects.equals(this$mwebUrl,other$mwebUrl)) return false;
         final Object this$body = this.getBody();
         final Object other$body = other.getBody();
-        if (this$body == null ? other$body != null : !this$body.equals(other$body)) return false;
+        if (!Objects.equals(this$body,other$body)) return false;
         final Object this$codeUrl = this.getCodeUrl();
         final Object other$codeUrl = other.getCodeUrl();
-        if (this$codeUrl == null ? other$codeUrl != null : !this$codeUrl.equals(other$codeUrl)) return false;
+        if (!Objects.equals(this$codeUrl,other$codeUrl)) return false;
         final Object this$attach = this.getAttach();
         final Object other$attach = other.getAttach();
-        if (this$attach == null ? other$attach != null : !this$attach.equals(other$attach)) return false;
+        if (!Objects.equals(this$attach,other$attach)) return false;
         final Object this$payPlatformEnum = this.getPayPlatformEnum();
         final Object other$payPlatformEnum = other.getPayPlatformEnum();
-        if (this$payPlatformEnum == null ? other$payPlatformEnum != null : !this$payPlatformEnum.equals(other$payPlatformEnum))
-            return false;
+        if (!Objects.equals(this$payPlatformEnum,other$payPlatformEnum)) return false;
         final Object this$prepayId = this.getPrepayId();
         final Object other$prepayId = other.getPrepayId();
-        if (this$prepayId == null ? other$prepayId != null : !this$prepayId.equals(other$prepayId)) return false;
-        return true;
+        return Objects.equals(this$prepayId,other$prepayId);
     }
 
     protected boolean canEqual(final Object other) {

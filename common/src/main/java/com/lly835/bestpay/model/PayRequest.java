@@ -3,6 +3,8 @@ package com.lly835.bestpay.model;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.model.alipay.request.AliPayTradeCreateRequest;
 
+import java.util.Objects;
+
 /**
  * 支付时请求参数
  */
@@ -149,42 +151,37 @@ public class PayRequest {
         if (o == this) return true;
         if (!(o instanceof PayRequest)) return false;
         final PayRequest other = (PayRequest) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$payTypeEnum = this.getPayTypeEnum();
         final Object other$payTypeEnum = other.getPayTypeEnum();
-        if (this$payTypeEnum == null ? other$payTypeEnum != null : !this$payTypeEnum.equals(other$payTypeEnum))
-            return false;
+        if (!Objects.equals(this$payTypeEnum,other$payTypeEnum)) return false;
         final Object this$orderId = this.getOrderId();
         final Object other$orderId = other.getOrderId();
-        if (this$orderId == null ? other$orderId != null : !this$orderId.equals(other$orderId)) return false;
+        if (!Objects.equals(this$orderId,other$orderId)) return false;
         final Object this$orderAmount = this.getOrderAmount();
         final Object other$orderAmount = other.getOrderAmount();
-        if (this$orderAmount == null ? other$orderAmount != null : !this$orderAmount.equals(other$orderAmount))
-            return false;
+        if (!Objects.equals(this$orderAmount,other$orderAmount)) return false;
         final Object this$orderName = this.getOrderName();
         final Object other$orderName = other.getOrderName();
-        if (this$orderName == null ? other$orderName != null : !this$orderName.equals(other$orderName)) return false;
+        if (!Objects.equals(this$orderName,other$orderName)) return false;
         final Object this$openid = this.getOpenid();
         final Object other$openid = other.getOpenid();
-        if (this$openid == null ? other$openid != null : !this$openid.equals(other$openid)) return false;
+        if (!Objects.equals(this$openid,other$openid)) return false;
         final Object this$spbillCreateIp = this.getSpbillCreateIp();
         final Object other$spbillCreateIp = other.getSpbillCreateIp();
-        if (this$spbillCreateIp == null ? other$spbillCreateIp != null : !this$spbillCreateIp.equals(other$spbillCreateIp))
-            return false;
+        if (!Objects.equals(this$spbillCreateIp,other$spbillCreateIp)) return false;
         final Object this$attach = this.getAttach();
         final Object other$attach = other.getAttach();
-        if (this$attach == null ? other$attach != null : !this$attach.equals(other$attach)) return false;
+        if (!Objects.equals(this$attach,other$attach)) return false;
         final Object this$returnUrl = this.getReturnUrl();
         final Object other$returnUrl = other.getReturnUrl();
-        if (this$returnUrl == null ? other$returnUrl != null : !this$returnUrl.equals(other$returnUrl)) return false;
+        if (!Objects.equals(this$returnUrl,other$returnUrl)) return false;
         final Object this$buyerLogonId = this.getBuyerLogonId();
         final Object other$buyerLogonId = other.getBuyerLogonId();
-        if (this$buyerLogonId == null ? other$buyerLogonId != null : !this$buyerLogonId.equals(other$buyerLogonId))
-            return false;
+        if (!Objects.equals(this$buyerLogonId,other$buyerLogonId)) return false;
         final Object this$buyerId = this.getBuyerId();
         final Object other$buyerId = other.getBuyerId();
-        if (this$buyerId == null ? other$buyerId != null : !this$buyerId.equals(other$buyerId)) return false;
-        return true;
+        return Objects.equals(this$buyerId,other$buyerId);
     }
 
     protected boolean canEqual(final Object other) {

@@ -34,18 +34,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
-/**
- * Created by this on 2019/9/8 15:50
- */
 public class AliPayServiceImpl extends BestPayServiceImpl {
 
     protected final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AliPayServiceImpl.class);
-    protected AliPayConfig aliPayConfig;
-    private Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
+    private final Retrofit retrofit = new Retrofit.Builder().baseUrl(AliPayConstants.ALIPAY_GATEWAY_OPEN).addConverterFactory(GsonConverterFactory.create(
             //下划线驼峰互转
             new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create())).client(new OkHttpClient.Builder().addInterceptor((new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))).build()).build();
+    protected AliPayConfig aliPayConfig;
 
     public void setAliPayConfig(AliPayConfig aliPayConfig) {
         this.aliPayConfig = aliPayConfig;
@@ -105,9 +103,6 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
 
     /**
      * 异步通知
-     *
-     * @param notifyData
-     * @return
      */
     @Override
     public PayResponse asyncNotify(String notifyData) {
@@ -123,7 +118,7 @@ public class AliPayServiceImpl extends BestPayServiceImpl {
         }
         HashMap<String, String> params = MapUtil.form2MapWithCamelCase(notifyData);
         AliPayAsyncResponse response = MapUtil.mapToObject(params,AliPayAsyncResponse.class);
-        String tradeStatus = response.getTradeStatus();
+        String tradeStatus = Objects.requireNonNull(response).getTradeStatus();
         if (!tradeStatus.equals(AliPayConstants.TRADE_FINISHED) && !tradeStatus.equals(AliPayConstants.TRADE_SUCCESS)) {
             throw new RuntimeException("【支付宝支付异步通知】发起支付, trade_status != SUCCESS | FINISHED");
         }

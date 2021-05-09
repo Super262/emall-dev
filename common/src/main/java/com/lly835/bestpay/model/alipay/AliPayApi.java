@@ -1,6 +1,5 @@
 package com.lly835.bestpay.model.alipay;
 
-
 import com.lly835.bestpay.model.alipay.response.AliPayOrderCreateResponse;
 import com.lly835.bestpay.model.alipay.response.AliPayOrderQueryResponse;
 import retrofit2.Call;

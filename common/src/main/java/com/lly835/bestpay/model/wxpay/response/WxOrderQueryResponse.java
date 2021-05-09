@@ -3,10 +3,8 @@ package com.lly835.bestpay.model.wxpay.response;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-/**
- * Created by 廖师兄
- * 2018-05-31 17:40
- */
+import java.util.Objects;
+
 @Root(name = "xml", strict = false)
 public class WxOrderQueryResponse {
 
@@ -317,101 +315,88 @@ public class WxOrderQueryResponse {
         if (o == this) return true;
         if (!(o instanceof WxOrderQueryResponse)) return false;
         final WxOrderQueryResponse other = (WxOrderQueryResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$returnCode = this.getReturnCode();
         final Object other$returnCode = other.getReturnCode();
-        if (this$returnCode == null ? other$returnCode != null : !this$returnCode.equals(other$returnCode))
-            return false;
+        if (!Objects.equals(this$returnCode,other$returnCode)) return false;
         final Object this$returnMsg = this.getReturnMsg();
         final Object other$returnMsg = other.getReturnMsg();
-        if (this$returnMsg == null ? other$returnMsg != null : !this$returnMsg.equals(other$returnMsg)) return false;
+        if (!Objects.equals(this$returnMsg,other$returnMsg)) return false;
         final Object this$appid = this.getAppid();
         final Object other$appid = other.getAppid();
-        if (this$appid == null ? other$appid != null : !this$appid.equals(other$appid)) return false;
+        if (!Objects.equals(this$appid,other$appid)) return false;
         final Object this$mchId = this.getMchId();
         final Object other$mchId = other.getMchId();
-        if (this$mchId == null ? other$mchId != null : !this$mchId.equals(other$mchId)) return false;
+        if (!Objects.equals(this$mchId,other$mchId)) return false;
         final Object this$nonceStr = this.getNonceStr();
         final Object other$nonceStr = other.getNonceStr();
-        if (this$nonceStr == null ? other$nonceStr != null : !this$nonceStr.equals(other$nonceStr)) return false;
+        if (!Objects.equals(this$nonceStr,other$nonceStr)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$resultCode = this.getResultCode();
         final Object other$resultCode = other.getResultCode();
-        if (this$resultCode == null ? other$resultCode != null : !this$resultCode.equals(other$resultCode))
-            return false;
+        if (!Objects.equals(this$resultCode,other$resultCode)) return false;
         final Object this$errCode = this.getErrCode();
         final Object other$errCode = other.getErrCode();
-        if (this$errCode == null ? other$errCode != null : !this$errCode.equals(other$errCode)) return false;
+        if (!Objects.equals(this$errCode,other$errCode)) return false;
         final Object this$errCodeDes = this.getErrCodeDes();
         final Object other$errCodeDes = other.getErrCodeDes();
-        if (this$errCodeDes == null ? other$errCodeDes != null : !this$errCodeDes.equals(other$errCodeDes))
-            return false;
+        if (!Objects.equals(this$errCodeDes,other$errCodeDes)) return false;
         final Object this$deviceInfo = this.getDeviceInfo();
         final Object other$deviceInfo = other.getDeviceInfo();
-        if (this$deviceInfo == null ? other$deviceInfo != null : !this$deviceInfo.equals(other$deviceInfo))
-            return false;
+        if (!Objects.equals(this$deviceInfo,other$deviceInfo)) return false;
         final Object this$openid = this.getOpenid();
         final Object other$openid = other.getOpenid();
-        if (this$openid == null ? other$openid != null : !this$openid.equals(other$openid)) return false;
+        if (!Objects.equals(this$openid,other$openid)) return false;
         final Object this$isSubscribe = this.getIsSubscribe();
         final Object other$isSubscribe = other.getIsSubscribe();
-        if (this$isSubscribe == null ? other$isSubscribe != null : !this$isSubscribe.equals(other$isSubscribe))
-            return false;
+        if (!Objects.equals(this$isSubscribe,other$isSubscribe)) return false;
         final Object this$tradeType = this.getTradeType();
         final Object other$tradeType = other.getTradeType();
-        if (this$tradeType == null ? other$tradeType != null : !this$tradeType.equals(other$tradeType)) return false;
+        if (!Objects.equals(this$tradeType,other$tradeType)) return false;
         final Object this$tradeState = this.getTradeState();
         final Object other$tradeState = other.getTradeState();
-        if (this$tradeState == null ? other$tradeState != null : !this$tradeState.equals(other$tradeState))
-            return false;
+        if (!Objects.equals(this$tradeState,other$tradeState)) return false;
         final Object this$bankType = this.getBankType();
         final Object other$bankType = other.getBankType();
-        if (this$bankType == null ? other$bankType != null : !this$bankType.equals(other$bankType)) return false;
+        if (!Objects.equals(this$bankType,other$bankType)) return false;
         final Object this$totalFee = this.getTotalFee();
         final Object other$totalFee = other.getTotalFee();
-        if (this$totalFee == null ? other$totalFee != null : !this$totalFee.equals(other$totalFee)) return false;
+        if (!Objects.equals(this$totalFee,other$totalFee)) return false;
         final Object this$settlementTotalFee = this.getSettlementTotalFee();
         final Object other$settlementTotalFee = other.getSettlementTotalFee();
-        if (this$settlementTotalFee == null ? other$settlementTotalFee != null : !this$settlementTotalFee.equals(other$settlementTotalFee))
-            return false;
+        if (!Objects.equals(this$settlementTotalFee,other$settlementTotalFee)) return false;
         final Object this$feeType = this.getFeeType();
         final Object other$feeType = other.getFeeType();
-        if (this$feeType == null ? other$feeType != null : !this$feeType.equals(other$feeType)) return false;
+        if (!Objects.equals(this$feeType,other$feeType)) return false;
         final Object this$cashFee = this.getCashFee();
         final Object other$cashFee = other.getCashFee();
-        if (this$cashFee == null ? other$cashFee != null : !this$cashFee.equals(other$cashFee)) return false;
+        if (!Objects.equals(this$cashFee,other$cashFee)) return false;
         final Object this$cashFeeType = this.getCashFeeType();
         final Object other$cashFeeType = other.getCashFeeType();
-        if (this$cashFeeType == null ? other$cashFeeType != null : !this$cashFeeType.equals(other$cashFeeType))
-            return false;
+        if (!Objects.equals(this$cashFeeType,other$cashFeeType)) return false;
         final Object this$couponFee = this.getCouponFee();
         final Object other$couponFee = other.getCouponFee();
-        if (this$couponFee == null ? other$couponFee != null : !this$couponFee.equals(other$couponFee)) return false;
+        if (!Objects.equals(this$couponFee,other$couponFee)) return false;
         final Object this$couponCount = this.getCouponCount();
         final Object other$couponCount = other.getCouponCount();
-        if (this$couponCount == null ? other$couponCount != null : !this$couponCount.equals(other$couponCount))
-            return false;
+        if (!Objects.equals(this$couponCount,other$couponCount)) return false;
         final Object this$transactionId = this.getTransactionId();
         final Object other$transactionId = other.getTransactionId();
-        if (this$transactionId == null ? other$transactionId != null : !this$transactionId.equals(other$transactionId))
-            return false;
+        if (!Objects.equals(this$transactionId,other$transactionId)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$attach = this.getAttach();
         final Object other$attach = other.getAttach();
-        if (this$attach == null ? other$attach != null : !this$attach.equals(other$attach)) return false;
+        if (!Objects.equals(this$attach,other$attach)) return false;
         final Object this$timeEnd = this.getTimeEnd();
         final Object other$timeEnd = other.getTimeEnd();
-        if (this$timeEnd == null ? other$timeEnd != null : !this$timeEnd.equals(other$timeEnd)) return false;
+        if (!Objects.equals(this$timeEnd,other$timeEnd)) return false;
         final Object this$tradeStateDesc = this.getTradeStateDesc();
         final Object other$tradeStateDesc = other.getTradeStateDesc();
-        if (this$tradeStateDesc == null ? other$tradeStateDesc != null : !this$tradeStateDesc.equals(other$tradeStateDesc))
-            return false;
-        return true;
+        return Objects.equals(this$tradeStateDesc,other$tradeStateDesc);
     }
 
     protected boolean canEqual(final Object other) {

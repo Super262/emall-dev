@@ -1,10 +1,8 @@
 package com.lly835.bestpay.model.alipay.response;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-/**
- * Created by this on 2019/9/13 2:36
- */
 public class AliPayAsyncResponse implements Serializable {
 
 
@@ -262,72 +260,64 @@ public class AliPayAsyncResponse implements Serializable {
         if (o == this) return true;
         if (!(o instanceof AliPayAsyncResponse)) return false;
         final AliPayAsyncResponse other = (AliPayAsyncResponse) o;
-        if (!other.canEqual((Object) this)) return false;
+        if (!other.canEqual(this)) return false;
         final Object this$notifyTime = this.getNotifyTime();
         final Object other$notifyTime = other.getNotifyTime();
-        if (this$notifyTime == null ? other$notifyTime != null : !this$notifyTime.equals(other$notifyTime))
-            return false;
+        if (!Objects.equals(this$notifyTime,other$notifyTime)) return false;
         final Object this$notifyType = this.getNotifyType();
         final Object other$notifyType = other.getNotifyType();
-        if (this$notifyType == null ? other$notifyType != null : !this$notifyType.equals(other$notifyType))
-            return false;
+        if (!Objects.equals(this$notifyType,other$notifyType)) return false;
         final Object this$notifyId = this.getNotifyId();
         final Object other$notifyId = other.getNotifyId();
-        if (this$notifyId == null ? other$notifyId != null : !this$notifyId.equals(other$notifyId)) return false;
+        if (!Objects.equals(this$notifyId,other$notifyId)) return false;
         final Object this$charset = this.getCharset();
         final Object other$charset = other.getCharset();
-        if (this$charset == null ? other$charset != null : !this$charset.equals(other$charset)) return false;
+        if (!Objects.equals(this$charset,other$charset)) return false;
         final Object this$version = this.getVersion();
         final Object other$version = other.getVersion();
-        if (this$version == null ? other$version != null : !this$version.equals(other$version)) return false;
+        if (!Objects.equals(this$version,other$version)) return false;
         final Object this$signType = this.getSignType();
         final Object other$signType = other.getSignType();
-        if (this$signType == null ? other$signType != null : !this$signType.equals(other$signType)) return false;
+        if (!Objects.equals(this$signType,other$signType)) return false;
         final Object this$sign = this.getSign();
         final Object other$sign = other.getSign();
-        if (this$sign == null ? other$sign != null : !this$sign.equals(other$sign)) return false;
+        if (!Objects.equals(this$sign,other$sign)) return false;
         final Object this$authAppId = this.getAuthAppId();
         final Object other$authAppId = other.getAuthAppId();
-        if (this$authAppId == null ? other$authAppId != null : !this$authAppId.equals(other$authAppId)) return false;
+        if (!Objects.equals(this$authAppId,other$authAppId)) return false;
         final Object this$tradeNo = this.getTradeNo();
         final Object other$tradeNo = other.getTradeNo();
-        if (this$tradeNo == null ? other$tradeNo != null : !this$tradeNo.equals(other$tradeNo)) return false;
+        if (!Objects.equals(this$tradeNo,other$tradeNo)) return false;
         final Object this$appId = this.getAppId();
         final Object other$appId = other.getAppId();
-        if (this$appId == null ? other$appId != null : !this$appId.equals(other$appId)) return false;
+        if (!Objects.equals(this$appId,other$appId)) return false;
         final Object this$outTradeNo = this.getOutTradeNo();
         final Object other$outTradeNo = other.getOutTradeNo();
-        if (this$outTradeNo == null ? other$outTradeNo != null : !this$outTradeNo.equals(other$outTradeNo))
-            return false;
+        if (!Objects.equals(this$outTradeNo,other$outTradeNo)) return false;
         final Object this$tradeStatus = this.getTradeStatus();
         final Object other$tradeStatus = other.getTradeStatus();
-        if (this$tradeStatus == null ? other$tradeStatus != null : !this$tradeStatus.equals(other$tradeStatus))
-            return false;
+        if (!Objects.equals(this$tradeStatus,other$tradeStatus)) return false;
         final Object this$totalAmount = this.getTotalAmount();
         final Object other$totalAmount = other.getTotalAmount();
-        if (this$totalAmount == null ? other$totalAmount != null : !this$totalAmount.equals(other$totalAmount))
-            return false;
+        if (!Objects.equals(this$totalAmount,other$totalAmount)) return false;
         final Object this$receiptAmount = this.getReceiptAmount();
         final Object other$receiptAmount = other.getReceiptAmount();
-        if (this$receiptAmount == null ? other$receiptAmount != null : !this$receiptAmount.equals(other$receiptAmount))
-            return false;
+        if (!Objects.equals(this$receiptAmount,other$receiptAmount)) return false;
         final Object this$buyerPayAmount = this.getBuyerPayAmount();
         final Object other$buyerPayAmount = other.getBuyerPayAmount();
-        if (this$buyerPayAmount == null ? other$buyerPayAmount != null : !this$buyerPayAmount.equals(other$buyerPayAmount))
-            return false;
+        if (!Objects.equals(this$buyerPayAmount,other$buyerPayAmount)) return false;
         final Object this$subject = this.getSubject();
         final Object other$subject = other.getSubject();
-        if (this$subject == null ? other$subject != null : !this$subject.equals(other$subject)) return false;
+        if (!Objects.equals(this$subject,other$subject)) return false;
         final Object this$body = this.getBody();
         final Object other$body = other.getBody();
-        if (this$body == null ? other$body != null : !this$body.equals(other$body)) return false;
+        if (!Objects.equals(this$body,other$body)) return false;
         final Object this$gmtCreate = this.getGmtCreate();
         final Object other$gmtCreate = other.getGmtCreate();
-        if (this$gmtCreate == null ? other$gmtCreate != null : !this$gmtCreate.equals(other$gmtCreate)) return false;
+        if (!Objects.equals(this$gmtCreate,other$gmtCreate)) return false;
         final Object this$gmtClose = this.getGmtClose();
         final Object other$gmtClose = other.getGmtClose();
-        if (this$gmtClose == null ? other$gmtClose != null : !this$gmtClose.equals(other$gmtClose)) return false;
-        return true;
+        return Objects.equals(this$gmtClose,other$gmtClose);
     }
 
     protected boolean canEqual(final Object other) {
