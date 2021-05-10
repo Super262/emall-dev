@@ -6,6 +6,7 @@ import com.fengwei.service.IProductMapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -99,7 +100,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
                 return productMonitorMapper.insert((ProductMonitor) record.getRawData());
             }
         }
-        return -1;
+        return 0;
     }
 
     @Override
@@ -131,7 +132,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
                 return productMonitorMapper.insertSelective((ProductMonitor) record.getRawData());
             }
         }
-        return -1;
+        return 0;
     }
 
     @Override
@@ -157,25 +158,102 @@ public class ProductMapperServiceImpl implements IProductMapperService {
                 break;
             }
             case "cpu": {
+                ProductCpu p = productCpuMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
                 break;
             }
             case "memory": {
+                ProductMemory p = productMemoryMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
                 break;
             }
             case "gpu": {
+                ProductGpu p = productGpuMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
                 break;
             }
             case "ssd": {
+                ProductSsd p = productSsdMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
                 break;
             }
             case "hdd": {
-
+                ProductHdd p = productHddMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
+                break;
             }
             case "powerSupply": {
-
+                ProductPowerSupply p = productPowerSupplyMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
+                break;
             }
             case "monitor": {
-
+                ProductMonitor p = productMonitorMapper.selectByPrimaryKey(trueId);
+                result.setName(p.getName());
+                result.setSubtitle(p.getSubtitle());
+                result.setMainImage(p.getMainImage());
+                result.setSubImages(p.getSubImages());
+                result.setPrice(p.getPrice());
+                result.setStock(p.getStock());
+                result.setStatus(p.getStatus());
+                result.setCreatedTime(p.getCreatedTime());
+                result.setUpdatedTime(p.getUpdatedTime());
+                result.setRawData(p);
+                break;
             }
             default: {
                 return null;
@@ -186,16 +264,77 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int updateByPrimaryKeySelective(Product record) {
+        String category = record.getId().split("#")[0];
+        switch (category) {
+            case "computer": {
+                return productComputerMapper.updateByPrimaryKeySelective((ProductComputer) record.getRawData());
+            }
+            case "cpu": {
+                return productCpuMapper.updateByPrimaryKeySelective((ProductCpu) record.getRawData());
+            }
+            case "memory": {
+                return productMemoryMapper.updateByPrimaryKeySelective((ProductMemory) record.getRawData());
+            }
+            case "gpu": {
+                return productGpuMapper.updateByPrimaryKeySelective((ProductGpu) record.getRawData());
+            }
+            case "ssd": {
+                return productSsdMapper.updateByPrimaryKeySelective((ProductSsd) record.getRawData());
+            }
+            case "hdd": {
+                return productHddMapper.updateByPrimaryKeySelective((ProductHdd) record.getRawData());
+            }
+            case "powerSupply": {
+                return productPowerSupplyMapper.updateByPrimaryKeySelective((ProductPowerSupply) record.getRawData());
+            }
+            case "monitor": {
+                return productMonitorMapper.updateByPrimaryKeySelective((ProductMonitor) record.getRawData());
+            }
+        }
         return 0;
     }
 
     @Override
     public int updateByPrimaryKey(Product record) {
+        String category = record.getId().split("#")[0];
+        switch (category) {
+            case "computer": {
+                return productComputerMapper.updateByPrimaryKey((ProductComputer) record.getRawData());
+            }
+            case "cpu": {
+                return productCpuMapper.updateByPrimaryKey((ProductCpu) record.getRawData());
+            }
+            case "memory": {
+                return productMemoryMapper.updateByPrimaryKey((ProductMemory) record.getRawData());
+            }
+            case "gpu": {
+                return productGpuMapper.updateByPrimaryKey((ProductGpu) record.getRawData());
+            }
+            case "ssd": {
+                return productSsdMapper.updateByPrimaryKey((ProductSsd) record.getRawData());
+            }
+            case "hdd": {
+                return productHddMapper.updateByPrimaryKey((ProductHdd) record.getRawData());
+            }
+            case "powerSupply": {
+                return productPowerSupplyMapper.updateByPrimaryKey((ProductPowerSupply) record.getRawData());
+            }
+            case "monitor": {
+                return productMonitorMapper.updateByPrimaryKey((ProductMonitor) record.getRawData());
+            }
+        }
         return 0;
     }
 
     @Override
     public List<Product> selectByProductIdSet(Set<String> productIdSet) {
-        return null;
+        List<Product> results = new LinkedList<>();
+        for (String id : productIdSet) {
+            Product item = this.selectByPrimaryKey(id);
+            if (item != null) {
+                results.add(item);
+            }
+        }
+        return results;
     }
 }
