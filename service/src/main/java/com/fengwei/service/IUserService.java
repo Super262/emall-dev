@@ -3,6 +3,7 @@ package com.fengwei.service;
 
 import com.fengwei.pojo.MallUser;
 import com.fengwei.pojo.vo.ResponseVo;
+import org.springframework.stereotype.Service;
 
 public interface IUserService {
 

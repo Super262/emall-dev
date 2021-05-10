@@ -1,6 +1,7 @@
 package com.fengwei.service;
 
 import com.fengwei.pojo.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;

@@ -59,6 +59,13 @@ public class UserPayment {
     @Column(name = "updated_time")
     private Date updatedTime;
 
+    public UserPayment(Long orderNo,Integer paymentPlatform,String platformStatus,BigDecimal paymentAmount) {
+        this.orderNo = orderNo;
+        this.paymentPlatform = paymentPlatform;
+        this.platformStatus = platformStatus;
+        this.paymentAmount = paymentAmount;
+    }
+
     /**
      * @return id
      */

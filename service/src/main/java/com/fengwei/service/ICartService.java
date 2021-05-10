@@ -6,6 +6,7 @@ import com.fengwei.forms.CartUpdateForm;
 import com.fengwei.pojo.CartItem;
 import com.fengwei.pojo.vo.CartVo;
 import com.fengwei.pojo.vo.ResponseVo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,9 +16,9 @@ public interface ICartService {
 
     ResponseVo<CartVo> getListOfItems(Integer uid);
 
-    ResponseVo<CartVo> updateItem(Integer uid,Integer productId,CartUpdateForm form);
+    ResponseVo<CartVo> updateItem(Integer uid,String productId,CartUpdateForm form);
 
-    ResponseVo<CartVo> deleteItem(Integer uid,Integer productId);
+    ResponseVo<CartVo> deleteItem(Integer uid,String productId);
 
     ResponseVo<CartVo> setAllSelected(Integer uid);
 

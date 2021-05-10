@@ -3,6 +3,7 @@ package com.fengwei.service;
 import com.fengwei.pojo.UserPayment;
 import com.lly835.bestpay.enums.BestPayTypeEnum;
 import com.lly835.bestpay.model.PayResponse;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
