@@ -3,6 +3,7 @@ package com.fengwei.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "product_monitor")
@@ -20,7 +21,7 @@ public class ProductMonitor {
     private String usage;
 
     @Column(name = "screen_size")
-    private Long screenSize;
+    private BigDecimal screenSize;
 
     private Integer widescreen;
 
@@ -28,7 +29,7 @@ public class ProductMonitor {
     private String recommendedResolution;
 
     @Column(name = "refresh_rate")
-    private Long refreshRate;
+    private BigDecimal refreshRate;
 
     @Column(name = "viewing_angle")
     private String viewingAngle;
@@ -70,7 +71,7 @@ public class ProductMonitor {
     @Column(name = "main_image")
     private String mainImage;
 
-    private Long price;
+    private BigDecimal price;
 
     private Integer stock;
 
@@ -160,14 +161,14 @@ public class ProductMonitor {
     /**
      * @return screen_size
      */
-    public Long getScreenSize() {
+    public BigDecimal getScreenSize() {
         return screenSize;
     }
 
     /**
      * @param screenSize
      */
-    public void setScreenSize(Long screenSize) {
+    public void setScreenSize(BigDecimal screenSize) {
         this.screenSize = screenSize;
     }
 
@@ -202,14 +203,14 @@ public class ProductMonitor {
     /**
      * @return refresh_rate
      */
-    public Long getRefreshRate() {
+    public BigDecimal getRefreshRate() {
         return refreshRate;
     }
 
     /**
      * @param refreshRate
      */
-    public void setRefreshRate(Long refreshRate) {
+    public void setRefreshRate(BigDecimal refreshRate) {
         this.refreshRate = refreshRate;
     }
 
@@ -426,14 +427,14 @@ public class ProductMonitor {
     /**
      * @return price
      */
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     /**
      * @param price
      */
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

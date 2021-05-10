@@ -3,6 +3,7 @@ package com.fengwei.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "product_power_supply")
@@ -24,7 +25,7 @@ public class ProductPowerSupply {
     @Column(name = "main_image")
     private String mainImage;
 
-    private Long price;
+    private BigDecimal price;
 
     private Integer stock;
 
@@ -144,14 +145,14 @@ public class ProductPowerSupply {
     /**
      * @return price
      */
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     /**
      * @param price
      */
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

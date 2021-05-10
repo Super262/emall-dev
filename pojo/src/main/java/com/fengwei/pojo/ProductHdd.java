@@ -3,6 +3,7 @@ package com.fengwei.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "product_hdd")
@@ -27,16 +28,16 @@ public class ProductHdd {
     @Column(name = "form_factor")
     private Integer formFactor;
 
-    private Long height;
+    private BigDecimal height;
 
-    private Long width;
+    private BigDecimal width;
 
-    private Long depth;
+    private BigDecimal depth;
 
     @Column(name = "main_image")
     private String mainImage;
 
-    private Long price;
+    private BigDecimal price;
 
     private Integer stock;
 
@@ -182,42 +183,42 @@ public class ProductHdd {
     /**
      * @return height
      */
-    public Long getHeight() {
+    public BigDecimal getHeight() {
         return height;
     }
 
     /**
      * @param height
      */
-    public void setHeight(Long height) {
+    public void setHeight(BigDecimal height) {
         this.height = height;
     }
 
     /**
      * @return width
      */
-    public Long getWidth() {
+    public BigDecimal getWidth() {
         return width;
     }
 
     /**
      * @param width
      */
-    public void setWidth(Long width) {
+    public void setWidth(BigDecimal width) {
         this.width = width;
     }
 
     /**
      * @return depth
      */
-    public Long getDepth() {
+    public BigDecimal getDepth() {
         return depth;
     }
 
     /**
      * @param depth
      */
-    public void setDepth(Long depth) {
+    public void setDepth(BigDecimal depth) {
         this.depth = depth;
     }
 
@@ -238,14 +239,14 @@ public class ProductHdd {
     /**
      * @return price
      */
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     /**
      * @param price
      */
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

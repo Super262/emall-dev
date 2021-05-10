@@ -3,6 +3,7 @@ package com.fengwei.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "product_memory")
@@ -27,7 +28,7 @@ public class ProductMemory {
 
     private String timing;
 
-    private Long voltage;
+    private BigDecimal voltage;
 
     /**
      * 0-无；1-有
@@ -38,7 +39,7 @@ public class ProductMemory {
     @Column(name = "main_image")
     private String mainImage;
 
-    private Long price;
+    private BigDecimal price;
 
     private Integer stock;
 
@@ -182,14 +183,14 @@ public class ProductMemory {
     /**
      * @return voltage
      */
-    public Long getVoltage() {
+    public BigDecimal getVoltage() {
         return voltage;
     }
 
     /**
      * @param voltage
      */
-    public void setVoltage(Long voltage) {
+    public void setVoltage(BigDecimal voltage) {
         this.voltage = voltage;
     }
 
@@ -228,14 +229,14 @@ public class ProductMemory {
     /**
      * @return price
      */
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
     /**
      * @param price
      */
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
