@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "product_ssd")
 public class ProductSsd {
     @Id
-    private String id;
+    private Integer id;
 
     private String brand;
 
@@ -63,14 +63,14 @@ public class ProductSsd {
     /**
      * @return id
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * @param id
      */
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -1,44 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fengwei.mapper.ProductCpuMapper">
-    <resultMap id="BaseResultMap" type="com.fengwei.pojo.ProductCpu">
-        <!--
-          WARNING - @mbg.generated
-        -->
-        <id column="id" property="id" jdbcType="VARCHAR"/>
-        <result column="brand" property="brand" jdbcType="VARCHAR"/>
-        <result column="series" property="series" jdbcType="VARCHAR"/>
-        <result column="name" property="name" jdbcType="VARCHAR"/>
-        <result column="model" property="model" jdbcType="VARCHAR"/>
-        <result column="cpu_socket_type" property="cpuSocketType" jdbcType="VARCHAR"/>
-        <result column="core_name" property="coreName" jdbcType="VARCHAR"/>
-        <result column="cores_count" property="coresCount" jdbcType="INTEGER"/>
-        <result column="threads_count" property="threadsCount" jdbcType="INTEGER"/>
-        <result column="operating_frequency" property="operatingFrequency" jdbcType="INTEGER"/>
-        <result column="max_turbo_frequency" property="maxTurboFrequency" jdbcType="INTEGER"/>
-        <result column="l1_cache" property="l1Cache" jdbcType="INTEGER"/>
-        <result column="l2_cache" property="l2Cache" jdbcType="INTEGER"/>
-        <result column="l3_cache" property="l3Cache" jdbcType="INTEGER"/>
-        <result column="manufacturing_tech" property="manufacturingTech" jdbcType="INTEGER"/>
-        <result column="memory_types" property="memoryTypes" jdbcType="INTEGER"/>
-        <result column="memory_channel" property="memoryChannel" jdbcType="INTEGER"/>
-        <result column="integrated_graphics" property="integratedGraphics" jdbcType="BIT"/>
-        <result column="graphics_card_name" property="graphicsCardName" jdbcType="VARCHAR"/>
-        <result column="graphics_base_frequency" property="graphicsBaseFrequency" jdbcType="INTEGER"/>
-        <result column="graphics_max_dynamic_frequency" property="graphicsMaxDynamicFrequency" jdbcType="INTEGER"/>
-        <result column="pci_express_revision" property="pciExpressRevision" jdbcType="INTEGER"/>
-        <result column="max_number_of_pci_express_lanes" property="maxNumberOfPciExpressLanes" jdbcType="INTEGER"/>
-        <result column="thermal_design_power" property="thermalDesignPower" jdbcType="INTEGER"/>
-        <result column="cooling_device" property="coolingDevice" jdbcType="BIT"/>
-        <result column="virtualization_technology_support" property="virtualizationTechnologySupport"
-                jdbcType="INTEGER"/>
-        <result column="hyper_threading_support" property="hyperThreadingSupport" jdbcType="INTEGER"/>
-        <result column="main_image" property="mainImage" jdbcType="VARCHAR"/>
-        <result column="price" property="price" jdbcType="DECIMAL"/>
-        <result column="stock" property="stock" jdbcType="INTEGER"/>
-        <result column="status" property="status" jdbcType="INTEGER"/>
-        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
-        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
-        <result column="sub_images" property="subImages" jdbcType="LONGVARCHAR"/>
-    </resultMap>
+<mapper namespace="com.fengwei.mapper.ProductCpuMapper" >
+  <resultMap id="BaseResultMap" type="com.fengwei.pojo.ProductCpu" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="series" property="series" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="cpu_socket_type" property="cpuSocketType" jdbcType="VARCHAR" />
+    <result column="core_name" property="coreName" jdbcType="VARCHAR" />
+    <result column="cores_count" property="coresCount" jdbcType="INTEGER" />
+    <result column="threads_count" property="threadsCount" jdbcType="INTEGER" />
+    <result column="operating_frequency" property="operatingFrequency" jdbcType="INTEGER" />
+    <result column="max_turbo_frequency" property="maxTurboFrequency" jdbcType="INTEGER" />
+    <result column="l1_cache" property="l1Cache" jdbcType="INTEGER" />
+    <result column="l2_cache" property="l2Cache" jdbcType="INTEGER" />
+    <result column="l3_cache" property="l3Cache" jdbcType="INTEGER" />
+    <result column="manufacturing_tech" property="manufacturingTech" jdbcType="INTEGER" />
+    <result column="memory_types" property="memoryTypes" jdbcType="INTEGER" />
+    <result column="memory_channel" property="memoryChannel" jdbcType="INTEGER" />
+    <result column="integrated_graphics" property="integratedGraphics" jdbcType="BIT" />
+    <result column="graphics_card_name" property="graphicsCardName" jdbcType="VARCHAR" />
+    <result column="graphics_base_frequency" property="graphicsBaseFrequency" jdbcType="INTEGER" />
+    <result column="graphics_max_dynamic_frequency" property="graphicsMaxDynamicFrequency" jdbcType="INTEGER" />
+    <result column="pci_express_revision" property="pciExpressRevision" jdbcType="INTEGER" />
+    <result column="max_number_of_pci_express_lanes" property="maxNumberOfPciExpressLanes" jdbcType="INTEGER" />
+    <result column="thermal_design_power" property="thermalDesignPower" jdbcType="INTEGER" />
+    <result column="cooling_device" property="coolingDevice" jdbcType="BIT" />
+    <result column="virtualization_technology_support" property="virtualizationTechnologySupport" jdbcType="INTEGER" />
+    <result column="hyper_threading_support" property="hyperThreadingSupport" jdbcType="INTEGER" />
+    <result column="main_image" property="mainImage" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+    <result column="sub_images" property="subImages" jdbcType="LONGVARCHAR" />
+  </resultMap>
 </mapper>
