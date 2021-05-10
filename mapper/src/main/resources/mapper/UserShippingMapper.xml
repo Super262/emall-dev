@@ -1,21 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fengwei.mapper.UserShippingMapper" >
-  <resultMap id="BaseResultMap" type="com.fengwei.pojo.UserShipping" >
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="receiver_name" property="receiverName" jdbcType="VARCHAR" />
-    <result column="receiver_phone" property="receiverPhone" jdbcType="VARCHAR" />
-    <result column="receiver_mobile" property="receiverMobile" jdbcType="VARCHAR" />
-    <result column="receiver_province" property="receiverProvince" jdbcType="VARCHAR" />
-    <result column="receiver_city" property="receiverCity" jdbcType="VARCHAR" />
-    <result column="receiver_district" property="receiverDistrict" jdbcType="VARCHAR" />
-    <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR" />
-    <result column="receiver_zip" property="receiverZip" jdbcType="VARCHAR" />
-    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
-    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
-  </resultMap>
+<mapper namespace="com.fengwei.mapper.UserShippingMapper">
+    <resultMap id="BaseResultMap" type="com.fengwei.pojo.UserShipping">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="receiver_name" property="receiverName" jdbcType="VARCHAR"/>
+        <result column="receiver_phone" property="receiverPhone" jdbcType="VARCHAR"/>
+        <result column="receiver_mobile" property="receiverMobile" jdbcType="VARCHAR"/>
+        <result column="receiver_province" property="receiverProvince" jdbcType="VARCHAR"/>
+        <result column="receiver_city" property="receiverCity" jdbcType="VARCHAR"/>
+        <result column="receiver_district" property="receiverDistrict" jdbcType="VARCHAR"/>
+        <result column="receiver_address" property="receiverAddress" jdbcType="VARCHAR"/>
+        <result column="receiver_zip" property="receiverZip" jdbcType="VARCHAR"/>
+        <result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+        <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, receiver_name, receiver_phone, receiver_mobile, receiver_province, receiver_city,
+    receiver_district, receiver_address, receiver_zip, created_time, updated_time
+    </sql>
+
+    <delete id="deleteByIdAndUid" parameterType="map">
+        delete
+        from user_shipping
+        where id = #{shippingId,jdbcType=INTEGER}
+          and user_id = #{uid,jdbcType=INTEGER}
+    </delete>
+
+    <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_shipping
+        where user_id = #{uid,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByUidAndShippingId" parameterType="map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_shipping
+        where id = #{shippingId,jdbcType=INTEGER}
+        and user_id = #{uid,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByIdSet" resultType="com.fengwei.pojo.UserShipping">
+        select
+        <include refid="Base_Column_List"/>
+        from user_shipping
+        <where>
+            <if test="idSet.size() > 0">
+                id in
+                <foreach collection="idSet" item="item" index="index" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
 </mapper>

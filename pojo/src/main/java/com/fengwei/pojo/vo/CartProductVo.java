@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class CartProductVo {
 
-    private Integer productId;
+    private String productId;
 
     /**
      * 购买的数量
@@ -34,7 +34,7 @@ public class CartProductVo {
      */
     private Boolean productSelected;
 
-    public CartProductVo(Integer productId,Integer quantity,String productName,String productSubtitle,String productMainImage,BigDecimal productPrice,Integer productStatus,BigDecimal productTotalPrice,Integer productStock,Boolean productSelected) {
+    public CartProductVo(String productId,Integer quantity,String productName,String productSubtitle,String productMainImage,BigDecimal productPrice,Integer productStatus,BigDecimal productTotalPrice,Integer productStock,Boolean productSelected) {
         this.productId = productId;
         this.quantity = quantity;
         this.productName = productName;
@@ -47,11 +47,11 @@ public class CartProductVo {
         this.productSelected = productSelected;
     }
 
-    public Integer getProductId() {
+    public String getProductId() {
         return this.productId;
     }
 
-    public void setProductId(Integer productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -143,28 +143,22 @@ public class CartProductVo {
         if (!Objects.equals(this$productName,other$productName)) return false;
         final Object this$productSubtitle = this.getProductSubtitle();
         final Object other$productSubtitle = other.getProductSubtitle();
-        if (!Objects.equals(this$productSubtitle,other$productSubtitle))
-            return false;
+        if (!Objects.equals(this$productSubtitle,other$productSubtitle)) return false;
         final Object this$productMainImage = this.getProductMainImage();
         final Object other$productMainImage = other.getProductMainImage();
-        if (!Objects.equals(this$productMainImage,other$productMainImage))
-            return false;
+        if (!Objects.equals(this$productMainImage,other$productMainImage)) return false;
         final Object this$productPrice = this.getProductPrice();
         final Object other$productPrice = other.getProductPrice();
-        if (!Objects.equals(this$productPrice,other$productPrice))
-            return false;
+        if (!Objects.equals(this$productPrice,other$productPrice)) return false;
         final Object this$productStatus = this.getProductStatus();
         final Object other$productStatus = other.getProductStatus();
-        if (!Objects.equals(this$productStatus,other$productStatus))
-            return false;
+        if (!Objects.equals(this$productStatus,other$productStatus)) return false;
         final Object this$productTotalPrice = this.getProductTotalPrice();
         final Object other$productTotalPrice = other.getProductTotalPrice();
-        if (!Objects.equals(this$productTotalPrice,other$productTotalPrice))
-            return false;
+        if (!Objects.equals(this$productTotalPrice,other$productTotalPrice)) return false;
         final Object this$productStock = this.getProductStock();
         final Object other$productStock = other.getProductStock();
-        if (!Objects.equals(this$productStock,other$productStock))
-            return false;
+        if (!Objects.equals(this$productStock,other$productStock)) return false;
         final Object this$productSelected = this.getProductSelected();
         final Object other$productSelected = other.getProductSelected();
         return Objects.equals(this$productSelected,other$productSelected);

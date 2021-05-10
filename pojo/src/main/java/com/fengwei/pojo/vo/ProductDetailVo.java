@@ -6,9 +6,7 @@ import java.util.Objects;
 
 public class ProductDetailVo {
 
-    private Integer id;
-
-    private Integer categoryId;
+    private String id;
 
     private String name;
 
@@ -26,27 +24,19 @@ public class ProductDetailVo {
 
     private Integer status;
 
-    private Date createTime;
+    private Date createdTime;
 
-    private Date updateTime;
+    private Date updatedTime;
 
     public ProductDetailVo() {
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public Integer getCategoryId() {
-        return this.categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -113,20 +103,20 @@ public class ProductDetailVo {
         this.status = status;
     }
 
-    public Date getCreateTime() {
-        return this.createTime;
+    public Date getCreatedTime() {
+        return this.createdTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
 
-    public Date getUpdateTime() {
-        return this.updateTime;
+    public Date getUpdatedTime() {
+        return this.updatedTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
 
     public boolean equals(final Object o) {
@@ -137,10 +127,6 @@ public class ProductDetailVo {
         final Object this$id = this.getId();
         final Object other$id = other.getId();
         if (!Objects.equals(this$id,other$id)) return false;
-        final Object this$categoryId = this.getCategoryId();
-        final Object other$categoryId = other.getCategoryId();
-        if (!Objects.equals(this$categoryId,other$categoryId))
-            return false;
         final Object this$name = this.getName();
         final Object other$name = other.getName();
         if (!Objects.equals(this$name,other$name)) return false;
@@ -165,12 +151,11 @@ public class ProductDetailVo {
         final Object this$status = this.getStatus();
         final Object other$status = other.getStatus();
         if (!Objects.equals(this$status,other$status)) return false;
-        final Object this$createTime = this.getCreateTime();
-        final Object other$createTime = other.getCreateTime();
-        if (!Objects.equals(this$createTime,other$createTime))
-            return false;
-        final Object this$updateTime = this.getUpdateTime();
-        final Object other$updateTime = other.getUpdateTime();
+        final Object this$createTime = this.getCreatedTime();
+        final Object other$createTime = other.getCreatedTime();
+        if (!Objects.equals(this$createTime,other$createTime)) return false;
+        final Object this$updateTime = this.getUpdatedTime();
+        final Object other$updateTime = other.getUpdatedTime();
         return Objects.equals(this$updateTime,other$updateTime);
     }
 
@@ -183,8 +168,6 @@ public class ProductDetailVo {
         int result = 1;
         final Object $id = this.getId();
         result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-        final Object $categoryId = this.getCategoryId();
-        result = result * PRIME + ($categoryId == null ? 43 : $categoryId.hashCode());
         final Object $name = this.getName();
         result = result * PRIME + ($name == null ? 43 : $name.hashCode());
         final Object $subtitle = this.getSubtitle();
@@ -201,14 +184,14 @@ public class ProductDetailVo {
         result = result * PRIME + ($stock == null ? 43 : $stock.hashCode());
         final Object $status = this.getStatus();
         result = result * PRIME + ($status == null ? 43 : $status.hashCode());
-        final Object $createTime = this.getCreateTime();
+        final Object $createTime = this.getCreatedTime();
         result = result * PRIME + ($createTime == null ? 43 : $createTime.hashCode());
-        final Object $updateTime = this.getUpdateTime();
+        final Object $updateTime = this.getUpdatedTime();
         result = result * PRIME + ($updateTime == null ? 43 : $updateTime.hashCode());
         return result;
     }
 
     public String toString() {
-        return "ProductDetailVo(id=" + this.getId() + ", categoryId=" + this.getCategoryId() + ", name=" + this.getName() + ", subtitle=" + this.getSubtitle() + ", mainImage=" + this.getMainImage() + ", subImages=" + this.getSubImages() + ", detail=" + this.getDetail() + ", price=" + this.getPrice() + ", stock=" + this.getStock() + ", status=" + this.getStatus() + ", createTime=" + this.getCreateTime() + ", updateTime=" + this.getUpdateTime() + ")";
+        return "ProductDetailVo(id=" + this.getId() + ", name=" + this.getName() + ", subtitle=" + this.getSubtitle() + ", mainImage=" + this.getMainImage() + ", subImages=" + this.getSubImages() + ", detail=" + this.getDetail() + ", price=" + this.getPrice() + ", stock=" + this.getStock() + ", status=" + this.getStatus() + ", createTime=" + this.getCreatedTime() + ", updateTime=" + this.getUpdatedTime() + ")";
     }
 }
