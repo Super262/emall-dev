@@ -6,9 +6,10 @@
       WARNING - @mbg.generated
     -->
     <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="subtitle" property="subtitle" jdbcType="VARCHAR" />
     <result column="brand" property="brand" jdbcType="VARCHAR" />
     <result column="series" property="series" jdbcType="VARCHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="model" property="model" jdbcType="VARCHAR" />
     <result column="cpu_socket_type" property="cpuSocketType" jdbcType="VARCHAR" />
     <result column="core_name" property="coreName" jdbcType="VARCHAR" />

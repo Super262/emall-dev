@@ -11,11 +11,13 @@ public class ProductCpu {
     @Id
     private Integer id;
 
+    private String name;
+
+    private String subtitle;
+
     private String brand;
 
     private String series;
-
-    private String name;
 
     private String model;
 
@@ -133,6 +135,34 @@ public class ProductCpu {
     }
 
     /**
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return subtitle
+     */
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    /**
+     * @param subtitle
+     */
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+
+    /**
      * @return brand
      */
     public String getBrand() {
@@ -158,20 +188,6 @@ public class ProductCpu {
      */
     public void setSeries(String series) {
         this.series = series;
-    }
-
-    /**
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**

@@ -11,6 +11,10 @@ public class ProductMonitor {
     @Id
     private Integer id;
 
+    private String name;
+
+    private String subtitle;
+
     private String brand;
 
     private String model;
@@ -100,6 +104,34 @@ public class ProductMonitor {
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    /**
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return subtitle
+     */
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    /**
+     * @param subtitle
+     */
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     /**

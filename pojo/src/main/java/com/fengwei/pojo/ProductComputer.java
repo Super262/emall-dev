@@ -11,6 +11,10 @@ public class ProductComputer {
     @Id
     private Integer id;
 
+    private String name;
+
+    private String subtitle;
+
     /**
      * 0-台式；1-笔记
      */
@@ -94,6 +98,34 @@ public class ProductComputer {
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    /**
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return subtitle
+     */
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    /**
+     * @param subtitle
+     */
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     /**
