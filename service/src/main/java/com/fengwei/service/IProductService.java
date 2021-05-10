@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 
 public interface IProductService {
 
-    public ResponseVo<PageInfo> getListOfProducts(Integer categoryId,Integer pageNum,Integer pageSize);
+    ResponseVo<PageInfo> getListOfProducts(Integer categoryId,Integer pageNum,Integer pageSize);
 
-    public ResponseVo<ProductDetailVo> getDetailOfProduct(Integer productId);
+    ResponseVo<ProductDetailVo> getDetailOfProduct(Integer productId);
 }

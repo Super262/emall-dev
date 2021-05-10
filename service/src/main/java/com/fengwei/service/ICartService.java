@@ -11,19 +11,19 @@ import java.util.List;
 
 public interface ICartService {
 
-    public ResponseVo<CartVo> addItem(Integer uid,CartAddForm form);
+    ResponseVo<CartVo> addItem(Integer uid,CartAddForm form);
 
-    public ResponseVo<CartVo> getListOfItems(Integer uid);
+    ResponseVo<CartVo> getListOfItems(Integer uid);
 
-    public ResponseVo<CartVo> updateItem(Integer uid,Integer productId,CartUpdateForm form);
+    ResponseVo<CartVo> updateItem(Integer uid,Integer productId,CartUpdateForm form);
 
-    public ResponseVo<CartVo> deleteItem(Integer uid,Integer productId);
+    ResponseVo<CartVo> deleteItem(Integer uid,Integer productId);
 
-    public ResponseVo<CartVo> setAllSelected(Integer uid);
+    ResponseVo<CartVo> setAllSelected(Integer uid);
 
-    public ResponseVo<CartVo> setAllUnselected(Integer uid);
+    ResponseVo<CartVo> setAllUnselected(Integer uid);
 
-    public ResponseVo<Integer> getTotalQuantity(Integer uid);
+    ResponseVo<Integer> getTotalQuantity(Integer uid);
 
-    public List<CartItem> getCartOfUser(Integer uid);
+    List<CartItem> getCartOfUser(Integer uid);
 }
