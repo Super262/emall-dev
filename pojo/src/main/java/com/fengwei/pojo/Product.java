@@ -40,6 +40,7 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+        updateRawData();
     }
 
     public String getSubtitle() {
@@ -48,6 +49,7 @@ public class Product {
 
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
+        updateRawData();
     }
 
     public String getMainImage() {
@@ -56,6 +58,7 @@ public class Product {
 
     public void setMainImage(String mainImage) {
         this.mainImage = mainImage;
+        updateRawData();
     }
 
     public String getSubImages() {
@@ -64,6 +67,7 @@ public class Product {
 
     public void setSubImages(String subImages) {
         this.subImages = subImages;
+        updateRawData();
     }
 
     public BigDecimal getPrice() {
@@ -72,6 +76,7 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+        updateRawData();
     }
 
     public Integer getStock() {
@@ -80,6 +85,7 @@ public class Product {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+        updateRawData();
     }
 
     public Integer getStatus() {
@@ -88,6 +94,7 @@ public class Product {
 
     public void setStatus(Integer status) {
         this.status = status;
+        updateRawData();
     }
 
     public Date getCreatedTime() {
@@ -96,6 +103,7 @@ public class Product {
 
     public void setCreatedTime(Date createdTime) {
         this.createdTime = createdTime;
+        updateRawData();
     }
 
     public Date getUpdatedTime() {
@@ -104,6 +112,7 @@ public class Product {
 
     public void setUpdatedTime(Date updatedTime) {
         this.updatedTime = updatedTime;
+        updateRawData();
     }
 
     public Object getRawData() {
@@ -112,6 +121,7 @@ public class Product {
 
     public void setRawData(Object rawData) {
         this.rawData = rawData;
+        updateRawData();
     }
 
     // 保持数据的一致性
@@ -120,6 +130,7 @@ public class Product {
         switch (category) {
             case "computer": {
                 ProductComputer p = (ProductComputer) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -133,6 +144,7 @@ public class Product {
             }
             case "cpu": {
                 ProductCpu p = (ProductCpu) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -146,6 +158,7 @@ public class Product {
             }
             case "memory": {
                 ProductMemory p = (ProductMemory) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -159,6 +172,7 @@ public class Product {
             }
             case "gpu": {
                 ProductGpu p = (ProductGpu) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -172,6 +186,7 @@ public class Product {
             }
             case "ssd": {
                 ProductSsd p = (ProductSsd) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -185,6 +200,7 @@ public class Product {
             }
             case "hdd": {
                 ProductHdd p = (ProductHdd) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -198,6 +214,7 @@ public class Product {
             }
             case "powerSupply": {
                 ProductPowerSupply p = (ProductPowerSupply) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -211,6 +228,7 @@ public class Product {
             }
             case "monitor": {
                 ProductMonitor p = (ProductMonitor) rawData;
+                p.setId(Integer.parseInt(id.split("#")[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
