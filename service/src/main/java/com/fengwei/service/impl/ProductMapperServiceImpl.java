@@ -140,123 +140,47 @@ public class ProductMapperServiceImpl implements IProductMapperService {
         String[] idParts = id.split("#");
         String category = idParts[0];
         Integer trueId = Integer.parseInt(idParts[1]);
-        Product result = new Product();
-        result.setId(id);
+        Product result = null;
         switch (category) {
             case "computer": {
                 ProductComputer p = productComputerMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "cpu": {
                 ProductCpu p = productCpuMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "memory": {
                 ProductMemory p = productMemoryMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "gpu": {
                 ProductGpu p = productGpuMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "ssd": {
                 ProductSsd p = productSsdMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "hdd": {
                 ProductHdd p = productHddMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "powerSupply": {
                 ProductPowerSupply p = productPowerSupplyMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
             }
             case "monitor": {
                 ProductMonitor p = productMonitorMapper.selectByPrimaryKey(trueId);
-                result.setName(p.getName());
-                result.setSubtitle(p.getSubtitle());
-                result.setMainImage(p.getMainImage());
-                result.setSubImages(p.getSubImages());
-                result.setPrice(p.getPrice());
-                result.setStock(p.getStock());
-                result.setStatus(p.getStatus());
-                result.setCreatedTime(p.getCreatedTime());
-                result.setUpdatedTime(p.getUpdatedTime());
-                result.setRawData(p);
+                result = new Product(p);
                 break;
-            }
-            default: {
-                return null;
             }
         }
         return result;
@@ -324,6 +248,62 @@ public class ProductMapperServiceImpl implements IProductMapperService {
             }
         }
         return 0;
+    }
+
+    @Override
+    public List<Product> selectByCategory(String category) {
+        List<Product> results = new LinkedList<>();
+        switch (category) {
+            case "computer": {
+                for (ProductComputer p : productComputerMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "cpu": {
+                for (ProductCpu p : productCpuMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "memory": {
+                for (ProductMemory p : productMemoryMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "gpu": {
+                for (ProductGpu p : productGpuMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "ssd": {
+                for (ProductSsd p : productSsdMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "hdd": {
+                for (ProductHdd p : productHddMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "powerSupply": {
+                for (ProductPowerSupply p : productPowerSupplyMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+            case "monitor": {
+                for (ProductMonitor p : productMonitorMapper.selectAll()) {
+                    results.add(new Product(p));
+                }
+                break;
+            }
+        }
+        return results;
     }
 
     @Override

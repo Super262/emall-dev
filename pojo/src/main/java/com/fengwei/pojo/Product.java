@@ -26,6 +26,123 @@ public class Product {
 
     private Object rawData;
 
+    public Product() {
+
+    }
+
+    public Product(ProductComputer p) {
+        this.id = "computer#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductCpu p) {
+        this.id = "cpu#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductGpu p) {
+        this.id = "gpu#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductHdd p) {
+        this.id = "hdd#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductMemory p) {
+        this.id = "memory#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductMonitor p) {
+        this.id = "monitor#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductPowerSupply p) {
+        this.id = "powerSupply#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+    public Product(ProductSsd p) {
+        this.id = "ssd#" + p.getId();
+        this.name = p.getName();
+        this.subtitle = p.getSubtitle();
+        this.mainImage = p.getMainImage();
+        this.subImages = p.getSubImages();
+        this.price = p.getPrice();
+        this.stock = p.getStock();
+        this.status = p.getStatus();
+        this.createdTime = p.getCreatedTime();
+        this.updatedTime = p.getUpdatedTime();
+        this.rawData = p;
+    }
+
+
     public String getId() {
         return id;
     }
@@ -118,11 +235,6 @@ public class Product {
 
     public Object getRawData() {
         return rawData;
-    }
-
-    public void setRawData(Object rawData) {
-        this.rawData = rawData;
-        updateRawData();
     }
 
     // 保持数据的一致性

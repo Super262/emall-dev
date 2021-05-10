@@ -18,5 +18,7 @@ public interface IProductMapperService {
 
     int updateByPrimaryKey(Product record);
 
+    List<Product> selectByCategory(String category);
+
     List<Product> selectByProductIdSet(Set<String> productIdSet);
 }
