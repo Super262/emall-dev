@@ -37,6 +37,7 @@ public class ProductServiceImpl implements IProductService {
 
         PageInfo pageInfo = new PageInfo<>(productList);
         pageInfo.setList(productVoList);
+        pageInfo.setPages(productVoList.size());
         return ResponseVo.success(pageInfo);
     }
 

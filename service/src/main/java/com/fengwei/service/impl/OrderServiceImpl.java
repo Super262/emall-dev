@@ -139,7 +139,7 @@ public class OrderServiceImpl implements IOrderService {
         }
         PageInfo pageInfo = new PageInfo<>(orderList);
         pageInfo.setList(orderVoList);
-
+        pageInfo.setPages(orderVoList.size());
         return ResponseVo.success(pageInfo);
     }
 
