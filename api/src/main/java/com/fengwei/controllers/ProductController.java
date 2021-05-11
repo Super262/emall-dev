@@ -16,12 +16,12 @@ public class ProductController {
     @Autowired
     private IProductService productService;
 
-    @GetMapping("/products")
-    public ResponseVo<PageInfo> list(@RequestParam(required = false) String category,@RequestParam(required = false, defaultValue = "1") Integer pageNum,@RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+    @GetMapping("/productList")
+    public ResponseVo<PageInfo> list(@RequestParam String category,@RequestParam(required = false, defaultValue = "1") Integer pageNum,@RequestParam(required = false, defaultValue = "16") Integer pageSize) {
         return productService.getListOfProducts(category,pageNum,pageSize);
     }
 
-    @GetMapping("/products/{productId}")
+    @GetMapping("/product/{productId}")
     public ResponseVo<Product> detail(@PathVariable String productId) {
         return productService.getDetailOfProduct(productId);
     }

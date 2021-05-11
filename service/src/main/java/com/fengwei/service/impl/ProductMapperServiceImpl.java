@@ -13,6 +13,8 @@ import java.util.Set;
 @Service
 public class ProductMapperServiceImpl implements IProductMapperService {
 
+    private final String SEP = "®";
+
     @Autowired
     private ProductComputerMapper productComputerMapper;
 
@@ -39,7 +41,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int deleteByPrimaryKey(String id) {
-        String[] idParts = id.split("#");
+        String[] idParts = id.split(SEP);
         String category = idParts[0];
         Integer trueId = Integer.parseInt(idParts[1]);
         switch (category) {
@@ -73,7 +75,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int insert(Product record) {
-        String category = record.getId().split("#")[0];
+        String category = record.getId().split(SEP)[0];
         switch (category) {
             case "computer": {
                 return productComputerMapper.insert((ProductComputer) record.getRawData());
@@ -105,7 +107,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int insertSelective(Product record) {
-        String category = record.getId().split("#")[0];
+        String category = record.getId().split(SEP)[0];
         switch (category) {
             case "computer": {
                 return productComputerMapper.insertSelective((ProductComputer) record.getRawData());
@@ -137,7 +139,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public Product selectByPrimaryKey(String id) {
-        String[] idParts = id.split("#");
+        String[] idParts = id.split(SEP);
         String category = idParts[0];
         Integer trueId = Integer.parseInt(idParts[1]);
         Product result = null;
@@ -188,7 +190,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int updateByPrimaryKeySelective(Product record) {
-        String category = record.getId().split("#")[0];
+        String category = record.getId().split(SEP)[0];
         switch (category) {
             case "computer": {
                 return productComputerMapper.updateByPrimaryKeySelective((ProductComputer) record.getRawData());
@@ -220,7 +222,7 @@ public class ProductMapperServiceImpl implements IProductMapperService {
 
     @Override
     public int updateByPrimaryKey(Product record) {
-        String category = record.getId().split("#")[0];
+        String category = record.getId().split(SEP)[0];
         switch (category) {
             case "computer": {
                 return productComputerMapper.updateByPrimaryKey((ProductComputer) record.getRawData());

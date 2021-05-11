@@ -12,7 +12,7 @@ public class OrderVo {
 
     private Long orderNo;
 
-    private BigDecimal payment;
+    private BigDecimal paymentAmount;
 
     private Integer paymentType;
 
@@ -20,15 +20,15 @@ public class OrderVo {
 
     private Integer status;
 
-    private Date paymentTime;
+    private Date paidTime;
 
-    private Date sendTime;
+    private Date sentTime;
 
-    private Date endTime;
+    private Date endedTime;
 
-    private Date closeTime;
+    private Date closedTime;
 
-    private Date createTime;
+    private Date createdTime;
 
     private List<OrderItemVo> orderItemVoList;
 
@@ -47,12 +47,12 @@ public class OrderVo {
         this.orderNo = orderNo;
     }
 
-    public BigDecimal getPayment() {
-        return this.payment;
+    public BigDecimal getPaymentAmount() {
+        return this.paymentAmount;
     }
 
-    public void setPayment(BigDecimal payment) {
-        this.payment = payment;
+    public void setPaymentAmount(BigDecimal paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 
     public Integer getPaymentType() {
@@ -79,44 +79,44 @@ public class OrderVo {
         this.status = status;
     }
 
-    public Date getPaymentTime() {
-        return this.paymentTime;
+    public Date getPaidTime() {
+        return this.paidTime;
     }
 
-    public void setPaymentTime(Date paymentTime) {
-        this.paymentTime = paymentTime;
+    public void setPaidTime(Date paidTime) {
+        this.paidTime = paidTime;
     }
 
-    public Date getSendTime() {
-        return this.sendTime;
+    public Date getSentTime() {
+        return this.sentTime;
     }
 
-    public void setSendTime(Date sendTime) {
-        this.sendTime = sendTime;
+    public void setSentTime(Date sentTime) {
+        this.sentTime = sentTime;
     }
 
-    public Date getEndTime() {
-        return this.endTime;
+    public Date getEndedTime() {
+        return this.endedTime;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setEndedTime(Date endedTime) {
+        this.endedTime = endedTime;
     }
 
-    public Date getCloseTime() {
-        return this.closeTime;
+    public Date getClosedTime() {
+        return this.closedTime;
     }
 
-    public void setCloseTime(Date closeTime) {
-        this.closeTime = closeTime;
+    public void setClosedTime(Date closedTime) {
+        this.closedTime = closedTime;
     }
 
-    public Date getCreateTime() {
-        return this.createTime;
+    public Date getCreatedTime() {
+        return this.createdTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
 
     public List<OrderItemVo> getOrderItemVoList() {
@@ -151,8 +151,8 @@ public class OrderVo {
         final Object this$orderNo = this.getOrderNo();
         final Object other$orderNo = other.getOrderNo();
         if (!Objects.equals(this$orderNo,other$orderNo)) return false;
-        final Object this$payment = this.getPayment();
-        final Object other$payment = other.getPayment();
+        final Object this$payment = this.getPaymentAmount();
+        final Object other$payment = other.getPaymentAmount();
         if (!Objects.equals(this$payment,other$payment)) return false;
         final Object this$paymentType = this.getPaymentType();
         final Object other$paymentType = other.getPaymentType();
@@ -164,21 +164,21 @@ public class OrderVo {
         final Object this$status = this.getStatus();
         final Object other$status = other.getStatus();
         if (!Objects.equals(this$status,other$status)) return false;
-        final Object this$paymentTime = this.getPaymentTime();
-        final Object other$paymentTime = other.getPaymentTime();
+        final Object this$paymentTime = this.getPaidTime();
+        final Object other$paymentTime = other.getPaidTime();
         if (!Objects.equals(this$paymentTime,other$paymentTime))
             return false;
-        final Object this$sendTime = this.getSendTime();
-        final Object other$sendTime = other.getSendTime();
+        final Object this$sendTime = this.getSentTime();
+        final Object other$sendTime = other.getSentTime();
         if (!Objects.equals(this$sendTime,other$sendTime)) return false;
-        final Object this$endTime = this.getEndTime();
-        final Object other$endTime = other.getEndTime();
+        final Object this$endTime = this.getEndedTime();
+        final Object other$endTime = other.getEndedTime();
         if (!Objects.equals(this$endTime,other$endTime)) return false;
-        final Object this$closeTime = this.getCloseTime();
-        final Object other$closeTime = other.getCloseTime();
+        final Object this$closeTime = this.getClosedTime();
+        final Object other$closeTime = other.getClosedTime();
         if (!Objects.equals(this$closeTime,other$closeTime)) return false;
-        final Object this$createTime = this.getCreateTime();
-        final Object other$createTime = other.getCreateTime();
+        final Object this$createTime = this.getCreatedTime();
+        final Object other$createTime = other.getCreatedTime();
         if (!Objects.equals(this$createTime,other$createTime))
             return false;
         final Object this$orderItemVoList = this.getOrderItemVoList();
@@ -203,7 +203,7 @@ public class OrderVo {
         int result = 1;
         final Object $orderNo = this.getOrderNo();
         result = result * PRIME + ($orderNo == null ? 43 : $orderNo.hashCode());
-        final Object $payment = this.getPayment();
+        final Object $payment = this.getPaymentAmount();
         result = result * PRIME + ($payment == null ? 43 : $payment.hashCode());
         final Object $paymentType = this.getPaymentType();
         result = result * PRIME + ($paymentType == null ? 43 : $paymentType.hashCode());
@@ -211,15 +211,15 @@ public class OrderVo {
         result = result * PRIME + ($postage == null ? 43 : $postage.hashCode());
         final Object $status = this.getStatus();
         result = result * PRIME + ($status == null ? 43 : $status.hashCode());
-        final Object $paymentTime = this.getPaymentTime();
+        final Object $paymentTime = this.getPaidTime();
         result = result * PRIME + ($paymentTime == null ? 43 : $paymentTime.hashCode());
-        final Object $sendTime = this.getSendTime();
+        final Object $sendTime = this.getSentTime();
         result = result * PRIME + ($sendTime == null ? 43 : $sendTime.hashCode());
-        final Object $endTime = this.getEndTime();
+        final Object $endTime = this.getEndedTime();
         result = result * PRIME + ($endTime == null ? 43 : $endTime.hashCode());
-        final Object $closeTime = this.getCloseTime();
+        final Object $closeTime = this.getClosedTime();
         result = result * PRIME + ($closeTime == null ? 43 : $closeTime.hashCode());
-        final Object $createTime = this.getCreateTime();
+        final Object $createTime = this.getCreatedTime();
         result = result * PRIME + ($createTime == null ? 43 : $createTime.hashCode());
         final Object $orderItemVoList = this.getOrderItemVoList();
         result = result * PRIME + ($orderItemVoList == null ? 43 : $orderItemVoList.hashCode());
@@ -231,6 +231,6 @@ public class OrderVo {
     }
 
     public String toString() {
-        return "OrderVo(orderNo=" + this.getOrderNo() + ", payment=" + this.getPayment() + ", paymentType=" + this.getPaymentType() + ", postage=" + this.getPostage() + ", status=" + this.getStatus() + ", paymentTime=" + this.getPaymentTime() + ", sendTime=" + this.getSendTime() + ", endTime=" + this.getEndTime() + ", closeTime=" + this.getCloseTime() + ", createTime=" + this.getCreateTime() + ", orderItemVoList=" + this.getOrderItemVoList() + ", shippingId=" + this.getShippingId() + ", shippingVo=" + this.getShippingVo() + ")";
+        return "OrderVo(orderNo=" + this.getOrderNo() + ", payment=" + this.getPaymentAmount() + ", paymentType=" + this.getPaymentType() + ", postage=" + this.getPostage() + ", status=" + this.getStatus() + ", paymentTime=" + this.getPaidTime() + ", sendTime=" + this.getSentTime() + ", endTime=" + this.getEndedTime() + ", closeTime=" + this.getClosedTime() + ", createTime=" + this.getCreatedTime() + ", orderItemVoList=" + this.getOrderItemVoList() + ", shippingId=" + this.getShippingId() + ", shippingVo=" + this.getShippingVo() + ")";
     }
 }

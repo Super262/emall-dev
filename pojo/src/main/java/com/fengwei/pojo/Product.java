@@ -31,7 +31,7 @@ public class Product {
     }
 
     public Product(ProductComputer p) {
-        this.id = "computer#" + p.getId();
+        this.id = "computer®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -45,7 +45,7 @@ public class Product {
     }
 
     public Product(ProductCpu p) {
-        this.id = "cpu#" + p.getId();
+        this.id = "cpu®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -59,7 +59,7 @@ public class Product {
     }
 
     public Product(ProductGpu p) {
-        this.id = "gpu#" + p.getId();
+        this.id = "gpu®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -73,7 +73,7 @@ public class Product {
     }
 
     public Product(ProductHdd p) {
-        this.id = "hdd#" + p.getId();
+        this.id = "hdd®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -87,7 +87,7 @@ public class Product {
     }
 
     public Product(ProductMemory p) {
-        this.id = "memory#" + p.getId();
+        this.id = "memory®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -101,7 +101,7 @@ public class Product {
     }
 
     public Product(ProductMonitor p) {
-        this.id = "monitor#" + p.getId();
+        this.id = "monitor®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -115,7 +115,7 @@ public class Product {
     }
 
     public Product(ProductPowerSupply p) {
-        this.id = "powerSupply#" + p.getId();
+        this.id = "powerSupply®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -129,7 +129,7 @@ public class Product {
     }
 
     public Product(ProductSsd p) {
-        this.id = "ssd#" + p.getId();
+        this.id = "ssd®" + p.getId();
         this.name = p.getName();
         this.subtitle = p.getSubtitle();
         this.mainImage = p.getMainImage();
@@ -239,11 +239,12 @@ public class Product {
 
     // 保持数据的一致性
     private void updateRawData() {
-        String category = id.split("#")[0];
+        final String SEP = "®";
+        String category = id.split(SEP)[0];
         switch (category) {
             case "computer": {
                 ProductComputer p = (ProductComputer) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -257,7 +258,7 @@ public class Product {
             }
             case "cpu": {
                 ProductCpu p = (ProductCpu) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -271,7 +272,7 @@ public class Product {
             }
             case "memory": {
                 ProductMemory p = (ProductMemory) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -285,7 +286,7 @@ public class Product {
             }
             case "gpu": {
                 ProductGpu p = (ProductGpu) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -299,7 +300,7 @@ public class Product {
             }
             case "ssd": {
                 ProductSsd p = (ProductSsd) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -313,7 +314,7 @@ public class Product {
             }
             case "hdd": {
                 ProductHdd p = (ProductHdd) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -327,7 +328,7 @@ public class Product {
             }
             case "powerSupply": {
                 ProductPowerSupply p = (ProductPowerSupply) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
@@ -341,7 +342,7 @@ public class Product {
             }
             case "monitor": {
                 ProductMonitor p = (ProductMonitor) rawData;
-                p.setId(Integer.parseInt(id.split("#")[1]));
+                p.setId(Integer.parseInt(id.split(SEP)[1]));
                 p.setName(name);
                 p.setSubtitle(subtitle);
                 p.setMainImage(mainImage);
