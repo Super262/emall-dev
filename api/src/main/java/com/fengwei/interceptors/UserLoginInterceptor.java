@@ -23,10 +23,6 @@ public class UserLoginInterceptor implements HandlerInterceptor {
         if (user == null) {
             log.info("user=null");
             throw new UserLoginException();
-
-//			response.getWriter().print("error");
-//			return false;
-//			return ResponseVo.error(ResponseEnum.NEED_LOGIN);
         }
         return true;
     }
