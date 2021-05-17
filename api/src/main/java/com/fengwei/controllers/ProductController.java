@@ -12,15 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
-
     @Autowired
     private IProductService productService;
 
+    // 获取商品列表
     @GetMapping("/productList")
     public ResponseVo<PageInfo> list(@RequestParam String category,@RequestParam(required = false, defaultValue = "1") Integer pageNum,@RequestParam(required = false, defaultValue = "16") Integer pageSize) {
         return productService.getListOfProducts(category,pageNum,pageSize);
     }
 
+    // 获取商品详情
     @GetMapping("/product/{productId}")
     public ResponseVo<Product> detail(@PathVariable String productId) {
         return productService.getDetailOfProduct(productId);
