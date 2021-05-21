@@ -6,7 +6,6 @@ import com.fengwei.forms.CartUpdateForm;
 import com.fengwei.pojo.CartItem;
 import com.fengwei.pojo.vo.CartVo;
 import com.fengwei.pojo.vo.ResponseVo;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
